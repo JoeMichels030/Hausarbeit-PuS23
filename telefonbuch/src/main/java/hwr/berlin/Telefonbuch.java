@@ -80,9 +80,8 @@ public class Telefonbuch implements Serializable{
     }
 
     //Buch laden
-    public  ArrayList<Kontakt> buchLaden(){
-        //Telefonbuch geladen = new Telefonbuch();
-        //ArrayList<Kontakt> geladenArray = new ArrayList<Kontakt>();
+    public  ArrayList<Kontakt> buchLaden(File file){
+ 
         try{
         fis = new FileInputStream(file);
         ois = new ObjectInputStream(fis);

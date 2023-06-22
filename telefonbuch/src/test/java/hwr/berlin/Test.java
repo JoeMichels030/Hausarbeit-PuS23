@@ -1,10 +1,14 @@
 package hwr.berlin;
 
+import java.io.File;
 
 public class Test {
 
 
     public static void main(String args[]){
+
+    final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
+    final File file = new File(filelocation);
 
     Telefonbuch testBuch = new Telefonbuch();
     Telefonbuch testBuch2 = new Telefonbuch();
@@ -27,7 +31,7 @@ public class Test {
     testBuch.alleKontakteAnzeigen();
     testBuch.buchSpeichern();
 
-    testBuch2.buchLaden();
+    testBuch2.buchLaden(file);
     testBuch2.alleKontakteAnzeigen();
     
     }

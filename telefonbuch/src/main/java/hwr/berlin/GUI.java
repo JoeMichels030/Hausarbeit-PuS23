@@ -3,9 +3,9 @@ package hwr.berlin;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import java.awt.*;
+
 import java.io.File;
-import java.io.IOException;
+
 
 public class GUI extends JFrame implements ActionListener{
 
@@ -53,6 +53,7 @@ public void initMenu(){
 
     //Action Listener menuTelefonbuch
     //laden
+    
     laden.addActionListener(new java.awt.event.ActionListener(){
         public void actionPerformed(java.awt.event.ActionEvent e){
             JFileChooser fc = new JFileChooser(filelocation);
@@ -64,6 +65,7 @@ public void initMenu(){
 
             if(a == JFileChooser.APPROVE_OPTION){
                 File file = fc.getSelectedFile();
+                
 
                 //TO-DO Methode telefonbuch.buchLaden() einbinden
                 System.out.println("Telefonbuch wurde geladen!");
