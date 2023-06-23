@@ -4,28 +4,47 @@ package hwr.berlin;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-//import java.awt.*;
+
+import java.awt.CardLayout;
+
+import java.awt.Dimension;
+
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-//import java.io.IOException;
+
 
 public class GUI extends JFrame implements ActionListener{
+  
+    //MenuBar
     JMenuBar menueleiste;
-
+    
+    //Menu
     JMenu menuTelefonbuch;
     JMenu menuKontakt;
 
+    //MenuItems Telefonbuch
     JMenuItem speichern;
     JMenuItem laden;
     JMenuItem beenden;
 
+    //MenuItems Kontakt
     JMenuItem neuerKontakt;
     JMenuItem alleKontakteAnzeigen;
     JMenuItem kontaktSuchen;
     JMenuItem kontaktLoeschen;
-    static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
 
+    //Panels mit Buttons
+    JPanel startPanel;
+    JButton butBuchLaden;
+    JButton butNeuesBuch;
+    
+    
+    static String filelocation = "telefonbuch/src/main/java/hwr/berlin/";
+    Telefonbuch buch;
+
+   
 
 
     public static void main(String args[]){
@@ -39,13 +58,16 @@ public class GUI extends JFrame implements ActionListener{
 
 public void initGUI(){
 
-    setSize(640, 480);
+    //setSize(640, 480);
+    setPreferredSize(new Dimension(800,600));
     setTitle("Telefonbuch App");
    
     initMenu();
+    initMainWindow();
     
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setVisible(true);
+    pack();
 
     }
 
@@ -90,12 +112,47 @@ public void initMenu(){
     
     }
 
+public void initMainWindow(){
 
+    JButton butBuchLaden = new JButton("Buch laden");
+    butBuchLaden.setPreferredSize(new Dimension(50,30));
+    butBuchLaden.addActionListener(this);
+
+    JButton butNeuesBuch = new JButton("Neues Buch anlegen");
+    butNeuesBuch.setPreferredSize(new Dimension(50,30));
+    butNeuesBuch.addActionListener(this);
+    
+    CardLayout cl = new CardLayout();
+    
+    
+    JPanel startPanel = new JPanel();
+    JPanel kontaktAnlegenPanel = new JPanel();
+    JPanel alleKontakteAnzeigenPanel = new JPanel();
+    JPanel kontaktSuchenPanel = new JPanel();
+
+
+    
+    getContentPane();
+    setLayout(cl);
+
+    GridLayout gl = new GridLayout(10, 10,10,20);    
+    startPanel.setLayout(gl);
+    startPanel.add(butBuchLaden);
+    startPanel.add(butNeuesBuch);
+
+
+    add("Start",startPanel);
+    add("Kontakt anlegen",kontaktAnlegenPanel);
+    add("Kontakt Suchen",kontaktSuchenPanel);
+    add("Alle Kontakte anzeigen",alleKontakteAnzeigenPanel);
+    add("Kontakt suchen",kontaktSuchenPanel);
+
+    }
 
 @Override
 public void actionPerformed(ActionEvent knopfdruck) {
-    // TODO Auto-generated method stub
-
+    
+    //Menü Telefonbuch laden
     if(knopfdruck.getSource() == laden){
         JFileChooser fc = new JFileChooser(filelocation);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");
@@ -106,6 +163,8 @@ public void actionPerformed(ActionEvent knopfdruck) {
 
         if(a == JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
+            buch = new Telefonbuch(file);
+            buch.alleKontakteAnzeigen();
 
             //TO-DO Methode telefonbuch.buchLaden() einbinden
             System.out.println("Telefonbuch wurde geladen!");
@@ -114,19 +173,40 @@ public void actionPerformed(ActionEvent knopfdruck) {
 
     }
 
+    //Menü Telefonbuch speichern
     if(knopfdruck.getSource() == speichern){
         JFileChooser fc = new JFileChooser(filelocation);
+
+        //Filter für Telefonbuch
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");
+        fc.setAcceptAllFileFilterUsed(false);
+        fc.addChoosableFileFilter(filter);
         fc.showSaveDialog(null);
 
-        //TO-DO Methode telefonbuch.buchSpeichern() einbinden     
+        
+        File file = fc.getSelectedFile();
+        buch.buchSpeichern(file);
         System.out.println("Telefonbuch wurde gespeichert!");                
 
 
     }
 
+    //Menü Telefonbuch beenden
     if(knopfdruck.getSource() == beenden){
         System.out.println("Programm wurde beendet");
         System.exit(0);
+    }
+
+    //Menü Kontakt neuer Kontakt
+    if(knopfdruck.getSource() == neuerKontakt){
+        //show(,"Kontakt anlegen");
+
+    }
+    
+    //startPanel Buttons
+    if (knopfdruck.getSource() == butBuchLaden){
+
+
     }
 
         //TODO ActionListener neuerKontakt, alleKontakteAnzeigen, kontaktSuchen, kontaktLoeschen
@@ -134,7 +214,4 @@ public void actionPerformed(ActionEvent knopfdruck) {
     
     }
 
-    public void speichern(){
-
-    }
 }

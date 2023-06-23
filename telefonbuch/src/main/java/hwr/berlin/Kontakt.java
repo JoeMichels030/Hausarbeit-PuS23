@@ -14,8 +14,7 @@ public class Kontakt implements Serializable{
     protected String adresse;
     protected String email;
     protected ArrayList<Long> nummern;
-    //protected long telefonnummer;
-    // @JacksonXmlElementWrapper(useWrapping = false);
+
 
     //Konstruktor
     public Kontakt(){
