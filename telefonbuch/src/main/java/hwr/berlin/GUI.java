@@ -21,10 +21,13 @@ public class GUI extends JFrame implements ActionListener{
     JMenuItem beenden;
 
     JMenuItem neuerKontakt;
-    JMenuItem alleKontakteanzeigen;
+    JMenuItem alleKontakteAnzeigen;
     JMenuItem kontaktSuchen;
     JMenuItem kontaktLoeschen;
     static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
+
+
+
     public static void main(String args[]){
         
         GUI fenster = new GUI();
@@ -55,32 +58,21 @@ public void initMenu(){
     JMenu menuKontakt = new JMenu ("Kontakt");
     
     //Einträge in Menu menuTelefonbuch
-    JMenuItem laden = new JMenuItem("Telefonbuch laden");
-    laden.addActionListener(this);
-    JMenuItem speichern = new JMenuItem("Telefonbuch speichern");
-    speichern.addActionListener(this);
-    JMenuItem beenden = new JMenuItem("Programm beenden");
-    beenden.addActionListener(this);
+    laden = new JMenuItem("Telefonbuch laden");
+    speichern = new JMenuItem("Telefonbuch speichern");
+    beenden = new JMenuItem("Programm beenden");
+   
 
     //Einträge in Menu menuKontakt
-    JMenuItem neuerKontakt = new JMenuItem("Neuer Kontakt anlegen");
-    JMenuItem alleKontakteAnzeigen = new JMenuItem("Alle Kontake anzeigen");
-    JMenuItem kontaktSuchen = new JMenuItem("Kontakt suchen");
-    JMenuItem kontaktLoeschen = new JMenuItem("Kontakt löschen");
+    neuerKontakt = new JMenuItem("Neuer Kontakt anlegen");
+    alleKontakteAnzeigen = new JMenuItem("Alle Kontake anzeigen");
+    kontaktSuchen = new JMenuItem("Kontakt suchen");
+    kontaktLoeschen = new JMenuItem("Kontakt löschen");
 
 
-   
-  
-
-    //speichern
-
-
-    //Beenden
-
-
-        //TODO ActionListener neuerKontakt, alleKontakteAnzeigen, kontaktSuchen, kontaktLoeschen
-        //TODO actionPerformed neuerKontakt, alleKontakteAnzeigen, kontaktSuchen, kontaktLoeschen
-        
+    laden.addActionListener(this);    
+    speichern.addActionListener(this);
+    beenden.addActionListener(this);
 
     menueleiste.add(menuTelefonbuch);
     menueleiste.add(menuKontakt);
@@ -104,7 +96,7 @@ public void initMenu(){
 public void actionPerformed(ActionEvent knopfdruck) {
     // TODO Auto-generated method stub
 
-    if(knopfdruck.getSource()== laden){
+    if(knopfdruck.getSource() == laden){
         JFileChooser fc = new JFileChooser(filelocation);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");
         fc.setAcceptAllFileFilterUsed(false);
@@ -136,6 +128,13 @@ public void actionPerformed(ActionEvent knopfdruck) {
         System.out.println("Programm wurde beendet");
         System.exit(0);
     }
-    throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
-}
+
+        //TODO ActionListener neuerKontakt, alleKontakteAnzeigen, kontaktSuchen, kontaktLoeschen
+        //TODO actionPerformed neuerKontakt, alleKontakteAnzeigen, kontaktSuchen, kontaktLoeschen
+    
+    }
+
+    public void speichern(){
+
+    }
 }
