@@ -1,14 +1,29 @@
+
 package hwr.berlin;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import java.awt.*;
+//import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
+//import java.io.IOException;
 
 public class GUI extends JFrame implements ActionListener{
+    JMenuBar menueleiste;
 
+    JMenu menuTelefonbuch;
+    JMenu menuKontakt;
+
+    JMenuItem speichern;
+    JMenuItem laden;
+    JMenuItem beenden;
+
+    JMenuItem neuerKontakt;
+    JMenuItem alleKontakteanzeigen;
+    JMenuItem kontaktSuchen;
+    JMenuItem kontaktLoeschen;
     static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
     public static void main(String args[]){
         
@@ -25,7 +40,7 @@ public void initGUI(){
     setTitle("Telefonbuch App");
    
     initMenu();
-
+    
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setVisible(true);
 
@@ -40,9 +55,12 @@ public void initMenu(){
     JMenu menuKontakt = new JMenu ("Kontakt");
     
     //Einträge in Menu menuTelefonbuch
-    JMenuItem laden = new JMenuItem("Telefonnbuch laden");
+    JMenuItem laden = new JMenuItem("Telefonbuch laden");
+    laden.addActionListener(this);
     JMenuItem speichern = new JMenuItem("Telefonbuch speichern");
+    speichern.addActionListener(this);
     JMenuItem beenden = new JMenuItem("Programm beenden");
+    beenden.addActionListener(this);
 
     //Einträge in Menu menuKontakt
     JMenuItem neuerKontakt = new JMenuItem("Neuer Kontakt anlegen");
@@ -51,49 +69,14 @@ public void initMenu(){
     JMenuItem kontaktLoeschen = new JMenuItem("Kontakt löschen");
 
 
-    //Action Listener menuTelefonbuch
-    //laden
-    laden.addActionListener(new java.awt.event.ActionListener(){
-        public void actionPerformed(java.awt.event.ActionEvent e){
-            JFileChooser fc = new JFileChooser(filelocation);
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");
-            fc.setAcceptAllFileFilterUsed(false);
-            fc.addChoosableFileFilter(filter);
-            
-            int a = fc.showOpenDialog(null);
-
-            if(a == JFileChooser.APPROVE_OPTION){
-                File file = fc.getSelectedFile();
-
-                //TO-DO Methode telefonbuch.buchLaden() einbinden
-                System.out.println("Telefonbuch wurde geladen!");
-
-                }
-            }
-        });
+   
+  
 
     //speichern
-        speichern.addActionListener(new java.awt.event.ActionListener(){
-        public void actionPerformed(java.awt.event.ActionEvent e){
-            JFileChooser fc = new JFileChooser(filelocation);
-            fc.showSaveDialog(null);
 
-            //TO-DO Methode telefonbuch.buchSpeichern() einbinden                   
-            System.out.println("Telefonbuch wurde gespeichert!");                
-            }
-    
-        });
 
     //Beenden
-        beenden.addActionListener(new java.awt.event.ActionListener(){
-        public void actionPerformed(java.awt.event.ActionEvent e){
 
-        System.out.println("Programm wurde beendet!");  
-        System.exit(0);                
-                      
-        }
-    
-        });
 
         //TODO ActionListener neuerKontakt, alleKontakteAnzeigen, kontaktSuchen, kontaktLoeschen
         //TODO actionPerformed neuerKontakt, alleKontakteAnzeigen, kontaktSuchen, kontaktLoeschen
@@ -114,4 +97,45 @@ public void initMenu(){
     setJMenuBar(menueleiste);
     
     }
+
+
+
+@Override
+public void actionPerformed(ActionEvent knopfdruck) {
+    // TODO Auto-generated method stub
+
+    if(knopfdruck.getSource()== laden){
+        JFileChooser fc = new JFileChooser(filelocation);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");
+        fc.setAcceptAllFileFilterUsed(false);
+        fc.addChoosableFileFilter(filter);
+            
+        int a = fc.showOpenDialog(null);
+
+        if(a == JFileChooser.APPROVE_OPTION){
+            File file = fc.getSelectedFile();
+
+            //TO-DO Methode telefonbuch.buchLaden() einbinden
+            System.out.println("Telefonbuch wurde geladen!");
+
+        }
+
+    }
+
+    if(knopfdruck.getSource() == speichern){
+        JFileChooser fc = new JFileChooser(filelocation);
+        fc.showSaveDialog(null);
+
+        //TO-DO Methode telefonbuch.buchSpeichern() einbinden     
+        System.out.println("Telefonbuch wurde gespeichert!");                
+
+
+    }
+
+    if(knopfdruck.getSource() == beenden){
+        System.out.println("Programm wurde beendet");
+        System.exit(0);
+    }
+    throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+}
 }
