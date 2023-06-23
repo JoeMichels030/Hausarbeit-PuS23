@@ -17,8 +17,8 @@ import java.util.ArrayList;
 public class Telefonbuch implements Serializable{
 
     private static final long serialVersionUID = -1L;
-    static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
-    static File file = new File(filelocation);
+    //static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
+    static File file = new File("Telefonbuch.ser");
     FileOutputStream fos = null;
     ObjectOutputStream oos = null;
     FileInputStream fis = null;
