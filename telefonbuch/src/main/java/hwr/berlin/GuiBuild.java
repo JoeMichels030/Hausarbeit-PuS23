@@ -13,6 +13,7 @@ public class GuiBuild extends javax.swing.JFrame {
     /**
      * Creates new form GuiBuild
      */
+    
     public GuiBuild() {
         initComponents();
     }
