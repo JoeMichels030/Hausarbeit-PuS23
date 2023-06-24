@@ -17,8 +17,8 @@ import java.util.ArrayList;
 public class Telefonbuch implements Serializable{
 
     private static final long serialVersionUID = -1L;
-    static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
-    static File file = new File(filelocation);
+    //static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
+    static File file = new File("Telefonbuch.ser");
     FileOutputStream fos = null;
     ObjectOutputStream oos = null;
     FileInputStream fis = null;
@@ -34,9 +34,9 @@ public class Telefonbuch implements Serializable{
     }
 
     public Telefonbuch(File file){
+        //ArrayList<Kontakt> telefonbuch = new ArrayList<>();
         this.telefonbuchArray = buchLaden(file);
     }
-
     //Kontakt zu ArrayList<Kontakt> hinzufügen
     public void fuegeKontaktHinzu(Kontakt kontakt){
         telefonbuchArray.add(kontakt);
@@ -60,10 +60,10 @@ public class Telefonbuch implements Serializable{
     }
 
     //Buch speichern 
-    public void buchSpeichern(){
+    public void buchSpeichern(File outputFile){
 
         try {
-            fos = new FileOutputStream(file, false);
+            fos = new FileOutputStream(outputFile, false);
             oos = new ObjectOutputStream(fos);
 
             oos.writeObject(telefonbuchArray);
