@@ -67,7 +67,8 @@ public class GuiBuild extends javax.swing.JFrame {
         menuKontaktLoeschen = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+        
+        
         cards.setLayout(new java.awt.CardLayout());
 
         butStartBuchLaden.setText("Telefonbuch laden");
@@ -320,6 +321,7 @@ public class GuiBuild extends javax.swing.JFrame {
             telefonbuch = new Telefonbuch(file);
             System.out.println("Telefonbuch wurde geladen!");
             telefonbuch.alleKontakteAnzeigen();
+            
         }
     }//GEN-LAST:event_butStartBuchLadenActionPerformed
 
@@ -354,6 +356,8 @@ public class GuiBuild extends javax.swing.JFrame {
             telefonbuch = new Telefonbuch(file);
             System.out.println("Telefonbuch wurde geladen!");
             telefonbuch.alleKontakteAnzeigen();
+
+           
         }
         
     }//GEN-LAST:event_menuLadenActionPerformed
