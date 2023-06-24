@@ -61,6 +61,14 @@ public class Telefonbuch implements Serializable{
         System.out.println("Alle Kontakte erfolgreich angezeigt!");
     }
 
+    public String alleNameToStrings(){
+       
+        
+        return  telefonbuchArray.toString();
+    }
+
+
+
     //Buch speichern 
     public void speichern(File outputFile){
        
@@ -108,5 +116,13 @@ public class Telefonbuch implements Serializable{
         }
         return telefonbuchArray; 
     }
+
     
+
+
+
 }
+
+  
+    
+

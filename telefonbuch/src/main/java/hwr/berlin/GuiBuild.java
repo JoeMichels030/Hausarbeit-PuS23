@@ -4,11 +4,17 @@
  */
 package hwr.berlin;
 
+import java.awt.Component;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
+
+import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
+import javax.swing.JList;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import org.testng.collections.Lists;
 
 /**
  *
@@ -190,13 +196,22 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         cards.add(kontaktAnlegen, "cardKontaktAnlegen");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        DefaultListModel<String> model = new DefaultListModel<>();
+        jList1.setModel(model);
+
+        //for(Kontakt kontakt:telefonbuch.telefonbuchArray){
+            
+          //  model.addElement(kontakt.getName());
+            
+        //}
+
+      // JList jList1 = new JList<Kontakt>();
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        listNamen.setViewportView(jList1);
+        
+        
+        
+
+        
         
 
         butKontaktSuchen.setText("Suchen");
@@ -323,6 +338,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             telefonbuch = new Telefonbuch(file);
             System.out.println("Telefonbuch wurde geladen!");
             telefonbuch.alleKontakteAnzeigen();
+
+            //Jump to Alle Kontakte Anzeigen
             CardLayout cl = (CardLayout)(cards.getLayout());
             ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
             
@@ -361,10 +378,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             System.out.println("Telefonbuch wurde geladen!");
             telefonbuch.alleKontakteAnzeigen();
 
+            //Jump to Alle Kontakte anzeigen
             CardLayout cl = (CardLayout)(cards.getLayout());
             ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
-            
-           
+        
         }
         
     }//GEN-LAST:event_menuLadenActionPerformed
@@ -393,6 +410,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
             }
+            //TODO Cancel Button Action
             
             if(!filename.endsWith(".ser")){
                 filename += ".ser";
@@ -416,6 +434,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -475,7 +494,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldNameNeu;
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
-    private Telefonbuch buchZuSpeichern;
     private Telefonbuch telefonbuch;
+    private Lists namenInListe;
+    
     // End of variables declaration//GEN-END:variables
 }
