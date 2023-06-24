@@ -197,6 +197,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         });
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listNamen.setViewportView(jList1);
+        
 
         butKontaktSuchen.setText("Suchen");
 
@@ -362,6 +363,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
             CardLayout cl = (CardLayout)(cards.getLayout());
             ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
+            
            
         }
         
