@@ -33,6 +33,10 @@ public class Telefonbuch implements Serializable{
         this.telefonbuchArray = telefonbuch;
     }
 
+    public Telefonbuch(File file){
+        this.telefonbuchArray = buchLaden(file);
+    }
+
     //Kontakt zu ArrayList<Kontakt> hinzufügen
     public void fuegeKontaktHinzu(Kontakt kontakt){
         telefonbuchArray.add(kontakt);

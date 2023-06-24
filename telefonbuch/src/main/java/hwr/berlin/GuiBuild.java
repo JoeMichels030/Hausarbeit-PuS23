@@ -337,6 +337,8 @@ public class GuiBuild extends javax.swing.JFrame {
         if(a==JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
             Telefonbuch buch_geladen = new Telefonbuch(file);
+            System.out.println("Telefonbuch wurde geladen!");
+            buch_geladen.alleKontakteAnzeigen();
         }
         
     }//GEN-LAST:event_menuLadenActionPerformed
@@ -346,7 +348,7 @@ public class GuiBuild extends javax.swing.JFrame {
         JFileChooser fc = new JFileChooser(filelocation);  
         fc.showSaveDialog(null);
       //  Telefonbuch buch_speichern = new Telefonbuch(file);
-        buch_speichern.buchSpeichern();
+      //  buch_speichern.buchSpeichern();
         System.out.println("Telefonbuch wurde gespeichert!");
 // TODO add your handling code here:
     }//GEN-LAST:event_menuSpeichernActionPerformed
