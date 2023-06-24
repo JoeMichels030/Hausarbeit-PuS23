@@ -4,6 +4,11 @@
  */
 package hwr.berlin;
 
+import java.io.File;
+import java.util.HashSet;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author joemi
@@ -241,9 +246,19 @@ public class GuiBuild extends javax.swing.JFrame {
         menuTelefonbuch.setText("Telefonbuch");
 
         menuLaden.setText("Telefonbuch laden");
+        menuLaden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuLadenActionPerformed(evt);
+            }
+        });
         menuTelefonbuch.add(menuLaden);
 
         menuSpeichern.setText("Telefonbuch speichern");
+        menuSpeichern.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuSpeichernActionPerformed(evt);
+            }
+        });
         menuTelefonbuch.add(menuSpeichern);
 
         menuBeenden.setText("Beenden");
@@ -308,6 +323,32 @@ public class GuiBuild extends javax.swing.JFrame {
         System.out.println("Programm wurde beendet!");
         System.exit(0);
     }//GEN-LAST:event_menuBeendenActionPerformed
+
+    private void menuLadenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLadenActionPerformed
+        final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
+        JFileChooser fc = new JFileChooser(filelocation);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");  
+        fc.setAcceptAllFileFilterUsed(false);
+        fc.addChoosableFileFilter(filter);
+        
+        int a = fc.showOpenDialog(null);
+        
+        if(a==JFileChooser.APPROVE_OPTION){
+            File file = fc.getSelectedFile();
+            Telefonbuch buch_geladen = new Telefonbuch(file);
+        }
+        
+    }//GEN-LAST:event_menuLadenActionPerformed
+
+    private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSpeichernActionPerformed
+        final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
+        JFileChooser fc = new JFileChooser(filelocation);  
+        fc.showSaveDialog(null);
+      //  Telefonbuch buch_speichern = new Telefonbuch(file);
+        buch_speichern.buchSpeichern();
+        System.out.println("Telefonbuch wurde gespeichert!");
+// TODO add your handling code here:
+    }//GEN-LAST:event_menuSpeichernActionPerformed
 
     /**
      * @param args the command line arguments
