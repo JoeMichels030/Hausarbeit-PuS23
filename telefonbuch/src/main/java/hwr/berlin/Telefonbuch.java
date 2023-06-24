@@ -14,6 +14,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
+
+
 public class Telefonbuch implements Serializable{
 
     private static final long serialVersionUID = -1L;
@@ -60,8 +62,9 @@ public class Telefonbuch implements Serializable{
     }
 
     //Buch speichern 
-    public void buchSpeichern(File outputFile){
-
+    public void speichern(File outputFile){
+       
+        
         try {
             fos = new FileOutputStream(outputFile, false);
             oos = new ObjectOutputStream(fos);
@@ -70,6 +73,8 @@ public class Telefonbuch implements Serializable{
             oos.flush();
             oos.close();
             System.out.println("Telefonbuch erfolgreich gespeichert!");
+            alleKontakteAnzeigen();
+
         } catch (FileNotFoundException e) {
             
             e.printStackTrace();

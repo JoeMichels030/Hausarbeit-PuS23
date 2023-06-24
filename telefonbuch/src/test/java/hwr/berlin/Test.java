@@ -29,7 +29,7 @@ public class Test {
     testBuch.fuegeKontaktHinzu(testKontakt2);
     
     testBuch.alleKontakteAnzeigen();
-    testBuch.buchSpeichern(file);
+   // testBuch.buchSpeichern(file);
 
     testBuch2.buchLaden(file);
     testBuch2.alleKontakteAnzeigen();

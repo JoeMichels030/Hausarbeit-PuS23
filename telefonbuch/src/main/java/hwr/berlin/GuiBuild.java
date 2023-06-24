@@ -5,6 +5,7 @@
 package hwr.berlin;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -306,6 +307,20 @@ public class GuiBuild extends javax.swing.JFrame {
 
     private void butStartBuchLadenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartBuchLadenActionPerformed
         // TODO add your handling code here:
+        final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
+        JFileChooser fc = new JFileChooser(filelocation);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");  
+        fc.setAcceptAllFileFilterUsed(false);
+        fc.addChoosableFileFilter(filter);
+        
+        int a = fc.showOpenDialog(null);
+        
+        if(a==JFileChooser.APPROVE_OPTION){
+            File file = fc.getSelectedFile();
+            telefonbuch = new Telefonbuch(file);
+            System.out.println("Telefonbuch wurde geladen!");
+            telefonbuch.alleKontakteAnzeigen();
+        }
     }//GEN-LAST:event_butStartBuchLadenActionPerformed
 
     private void textfieldNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldNummerNeuActionPerformed
@@ -336,20 +351,48 @@ public class GuiBuild extends javax.swing.JFrame {
         
         if(a==JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
-            Telefonbuch buch_geladen = new Telefonbuch(file);
+            telefonbuch = new Telefonbuch(file);
             System.out.println("Telefonbuch wurde geladen!");
-            buch_geladen.alleKontakteAnzeigen();
+            telefonbuch.alleKontakteAnzeigen();
         }
         
     }//GEN-LAST:event_menuLadenActionPerformed
 
     private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSpeichernActionPerformed
-        final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
+        final String filelocation = "telefonbuch/src/main/java/hwr/berlin/";
+        
         JFileChooser fc = new JFileChooser(filelocation);  
-        fc.showSaveDialog(null);
-      //  Telefonbuch buch_speichern = new Telefonbuch(file);
-      //  buch_speichern.buchSpeichern();
+        fc.setSelectedFile(new File(filelocation));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");  
+        fc.setAcceptAllFileFilterUsed(false);
+        fc.addChoosableFileFilter(filter);
+
+        int a = fc.showSaveDialog(null);
+
+        if(a == JFileChooser.APPROVE_OPTION){
+            File buch_speichern = fc.getSelectedFile();
+            String filename = fc.getSelectedFile().getName().toString();
+
+            if(!buch_speichern.exists()){
+                try {
+                    buch_speichern.createNewFile();
+                   
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+            
+            if(!filename.endsWith(".ser")){
+                filename += ".ser";
+            }
+            telefonbuch.speichern(buch_speichern);
+            
+        }
+
+        
         System.out.println("Telefonbuch wurde gespeichert!");
+
 // TODO add your handling code here:
     }//GEN-LAST:event_menuSpeichernActionPerformed
 
@@ -421,5 +464,7 @@ public class GuiBuild extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldNameNeu;
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch buchZuSpeichern;
+    private Telefonbuch telefonbuch;
     // End of variables declaration//GEN-END:variables
 }

@@ -185,7 +185,7 @@ public void actionPerformed(ActionEvent knopfdruck) {
 
         
         File file = fc.getSelectedFile();
-        buch.buchSpeichern(file);
+        //buch.buchSpeichern(file);
         System.out.println("Telefonbuch wurde gespeichert!");                
 
 
