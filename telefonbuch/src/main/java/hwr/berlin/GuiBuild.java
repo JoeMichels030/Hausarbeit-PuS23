@@ -13,8 +13,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
  * @author joemi
+ * @param <CardLayout>
  */
-public class GuiBuild extends javax.swing.JFrame {
+public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     /**
      * Creates new form GuiBuild
@@ -321,6 +322,8 @@ public class GuiBuild extends javax.swing.JFrame {
             telefonbuch = new Telefonbuch(file);
             System.out.println("Telefonbuch wurde geladen!");
             telefonbuch.alleKontakteAnzeigen();
+            CardLayout cl = (CardLayout)(cards.getLayout());
+            ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
             
         }
     }//GEN-LAST:event_butStartBuchLadenActionPerformed
@@ -357,6 +360,8 @@ public class GuiBuild extends javax.swing.JFrame {
             System.out.println("Telefonbuch wurde geladen!");
             telefonbuch.alleKontakteAnzeigen();
 
+            CardLayout cl = (CardLayout)(cards.getLayout());
+            ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
            
         }
         
