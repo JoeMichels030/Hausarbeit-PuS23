@@ -5,13 +5,16 @@
 package hwr.berlin;
 
 import java.awt.Component;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JList;
+import javax.swing.ListModel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import org.testng.collections.Lists;
@@ -196,17 +199,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         cards.add(kontaktAnlegen, "cardKontaktAnlegen");
 
+
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         DefaultListModel<String> model = new DefaultListModel<>();
         jList1.setModel(model);
-
-        //for(Kontakt kontakt:telefonbuch.telefonbuchArray){
-            
-          //  model.addElement(kontakt.getName());
-            
-        //}
-
-      // JList jList1 = new JList<Kontakt>();
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         
         
         
@@ -335,13 +331,15 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         
         if(a==JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
-            telefonbuch = new Telefonbuch(file);
+            Telefonbuch telefonbuch_geladen = new Telefonbuch(file);
             System.out.println("Telefonbuch wurde geladen!");
-            telefonbuch.alleKontakteAnzeigen();
+            telefonbuch_geladen.alleKontakteAnzeigen();
 
             //Jump to Alle Kontakte Anzeigen
             CardLayout cl = (CardLayout)(cards.getLayout());
             ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
+
+            jListfuellen(telefonbuch_geladen);
             
         }
     }//GEN-LAST:event_butStartBuchLadenActionPerformed
@@ -363,6 +361,16 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_menuBeendenActionPerformed
 
+
+    private void jListfuellen(Telefonbuch telefonbuch){
+        DefaultListModel<String> model = new DefaultListModel<>();
+        for (Kontakt kontakt:telefonbuch.telefonbuchArray){
+        model.addElement(kontakt.getName());
+        }
+        jList1.setModel(model);
+
+    }
+
     private void menuLadenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLadenActionPerformed
         final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
         JFileChooser fc = new JFileChooser(filelocation);
@@ -374,17 +382,22 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         
         if(a==JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
-            telefonbuch = new Telefonbuch(file);
+            Telefonbuch telefonbuch_geladen = new Telefonbuch(file);
             System.out.println("Telefonbuch wurde geladen!");
-            telefonbuch.alleKontakteAnzeigen();
+            telefonbuch_geladen.alleKontakteAnzeigen();
+            telefonbuch_geladen.buchLaden(file);
 
             //Jump to Alle Kontakte anzeigen
             CardLayout cl = (CardLayout)(cards.getLayout());
             ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
+
+            jListfuellen(telefonbuch_geladen);
+        } 
+          
+            
+    }
         
-        }
-        
-    }//GEN-LAST:event_menuLadenActionPerformed
+    //GEN-LAST:event_menuLadenActionPerformed
 
     private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSpeichernActionPerformed
         final String filelocation = "telefonbuch/src/main/java/hwr/berlin/";
@@ -410,7 +423,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
             }
-            //TODO Cancel Button Action
+            //TODO Cancel Button Action1
             
             if(!filename.endsWith(".ser")){
                 filename += ".ser";
@@ -495,7 +508,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
     private Telefonbuch telefonbuch;
-    private Lists namenInListe;
+    private DefaultListModel model;
+   // private Lists namenInListe;
     
     // End of variables declaration//GEN-END:variables
+
 }

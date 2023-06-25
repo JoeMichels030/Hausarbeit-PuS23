@@ -10,7 +10,7 @@ public class Kontakt implements Serializable{
 
     private static final long serialVersionUID = -1L;
 
-    protected String name;
+    protected  String name;
     protected String adresse;
     protected String email;
     protected ArrayList<Long> nummern;
