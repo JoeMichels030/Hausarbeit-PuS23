@@ -17,7 +17,7 @@ import javax.swing.JList;
 import javax.swing.ListModel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import org.testng.collections.Lists;
+//import org.testng.collections.Lists;
 
 /**
  *
@@ -77,8 +77,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontaktLoeschen = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        
-        
+
         cards.setLayout(new java.awt.CardLayout());
 
         butStartBuchLaden.setText("Telefonbuch laden");
@@ -135,7 +134,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         });
 
         butZusNummerNeu.setText("zusätzliche Telefonnummer");
-        butZusNummerNeu.setActionCommand("zusätzliche Telefonnummer");
 
         butCancelNeu.setText("Cancel");
 
@@ -199,16 +197,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         cards.add(kontaktAnlegen, "cardKontaktAnlegen");
 
-
+        jList1.setModel(jList1.getModel());
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        DefaultListModel<String> model = new DefaultListModel<>();
-        jList1.setModel(model);
-        
-        
-        
-
-        
-        
+        listNamen.setViewportView(jList1);
 
         butKontaktSuchen.setText("Suchen");
 
@@ -228,33 +219,27 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(butKontaktSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(butKontaktLoeschen, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(492, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alleKontakteAnzeigenLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(butKontaktAnzeigen)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(butKontaktAnzeigen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(butKontaktLoeschen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(butKontaktSuchen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(375, Short.MAX_VALUE))
         );
         alleKontakteAnzeigenLayout.setVerticalGroup(
             alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
-                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(butKontaktSuchen)
-                        .addGap(43, 43, 43)
-                        .addComponent(butKontaktAnzeigen)
-                        .addGap(62, 62, 62)
-                        .addComponent(butKontaktLoeschen)))
+                .addGap(53, 53, 53)
+                .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(34, Short.MAX_VALUE))
+            .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addComponent(butKontaktAnzeigen)
+                .addGap(66, 66, 66)
+                .addComponent(butKontaktSuchen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(butKontaktLoeschen)
+                .addGap(83, 83, 83))
         );
 
         cards.add(alleKontakteAnzeigen, "cardAlleKontakteAnzeigen");
@@ -397,7 +382,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             
     }
         
-    //GEN-LAST:event_menuLadenActionPerformed
+//GEN-LAST:event_menuLadenActionPerformed
 
     private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSpeichernActionPerformed
         final String filelocation = "telefonbuch/src/main/java/hwr/berlin/";
@@ -507,10 +492,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldNameNeu;
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
-    private Telefonbuch telefonbuch;
-    private DefaultListModel model;
-   // private Lists namenInListe;
-    
     // End of variables declaration//GEN-END:variables
 
 }
