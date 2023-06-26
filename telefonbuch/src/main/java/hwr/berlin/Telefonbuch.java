@@ -3,6 +3,7 @@ package hwr.berlin;
 
 
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -71,8 +72,8 @@ public class Telefonbuch implements Serializable{
 
     //Buch speichern 
     public void speichern(File outputFile){
-       
-        
+
+
         try {
             fos = new FileOutputStream(outputFile, false);
             oos = new ObjectOutputStream(fos);
@@ -81,7 +82,7 @@ public class Telefonbuch implements Serializable{
             oos.flush();
             oos.close();
             System.out.println("Telefonbuch erfolgreich gespeichert!");
-            alleKontakteAnzeigen();
+            //alleKontakteAnzeigen();
 
         } catch (FileNotFoundException e) {
             
@@ -114,8 +115,18 @@ public class Telefonbuch implements Serializable{
         catch (ClassNotFoundException e){
             e.printStackTrace();
         }
+    
+        try {
+            ois.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
         return telefonbuchArray; 
     }
+
+
 
     
 

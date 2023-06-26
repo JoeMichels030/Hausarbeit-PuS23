@@ -23,13 +23,19 @@ public class Test {
     testKontakt2.setAdresse("straßetest");
     testKontakt2.setEmail("test2@test2.com");
     testKontakt2.fuegeNrHinzu(999999999);
-    testKontakt2.fuegeNrHinzu(888888888);
+    testKontakt2.fuegeNrHinzu(888888777);
+
+    Kontakt testKontakt3 = new Kontakt("Joe");
+    testKontakt3.setAdresse("straßetest");
+    testKontakt3.setEmail("test2@test2.com");
+    testKontakt3.fuegeNrHinzu(11111111);
+    testKontakt3.fuegeNrHinzu(222222777);
 
     testBuch.fuegeKontaktHinzu(testKontakt);
     testBuch.fuegeKontaktHinzu(testKontakt2);
-    
+    testBuch.fuegeKontaktHinzu(testKontakt3);
     testBuch.alleKontakteAnzeigen();
-   // testBuch.buchSpeichern(file);
+    testBuch.speichern(file);
 
     testBuch2.buchLaden(file);
     testBuch2.alleKontakteAnzeigen();

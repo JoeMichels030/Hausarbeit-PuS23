@@ -367,16 +367,16 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         
         if(a==JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
-            Telefonbuch telefonbuch_geladen = new Telefonbuch(file);
+            Telefonbuch telefonbuch = new Telefonbuch(file);
             System.out.println("Telefonbuch wurde geladen!");
-            telefonbuch_geladen.alleKontakteAnzeigen();
-            telefonbuch_geladen.buchLaden(file);
-
+            
+            telefonbuch.buchLaden(file);
+            telefonbuch.alleKontakteAnzeigen();
             //Jump to Alle Kontakte anzeigen
             CardLayout cl = (CardLayout)(cards.getLayout());
             ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
 
-            jListfuellen(telefonbuch_geladen);
+            jListfuellen(telefonbuch);
         } 
           
             
@@ -386,6 +386,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSpeichernActionPerformed
         final String filelocation = "telefonbuch/src/main/java/hwr/berlin/";
+       
         
         JFileChooser fc = new JFileChooser(filelocation);  
         fc.setSelectedFile(new File(filelocation));
@@ -394,17 +395,26 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         fc.addChoosableFileFilter(filter);
 
         int a = fc.showSaveDialog(null);
-
+        
+        
         if(a == JFileChooser.APPROVE_OPTION){
             File buch_speichern = fc.getSelectedFile();
+            
             String filename = fc.getSelectedFile().getName().toString();
+            
+            
+            System.out.println("Überprüfe ob "+filename+" existiert...");
 
             if(!buch_speichern.exists()){
-                try {
-                    buch_speichern.createNewFile();
+               try {
+                   buch_speichern.createNewFile();
+                   System.out.println("Datei "+filename+" wurde erfolgreich erstellt");
+                   // buch = new Telefonbuch(buch_speichern);
+                   telefonbuch.speichern(buch_speichern);
                    
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
+                    System.out.println("Fehler beim erstellen einer neuen Datei");
                     e.printStackTrace();
                 }
             }
@@ -413,7 +423,12 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             if(!filename.endsWith(".ser")){
                 filename += ".ser";
             }
-            telefonbuch.speichern(buch_speichern);
+            
+            System.out.println("Versuche zu speichern...");
+            this.telefonbuch.speichern(buch_speichern);
+
+            
+
             
         }
 
@@ -432,7 +447,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-
+    
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -492,6 +507,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldNameNeu;
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch telefonbuch;
+    private Telefonbuch kopie;
     // End of variables declaration//GEN-END:variables
 
 }
