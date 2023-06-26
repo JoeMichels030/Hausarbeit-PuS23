@@ -7,7 +7,7 @@ public class Test {
 
     public static void main(String args[]){
 
-    final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
+    final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch_Testklasse.ser";
     final File file = new File(filelocation);
 
     Telefonbuch testBuch = new Telefonbuch();

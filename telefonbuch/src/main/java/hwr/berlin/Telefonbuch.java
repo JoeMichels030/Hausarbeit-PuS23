@@ -21,7 +21,7 @@ public class Telefonbuch implements Serializable{
 
     private static final long serialVersionUID = -1L;
     //static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
-    static File file = new File("Telefonbuch.ser");
+   // static File file = new File("Telefonbuch.ser");
     FileOutputStream fos = null;
     ObjectOutputStream oos = null;
     FileInputStream fis = null;
@@ -62,6 +62,8 @@ public class Telefonbuch implements Serializable{
         System.out.println("Alle Kontakte erfolgreich angezeigt!");
     }
 
+   
+
     public String alleNameToStrings(){
        
         
@@ -72,7 +74,8 @@ public class Telefonbuch implements Serializable{
 
     //Buch speichern 
     public void speichern(File outputFile){
-
+        
+   
 
         try {
             fos = new FileOutputStream(outputFile, false);
@@ -81,7 +84,7 @@ public class Telefonbuch implements Serializable{
             oos.writeObject(telefonbuchArray);
             oos.flush();
             oos.close();
-            System.out.println("Telefonbuch erfolgreich gespeichert!");
+            System.out.println("FileOutPutStream erfolgreich");
             //alleKontakteAnzeigen();
 
         } catch (FileNotFoundException e) {

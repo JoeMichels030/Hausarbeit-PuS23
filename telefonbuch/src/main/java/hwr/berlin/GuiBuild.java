@@ -43,6 +43,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        telefonbuch = new Telefonbuch();
         cards = new javax.swing.JPanel();
         startWindow = new javax.swing.JPanel();
         butStartBuchLaden = new javax.swing.JButton();
@@ -398,19 +399,20 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         
         
         if(a == JFileChooser.APPROVE_OPTION){
-            File buch_speichern = fc.getSelectedFile();
+            File outputFile = fc.getSelectedFile();
             
             String filename = fc.getSelectedFile().getName().toString();
             
             
             System.out.println("Überprüfe ob "+filename+" existiert...");
 
-            if(!buch_speichern.exists()){
+            if(!outputFile.exists()){
                try {
-                   buch_speichern.createNewFile();
+                   outputFile.createNewFile();
                    System.out.println("Datei "+filename+" wurde erfolgreich erstellt");
                    // buch = new Telefonbuch(buch_speichern);
-                   telefonbuch.speichern(buch_speichern);
+                   //telefonbuch.speichern(outputFile);
+                   
                    
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
@@ -423,9 +425,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             if(!filename.endsWith(".ser")){
                 filename += ".ser";
             }
-            
+           //else 
             System.out.println("Versuche zu speichern...");
-            this.telefonbuch.speichern(buch_speichern);
+            telefonbuch.speichern(outputFile);
 
             
 
