@@ -65,6 +65,14 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         butKontaktSuchen = new javax.swing.JButton();
         butKontaktAnzeigen = new javax.swing.JButton();
         butKontaktLoeschen = new javax.swing.JButton();
+        detailsName = new javax.swing.JLabel();
+        detailsAdresse = new javax.swing.JLabel();
+        detailsEmail = new javax.swing.JLabel();
+        detailsNummer = new javax.swing.JLabel();
+        detailsNameText = new javax.swing.JTextField();
+        detailsAdresseText = new javax.swing.JTextField();
+        detailsEmailText = new javax.swing.JTextField();
+        detailsNummerText = new javax.swing.JTextField();
         menueleiste = new javax.swing.JMenuBar();
         menuTelefonbuch = new javax.swing.JMenu();
         menuLaden = new javax.swing.JMenuItem();
@@ -219,6 +227,20 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             }
         });
 
+        detailsName.setText("Name");
+
+        detailsAdresse.setText("Adresse");
+
+        detailsEmail.setText("E-Mail");
+
+        detailsNummer.setText("Telefonnummer");
+
+        detailsNameText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                detailsNameTextActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout alleKontakteAnzeigenLayout = new javax.swing.GroupLayout(alleKontakteAnzeigen);
         alleKontakteAnzeigen.setLayout(alleKontakteAnzeigenLayout);
         alleKontakteAnzeigenLayout.setHorizontalGroup(
@@ -226,7 +248,23 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(296, 296, 296)
+                .addGap(49, 49, 49)
+                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
+                        .addComponent(detailsNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(detailsNummerText, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
+                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
+                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(detailsName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(detailsAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(detailsEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50)
+                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(detailsNameText)
+                            .addComponent(detailsAdresseText)
+                            .addComponent(detailsEmailText, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))))
+                .addGap(23, 23, 23)
                 .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(butKontaktSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(butKontaktAnzeigen)
@@ -240,10 +278,29 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(butKontaktSuchen)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(butKontaktAnzeigen)
+                .addGap(51, 51, 51)
+                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(detailsName)
+                    .addComponent(detailsNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(butKontaktSuchen)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(butKontaktAnzeigen))
+                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(detailsAdresse)
+                            .addComponent(detailsAdresseText, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(19, 19, 19)
+                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(detailsEmail)
+                    .addComponent(detailsEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(detailsNummer)
+                    .addComponent(detailsNummerText, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(butKontaktLoeschen)
                 .addGap(51, 51, 51))
@@ -453,6 +510,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jList1ValueChanged
 
+    private void detailsNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsNameTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_detailsNameTextActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -500,6 +561,14 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JButton butStartBuchNeu;
     private javax.swing.JButton butZusNummerNeu;
     private javax.swing.JPanel cards;
+    private javax.swing.JLabel detailsAdresse;
+    private javax.swing.JTextField detailsAdresseText;
+    private javax.swing.JLabel detailsEmail;
+    private javax.swing.JTextField detailsEmailText;
+    private javax.swing.JLabel detailsName;
+    private javax.swing.JTextField detailsNameText;
+    private javax.swing.JLabel detailsNummer;
+    private javax.swing.JTextField detailsNummerText;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel kontaktAnlegen;
     private javax.swing.JLabel labelAdresseNeu;
