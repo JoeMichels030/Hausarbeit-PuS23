@@ -26,8 +26,8 @@ public class Telefonbuch implements Serializable{
     //static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
    // static File file = new File("Telefonbuch.ser");
     
-    Path currentRelativePath = Paths.get("");
-    File updateFile = currentRelativePath.toFile();
+    //Path currentRelativePath = Paths.get("");
+    //File updateFile = currentRelativePath.toFile();
     //String s = currentRelativePath.toAbsolutePath().toString();
     //File outpFile;
     FileOutputStream fos = null;
@@ -108,8 +108,8 @@ public class Telefonbuch implements Serializable{
 
     //Buch updaten
     public void update(){
-        this.speichern(updateFile);
-        this.buchLaden(updateFile);
+        //this.speichern(updateFile);
+        //this.buchLaden(updateFile);
     }
 
     //Buch laden

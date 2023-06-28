@@ -390,29 +390,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void butStartBuchLadenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartBuchLadenActionPerformed
         // TODO add your handling code here:
-        final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
-        JFileChooser fc = new JFileChooser(filelocation);
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");  
-        fc.setAcceptAllFileFilterUsed(false);
-        fc.addChoosableFileFilter(filter);
-        
-        int a = fc.showOpenDialog(null);
-        
-        if(a==JFileChooser.APPROVE_OPTION){
-            File file = fc.getSelectedFile();
-            Telefonbuch telefonbuch_geladen = new Telefonbuch(file);
-            System.out.println("Telefonbuch wurde geladen!");
-            telefonbuch_geladen.alleKontakteAnzeigen();
+        menuLadenActionPerformed(evt);
 
-            //Jump to Alle Kontakte Anzeigen
-            CardLayout cl = (CardLayout)(cards.getLayout());
-            ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
-
-            jListfuellen(telefonbuch_geladen);
-            menuKontakt.setEnabled(true);
            
         }
-    }//GEN-LAST:event_butStartBuchLadenActionPerformed
+    //GEN-LAST:event_butStartBuchLadenActionPerformed
 
     private void textfieldNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldNummerNeuActionPerformed
         // TODO add your handling code here:
@@ -548,20 +530,19 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private void butKontaktSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktSpeichernActionPerformed
 
         // TODO add your handling code here:
-        int index = jList1.getSelectedIndex();
-       
-        Path currentRelativePath = Paths.get("");
-        File filelocation = currentRelativePath.toFile();
-        Kontakt details = telefonbuch.telefonbuchArray.get(index);
         
-        details.setName(detailsNameText.getText());
-        details.setAdresse(detailsAdresseText.getText());
-        details.setEmail(detailsEmailText.getText());
-        //menuSpeichernActionPerformed(evt);
-        //details.setNummern(detailsNummerText.getText());
+       //Quasi neuer Kontakt erstellen und zum Telefonbuch hinzufügen
+  
+        Kontakt neuerKontakt = new Kontakt();
+        neuerKontakt.setName(detailsNameText.getText());
+        neuerKontakt.setAdresse(detailsAdresseText.getText());
+        neuerKontakt.setEmail(detailsEmailText.getText());
         
         
-        telefonbuch.speichern(filelocation);
+        
+        telefonbuch.fuegeKontaktHinzu(neuerKontakt);
+        jListfuellen(telefonbuch);
+        
         
     }//GEN-LAST:event_butKontaktSpeichernActionPerformed
 
