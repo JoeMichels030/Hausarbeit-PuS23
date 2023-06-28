@@ -386,7 +386,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 //GEN-LAST:event_menuLadenActionPerformed
 
     private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSpeichernActionPerformed
-        final String filelocation = "telefonbuch/src/main/java/hwr/berlin/";
+        String filelocation = "telefonbuch/src/main/java/hwr/berlin/";
        
         
         JFileChooser fc = new JFileChooser(filelocation);  
@@ -425,7 +425,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             if(!filename.endsWith(".ser")){
                 filename += ".ser";
             }
-           //else 
+           //
             System.out.println("Versuche zu speichern...");
             telefonbuch.speichern(outputFile);
 
@@ -510,7 +510,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
     private Telefonbuch telefonbuch;
-    private Telefonbuch kopie;
+   // private Telefonbuch kopie;
     // End of variables declaration//GEN-END:variables
 
 }

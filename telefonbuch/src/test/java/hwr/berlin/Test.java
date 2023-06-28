@@ -26,10 +26,10 @@ public class Test {
     testKontakt2.fuegeNrHinzu(888888777);
 
     Kontakt testKontakt3 = new Kontakt("Joe");
-    testKontakt3.setAdresse("straßetest");
-    testKontakt3.setEmail("test2@test2.com");
+    testKontakt3.setAdresse("straßetest3");
+    testKontakt3.setEmail("test3@test3.com");
     testKontakt3.fuegeNrHinzu(11111111);
-    testKontakt3.fuegeNrHinzu(222222777);
+    testKontakt3.fuegeNrHinzu(222222771);
 
     testBuch.fuegeKontaktHinzu(testKontakt);
     testBuch.fuegeKontaktHinzu(testKontakt2);
