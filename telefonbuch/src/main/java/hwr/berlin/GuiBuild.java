@@ -75,6 +75,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
+        telefonbuch = new Telefonbuch();
+       
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -410,6 +412,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             
             System.out.println("Überprüfe ob "+filename+" existiert...");
 
+            if(!filename.endsWith(".ser")){
+            filename += ".ser";
+            }
+            
             if(!outputFile.exists()){
                try {
                    outputFile.createNewFile();
@@ -426,11 +432,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             }
             //TODO Cancel Button Action1
             
-            if(!filename.endsWith(".ser")){
-                filename += ".ser";
-            }
+
            //
             System.out.println("Versuche zu speichern...");
+            telefonbuch.alleKontakteAnzeigen();
             telefonbuch.speichern(outputFile);
 
             
@@ -517,6 +522,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldNameNeu;
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch telefonbuch;
+ 
     // End of variables declaration//GEN-END:variables
 
 }

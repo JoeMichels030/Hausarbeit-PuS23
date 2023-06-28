@@ -36,6 +36,8 @@ public class Telefonbuch implements Serializable{
         this.telefonbuchArray = telefonbuch;
     }
 
+
+
     public Telefonbuch(File file){
         //ArrayList<Kontakt> telefonbuch = new ArrayList<>();
         this.telefonbuchArray = buchLaden(file);
@@ -128,12 +130,6 @@ public class Telefonbuch implements Serializable{
         
         return telefonbuchArray; 
     }
-
-
-
-    
-
-
 
 }
 
