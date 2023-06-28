@@ -1,9 +1,5 @@
 package hwr.berlin;
 
-
-
-
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,57 +8,42 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
-
-
-
-public class Telefonbuch implements Serializable{
+public class Telefonbuch implements Serializable {
 
     private static final long serialVersionUID = -1L;
-    public int status;
-    //static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
-   // static File file = new File("Telefonbuch.ser");
     
-    //Path currentRelativePath = Paths.get("");
-    //File updateFile = currentRelativePath.toFile();
-    //String s = currentRelativePath.toAbsolutePath().toString();
-    //File outpFile;
-    FileOutputStream fos = null;
-    ObjectOutputStream oos = null;
-    FileInputStream fis = null;
-    ObjectInputStream ois=null;
+    FileOutputStream fos;
+    ObjectOutputStream oos;
+    FileInputStream fis;
+    ObjectInputStream ois;
     
 
     public ArrayList<Kontakt> telefonbuchArray;
     
     //Konstruktor
-    public Telefonbuch(){
+    public Telefonbuch() {
         ArrayList<Kontakt> telefonbuch = new ArrayList<>();
         this.telefonbuchArray = telefonbuch;
     }
 
-
-
-    public Telefonbuch(File file){
-        //ArrayList<Kontakt> telefonbuch = new ArrayList<>();
+    public Telefonbuch(File file) {
         this.telefonbuchArray = buchLaden(file);
     }
+
     //Kontakt zu ArrayList<Kontakt> hinzufügen
-    public void fuegeKontaktHinzu(Kontakt kontakt){
+    public void fuegeKontaktHinzu(Kontakt kontakt) {
         telefonbuchArray.add(kontakt);
     }
 
     //Kontakt löschen
-    public void loescheKontakt(Kontakt kontakt){
+    public void loescheKontakt(Kontakt kontakt) {
         telefonbuchArray.remove(kontakt);
     }
 
     //Kontakte anzeigen
-    public void alleKontakteAnzeigen(){
-        
+    public void alleKontakteAnzeigen() {
         for (Kontakt kontakt:telefonbuchArray){
             System.out.println(kontakt.getName());
             System.out.println(kontakt.getAdresse());
@@ -72,25 +53,15 @@ public class Telefonbuch implements Serializable{
         System.out.println("Alle Kontakte erfolgreich angezeigt!");
     }
 
-   
-
-    public String alleNameToStrings(){
-       
-        
+    public String alleNameToStrings() {
         return  telefonbuchArray.toString();
     }
 
-
-
     //Buch speichern 
     public void speichern(File outputFile){
-        
-   
-
         try {
             fos = new FileOutputStream(outputFile, false);
             oos = new ObjectOutputStream(fos);
-
             oos.writeObject(telefonbuchArray);
             oos.flush();
             oos.close();
@@ -106,41 +77,28 @@ public class Telefonbuch implements Serializable{
        
     }
 
-    //Buch updaten
-    public void update(){
-        //this.speichern(updateFile);
-        //this.buchLaden(updateFile);
-    }
-
     //Buch laden
-    public  ArrayList<Kontakt> buchLaden(File file){
-        status = 1;
-        try{
-        fis = new FileInputStream(file);
-        ois = new ObjectInputStream(fis);
-        Object obj = ois.readObject();
-        telefonbuchArray = (ArrayList<Kontakt>) obj;
+    public  ArrayList<Kontakt> buchLaden(File file) {
+        try {
+            fis = new FileInputStream(file);
+            ois = new ObjectInputStream(fis);
+            Object obj = ois.readObject();
+            telefonbuchArray = (ArrayList<Kontakt>) obj;
         //System.out.println("Telefonbuch erfolgreich geladen!");
-        
-           
         }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        catch (ClassNotFoundException e){
-            e.printStackTrace();
-        }
+            catch (IOException e){
+                e.printStackTrace();
+            } catch (ClassNotFoundException e){
+                e.printStackTrace();
+            }
     
         try {
             ois.close();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
         }
-        
         return telefonbuchArray; 
     }
-
 }
 
   

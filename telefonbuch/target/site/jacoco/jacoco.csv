@@ -1,0 +1,19 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,GuiBuild,1489,0,14,0,354,0,23,0,16,0
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,GuiBuild.new ListSelectionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,App,4,0,0,0,2,0,1,0,1,0
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,Telefonbuch,140,0,2,0,46,0,9,0,8,0
+telefonbuch,hwr.berlin,GUI,362,0,12,0,86,0,13,0,7,0
+telefonbuch,hwr.berlin,Kontakt,121,0,2,0,34,0,15,0,14,0
+telefonbuch,hwr.berlin,GuiBuild.new Runnable() {...},9,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+telefonbuch,hwr.berlin,GuiBuild.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0

@@ -3,32 +3,28 @@ package hwr.berlin;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-
-
-
-public class Kontakt implements Serializable{
+public class Kontakt implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    protected  String name;
-    protected String adresse;
-    protected String email;
+    private String name;
+    private String adresse;
+    private String email;
     protected ArrayList<Long> nummern;
 
-
     //Konstruktor
-    public Kontakt(){
+    public Kontakt() {
+        ArrayList<Long> nummern = new ArrayList<>();
+        this.nummern = nummern;
         this.name = null;
         this.adresse = null;
         this.email = null;
-        this.nummern = null;
     }
 
-    public Kontakt(String name){
+    public Kontakt(String name) {
         ArrayList<Long> nummern = new ArrayList<>();
         this.nummern = nummern;
         this.name = name;
-
     }
 
     public ArrayList<Long> getNummern() {
@@ -52,7 +48,6 @@ public class Kontakt implements Serializable{
         return email;
     }
 
-
     //Setter Methoden
     public void setName(String name) {
         this.name = name;
@@ -66,33 +61,26 @@ public class Kontakt implements Serializable{
         this.email = email;
     }
 
-    
-
     //Telefonnummer zu ArrayList<Long> hinzufügen
-    
-    public void fuegeNrHinzu(long telefonnummer){
-        this.nummern.add(telefonnummer);
+    public void fuegeNrHinzu(long telefonnummer) {
+        nummern.add(telefonnummer);
     }
 
     //beim laden aus Datei Telefonbuch.ser
-    public void fuegeNrHinzu(String nummerString){
+    public void fuegeNrHinzu(String nummerString) {
         long l = Long.parseLong(nummerString);
-        this.nummern.add(l);
+        nummern.add(l);
     }
 
-    public void nummerAusgeben(){
+    public void nummerAusgeben() {
         for(long nummer: nummern){
             System.out.println(nummer);
         }
     }
+
     // toString
     @Override
     public String toString() {
         return "[name=" + name + ", adresse=" + adresse + ", email=" + email + ", nummern=" + nummern + "]";
     }
-
-    
-
-
-    
 }
