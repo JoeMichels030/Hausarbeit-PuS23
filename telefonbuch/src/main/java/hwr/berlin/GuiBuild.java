@@ -149,7 +149,12 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         butZusNummerNeu.setText("zusätzliche Telefonnummer");
 
-        butCancelNeu.setText("Cancel");
+        butCancelNeu.setText("Zurück");
+        butCancelNeu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butCancelNeuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kontaktAnlegenLayout = new javax.swing.GroupLayout(kontaktAnlegen);
         kontaktAnlegen.setLayout(kontaktAnlegenLayout);
@@ -358,6 +363,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontakt.setText("Kontakt");
 
         menuNeuerKontakt.setText("Neuer Kontakt");
+        menuNeuerKontakt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuNeuerKontaktActionPerformed(evt);
+            }
+        });
         menuKontakt.add(menuNeuerKontakt);
 
         menuAlleKontakteAnzeigen.setText("Alle Kontakte anzeigen");
@@ -545,6 +555,14 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_butKontaktSpeichernActionPerformed
+
+    private void menuNeuerKontaktActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNeuerKontaktActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuNeuerKontaktActionPerformed
+
+    private void butCancelNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelNeuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butCancelNeuActionPerformed
 
     /**
      * @param args the command line arguments

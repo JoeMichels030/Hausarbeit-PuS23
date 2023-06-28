@@ -44,6 +44,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Neuer Kontakt"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuNeuerKontaktActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuAlleKontakteAnzeigen">
               <Properties>
@@ -277,8 +280,11 @@
             </Component>
             <Component class="javax.swing.JButton" name="butCancelNeu">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cancel"/>
+                <Property name="text" type="java.lang.String" value="Zur&#xfc;ck"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butCancelNeuActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
