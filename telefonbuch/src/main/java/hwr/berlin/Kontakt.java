@@ -31,6 +31,14 @@ public class Kontakt implements Serializable{
 
     }
 
+    public ArrayList<Long> getNummern() {
+        return nummern;
+    }
+
+    public void setNummern(ArrayList<Long> nummern) {
+        this.nummern = nummern;
+    }
+
     //Getter Methoden
     public String getName() {
         return name;

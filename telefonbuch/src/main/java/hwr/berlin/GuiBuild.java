@@ -15,6 +15,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JList;
 import javax.swing.ListModel;
+import javax.swing.event.ListSelectionEvent;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 //import org.testng.collections.Lists;
@@ -84,6 +85,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
         telefonbuch = new Telefonbuch();
+        //status = 0;
        
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -350,6 +352,12 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontaktLoeschen.setText("Kontakt löschen");
         menuKontakt.add(menuKontaktLoeschen);
 
+        
+        menuKontakt.setEnabled(false);
+        
+        if (status == 1){
+        menuKontakt.setEnabled(true);
+        }
         menueleiste.add(menuKontakt);
 
         setJMenuBar(menueleiste);
@@ -389,7 +397,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
 
             jListfuellen(telefonbuch_geladen);
-            
+            menuKontakt.setEnabled(true);
+           // status = 1;
         }
     }//GEN-LAST:event_butStartBuchLadenActionPerformed
 
@@ -413,7 +422,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void jListfuellen(Telefonbuch telefonbuch){
         DefaultListModel<String> model = new DefaultListModel<>();
+        
         for (Kontakt kontakt:telefonbuch.telefonbuchArray){
+
         model.addElement(kontakt.getName());
         }
         jList1.setModel(model);
@@ -426,21 +437,23 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");  
         fc.setAcceptAllFileFilterUsed(false);
         fc.addChoosableFileFilter(filter);
-        
         int a = fc.showOpenDialog(null);
         
         if(a==JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
-            Telefonbuch telefonbuch = new Telefonbuch(file);
+           // Telefonbuch telefonbuch = new Telefonbuch(file);
             System.out.println("Telefonbuch wurde geladen!");
             
             telefonbuch.buchLaden(file);
             telefonbuch.alleKontakteAnzeigen();
-            //Jump to Alle Kontakte anzeigen
+           
             CardLayout cl = (CardLayout)(cards.getLayout());
             ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
 
             jListfuellen(telefonbuch);
+            menuKontakt.setEnabled(true);
+
+            //status = 1;
         } 
           
             
@@ -469,15 +482,16 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             
             System.out.println("Überprüfe ob "+filename+" existiert...");
 
-            if(!filename.endsWith(".ser")){
-            filename += ".ser";
-            }
+
             
             if(!outputFile.exists()){
                try {
-                   outputFile.createNewFile();
+                    outputFile.createNewFile();
+                    if(!filename.endsWith(".ser")){
+                    filename += ".ser";
+                }
                    System.out.println("Datei "+filename+" wurde erfolgreich erstellt");
-                   // buch = new Telefonbuch(buch_speichern);
+                   
                    //telefonbuch.speichern(outputFile);
                    
                    
@@ -508,6 +522,15 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
         // TODO add your handling code here:
+        
+        int index = jList1.getSelectedIndex();
+        Kontakt details = telefonbuch.telefonbuchArray.get(index);
+    
+        detailsNameText.setText(details.getName());
+        detailsAdresseText.setText(details.getAdresse());
+        detailsEmailText.setText(details.getEmail());
+        detailsNummerText.setText(details.nummern.toString());
+       
     }//GEN-LAST:event_jList1ValueChanged
 
     private void detailsNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsNameTextActionPerformed
@@ -592,6 +615,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
     private Telefonbuch telefonbuch;
+    private Kontakt kontakt;
+    private int status;
  
     // End of variables declaration//GEN-END:variables
 

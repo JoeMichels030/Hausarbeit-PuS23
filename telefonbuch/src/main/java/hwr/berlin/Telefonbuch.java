@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class Telefonbuch implements Serializable{
 
     private static final long serialVersionUID = -1L;
+    public int status;
     //static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
    // static File file = new File("Telefonbuch.ser");
     FileOutputStream fos = null;
@@ -104,13 +105,13 @@ public class Telefonbuch implements Serializable{
 
     //Buch laden
     public  ArrayList<Kontakt> buchLaden(File file){
- 
+        status = 1;
         try{
         fis = new FileInputStream(file);
         ois = new ObjectInputStream(fis);
         Object obj = ois.readObject();
         telefonbuchArray = (ArrayList<Kontakt>) obj;
-        System.out.println("Telefonbuch erfolgreich geladen!");
+        //System.out.println("Telefonbuch erfolgreich geladen!");
         
            
         }
