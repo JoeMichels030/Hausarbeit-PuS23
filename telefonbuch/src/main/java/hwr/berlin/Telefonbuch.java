@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 
@@ -23,6 +25,11 @@ public class Telefonbuch implements Serializable{
     public int status;
     //static String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
    // static File file = new File("Telefonbuch.ser");
+    
+    Path currentRelativePath = Paths.get("");
+    File updateFile = currentRelativePath.toFile();
+    //String s = currentRelativePath.toAbsolutePath().toString();
+    //File outpFile;
     FileOutputStream fos = null;
     ObjectOutputStream oos = null;
     FileInputStream fis = null;
@@ -96,11 +103,13 @@ public class Telefonbuch implements Serializable{
         } catch (IOException e){
             e.printStackTrace();
         }
-
-
        
+    }
 
-       
+    //Buch updaten
+    public void update(){
+        this.speichern(updateFile);
+        this.buchLaden(updateFile);
     }
 
     //Buch laden
