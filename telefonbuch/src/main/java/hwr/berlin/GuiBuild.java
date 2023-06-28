@@ -9,6 +9,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashSet;
 
 import javax.swing.DefaultListModel;
@@ -85,6 +87,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
+        telefonbuch = new Telefonbuch();
+       
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -364,6 +368,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         menuKontaktLoeschen.setText("Kontakt löschen");
         menuKontakt.add(menuKontaktLoeschen);
+        menuKontakt.setEnabled(false);
 
         menueleiste.add(menuKontakt);
 
@@ -405,7 +410,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
             jListfuellen(telefonbuch_geladen);
             menuKontakt.setEnabled(true);
-           // status = 1;
+           
         }
     }//GEN-LAST:event_butStartBuchLadenActionPerformed
 
@@ -448,7 +453,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         
         if(a==JFileChooser.APPROVE_OPTION){
             File file = fc.getSelectedFile();
-           // Telefonbuch telefonbuch = new Telefonbuch(file);
+           
             System.out.println("Telefonbuch wurde geladen!");
             
             telefonbuch.buchLaden(file);
@@ -460,7 +465,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             jListfuellen(telefonbuch);
             menuKontakt.setEnabled(true);
 
-            //status = 1;
+            
         } 
           
             
@@ -509,16 +514,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 }
             }
             //TODO Cancel Button Action1
-            
-
+        
            //
             System.out.println("Versuche zu speichern...");
             telefonbuch.alleKontakteAnzeigen();
             telefonbuch.speichern(outputFile);
-
-            
-
-            
         }
 
         
@@ -537,6 +537,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         detailsAdresseText.setText(details.getAdresse());
         detailsEmailText.setText(details.getEmail());
         detailsNummerText.setText(details.nummern.toString());
+        
        
     }//GEN-LAST:event_jList1ValueChanged
 
@@ -545,7 +546,23 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     }//GEN-LAST:event_detailsNameTextActionPerformed
 
     private void butKontaktSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktSpeichernActionPerformed
+
         // TODO add your handling code here:
+        int index = jList1.getSelectedIndex();
+       
+        Path currentRelativePath = Paths.get("");
+        File filelocation = currentRelativePath.toFile();
+        Kontakt details = telefonbuch.telefonbuchArray.get(index);
+        
+        details.setName(detailsNameText.getText());
+        details.setAdresse(detailsAdresseText.getText());
+        details.setEmail(detailsEmailText.getText());
+        //menuSpeichernActionPerformed(evt);
+        //details.setNummern(detailsNummerText.getText());
+        
+        
+        telefonbuch.speichern(filelocation);
+        
     }//GEN-LAST:event_butKontaktSpeichernActionPerformed
 
     /**
@@ -626,6 +643,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldNameNeu;
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch telefonbuch;
     // End of variables declaration//GEN-END:variables
 
 }
