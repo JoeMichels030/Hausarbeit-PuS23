@@ -43,7 +43,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        telefonbuch = new Telefonbuch();
         cards = new javax.swing.JPanel();
         startWindow = new javax.swing.JPanel();
         butStartBuchLaden = new javax.swing.JButton();
@@ -200,6 +199,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         jList1.setModel(jList1.getModel());
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jList1ValueChanged(evt);
+            }
+        });
         listNamen.setViewportView(jList1);
 
         butKontaktSuchen.setText("Suchen");
@@ -220,12 +224,12 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
-                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(butKontaktAnzeigen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(butKontaktLoeschen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(butKontaktSuchen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(375, Short.MAX_VALUE))
+                .addGap(296, 296, 296)
+                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(butKontaktSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(butKontaktAnzeigen)
+                    .addComponent(butKontaktLoeschen))
+                .addContainerGap(306, Short.MAX_VALUE))
         );
         alleKontakteAnzeigenLayout.setVerticalGroup(
             alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,13 +238,13 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(butKontaktAnzeigen)
-                .addGap(66, 66, 66)
+                .addGap(79, 79, 79)
                 .addComponent(butKontaktSuchen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(butKontaktAnzeigen)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(butKontaktLoeschen)
-                .addGap(83, 83, 83))
+                .addGap(51, 51, 51))
         );
 
         cards.add(alleKontakteAnzeigen, "cardAlleKontakteAnzeigen");
@@ -440,6 +444,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 // TODO add your handling code here:
     }//GEN-LAST:event_menuSpeichernActionPerformed
 
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jList1ValueChanged
+
     /**
      * @param args the command line arguments
      */
@@ -509,8 +517,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldNameNeu;
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
-    private Telefonbuch telefonbuch;
-   // private Telefonbuch kopie;
     // End of variables declaration//GEN-END:variables
 
 }
