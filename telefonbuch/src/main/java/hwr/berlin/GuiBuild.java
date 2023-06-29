@@ -762,10 +762,17 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void jButtonDialogSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDialogSuchenActionPerformed
         // TODO add your handling code here:
+        String suchString = jTextFieldSuche.getText();
+        for (Kontakt kontakt: telefonbuch.telefonbuchArray){
+            if (kontakt.getName().contains(suchString));
+
+        }
     }//GEN-LAST:event_jButtonDialogSuchenActionPerformed
 
     private void menuKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuKontaktSuchenActionPerformed
         // TODO add your handling code here:
+        jDialogSuchen.setVisible(true);
+
     }//GEN-LAST:event_menuKontaktSuchenActionPerformed
 
     private void menuAlleKontakteAnzeigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAlleKontakteAnzeigenActionPerformed
