@@ -504,9 +504,19 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontakt.add(menuNeuerKontakt);
 
         menuAlleKontakteAnzeigen.setText("Alle Kontakte anzeigen");
+        menuAlleKontakteAnzeigen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuAlleKontakteAnzeigenActionPerformed(evt);
+            }
+        });
         menuKontakt.add(menuAlleKontakteAnzeigen);
 
         menuKontaktSuchen.setText("Kontakt suchen");
+        menuKontaktSuchen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuKontaktSuchenActionPerformed(evt);
+            }
+        });
         menuKontakt.add(menuKontaktSuchen);
 
         menuKontaktLoeschen.setText("Kontakt löschen");
@@ -749,6 +759,14 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private void jButtonDialogSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDialogSuchenActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonDialogSuchenActionPerformed
+
+    private void menuKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuKontaktSuchenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuKontaktSuchenActionPerformed
+
+    private void menuAlleKontakteAnzeigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAlleKontakteAnzeigenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuAlleKontakteAnzeigenActionPerformed
 
     /**
      * @param args the command line arguments
