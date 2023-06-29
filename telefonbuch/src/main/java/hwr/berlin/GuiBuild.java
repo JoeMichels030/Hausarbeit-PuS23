@@ -37,6 +37,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dialogZusNummer = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
+        TextZusNummer = new javax.swing.JTextField();
+        butSpeichernZusNummer = new javax.swing.JButton();
+        butZuruckZusNummer = new javax.swing.JButton();
         cards = new javax.swing.JPanel();
         startWindow = new javax.swing.JPanel();
         butStartBuchLaden = new javax.swing.JButton();
@@ -78,8 +83,63 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
-        telefonbuch = new Telefonbuch();
-       
+
+        dialogZusNummer.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jLabel1.setText("zusätzliche Nummer");
+
+        TextZusNummer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextZusNummerActionPerformed(evt);
+            }
+        });
+
+        butSpeichernZusNummer.setText("Speichern");
+        butSpeichernZusNummer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butSpeichernZusNummerActionPerformed(evt);
+            }
+        });
+
+        butZuruckZusNummer.setText("Zurück");
+        butZuruckZusNummer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butZuruckZusNummerActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout dialogZusNummerLayout = new javax.swing.GroupLayout(dialogZusNummer.getContentPane());
+        dialogZusNummer.getContentPane().setLayout(dialogZusNummerLayout);
+        dialogZusNummerLayout.setHorizontalGroup(
+            dialogZusNummerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogZusNummerLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(dialogZusNummerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dialogZusNummerLayout.createSequentialGroup()
+                        .addComponent(butSpeichernZusNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(butZuruckZusNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(dialogZusNummerLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TextZusNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+        dialogZusNummerLayout.setVerticalGroup(
+            dialogZusNummerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogZusNummerLayout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addGroup(dialogZusNummerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(TextZusNummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(64, 64, 64)
+                .addGroup(dialogZusNummerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butSpeichernZusNummer)
+                    .addComponent(butZuruckZusNummer))
+                .addContainerGap(80, Short.MAX_VALUE))
+        );
+
+        dialogZusNummer.getAccessibleContext().setAccessibleParent(butZusNummerNeu);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -139,6 +199,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         });
 
         butZusNummerNeu.setText("zusätzliche Telefonnummer");
+        butZusNummerNeu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butZusNummerNeuActionPerformed(evt);
+            }
+        });
 
         butCancelNeu.setText("Zurück");
         butCancelNeu.addActionListener(new java.awt.event.ActionListener() {
@@ -369,7 +434,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         menuKontaktLoeschen.setText("Kontakt löschen");
         menuKontakt.add(menuKontaktLoeschen);
-        menuKontakt.setEnabled(false);
 
         menueleiste.add(menuKontakt);
 
@@ -393,7 +457,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //menuLadenActionPerformed lädt das Telefonbuch
         menuLadenActionPerformed(evt);
         }
-    //GEN-LAST:event_butStartBuchLadenActionPerformed
+//GEN-LAST:event_butStartBuchLadenActionPerformed
 
     private void textfieldNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldNummerNeuActionPerformed
         // TODO add your handling code here:
@@ -423,9 +487,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         textFieldAdresseNeu.setText("");
         textFieldeMailNeu.setText("");
         textfieldNummerNeu.setText("");
-    } //GEN-LAST:event_butSpeichernNeuActionPerformed
+    }//GEN-LAST:event_butSpeichernNeuActionPerformed
 
-    private void butKontaktLoeschenActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_butKontaktLoeschenActionPerformed
+    private void butKontaktLoeschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktLoeschenActionPerformed
         // TODO add your handling code here:
                 //Auswahl index
         int index = jList1.getSelectedIndex();
@@ -435,13 +499,13 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         
         telefonbuch.loescheKontakt(details);
         jListFuellen(telefonbuch);
-    } //GEN-LAST:event_butKontaktLoeschenActionPerformed
+    }//GEN-LAST:event_butKontaktLoeschenActionPerformed
 
-    private void menuBeendenActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_menuBeendenActionPerformed
+    private void menuBeendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuBeendenActionPerformed
         //Programm schließen
         System.out.println("Programm wurde beendet!");
         System.exit(0);
-    } //GEN-LAST:event_menuBeendenActionPerformed
+    }//GEN-LAST:event_menuBeendenActionPerformed
 
     private void jListFuellen(Telefonbuch telefonbuch){
         //Befüllt und aktualisiert die jListe
@@ -453,7 +517,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jList1.setModel(model);
     }
 
-    private void menuLadenActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_menuLadenActionPerformed
+    private void menuLadenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLadenActionPerformed
         final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
         JFileChooser fc = new JFileChooser(filelocation);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Telefonbuch", "ser");  
@@ -475,9 +539,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             jListFuellen(telefonbuch);
             menuKontakt.setEnabled(true);
         } 
-    }   //GEN-LAST:event_menuLadenActionPerformed
+    }//GEN-LAST:event_menuLadenActionPerformed
 
-    private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_menuSpeichernActionPerformed
+    private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSpeichernActionPerformed
         String filelocation = "telefonbuch/src/main/java/hwr/berlin/";                      // Standard Location für File
         JFileChooser fc = new JFileChooser(filelocation);  
         fc.setSelectedFile(new File(filelocation));                         
@@ -520,9 +584,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         System.out.println("Telefonbuch wurde gespeichert!");
 
     // TODO add your handling code here:
-    } //GEN-LAST:event_menuSpeichernActionPerformed
+    }//GEN-LAST:event_menuSpeichernActionPerformed
 
-    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) { //GEN-FIRST:event_jList1ValueChanged
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
         
         //Auswahl index
         int index = jList1.getSelectedIndex();
@@ -535,35 +599,51 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         detailsAdresseText.setText(details.getAdresse());
         detailsEmailText.setText(details.getEmail());
         detailsNummerText.setText(details.nummern.toString());
-    } //GEN-LAST:event_jList1ValueChanged
+    }//GEN-LAST:event_jList1ValueChanged
 
-    private void detailsNameTextActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_detailsNameTextActionPerformed
+    private void detailsNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsNameTextActionPerformed
         // TODO add your handling code here:
-    } //GEN-LAST:event_detailsNameTextActionPerformed
+    }//GEN-LAST:event_detailsNameTextActionPerformed
 
-    private void butKontaktSpeichernActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_butKontaktSpeichernActionPerformed
+    private void butKontaktSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktSpeichernActionPerformed
 
         // TODO add your handling code here:
         //UPDATE FILE
         //Wie speichern nur ohne FileChooser
         //get.currentpath, file..
         
-    } //GEN-LAST:event_butKontaktSpeichernActionPerformed
+    }//GEN-LAST:event_butKontaktSpeichernActionPerformed
 
-    private void menuNeuerKontaktActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_menuNeuerKontaktActionPerformed
+    private void menuNeuerKontaktActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNeuerKontaktActionPerformed
         // TODO add your handling code here:
         //Springe zu Card "Neuer Kontakt anlegen"
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardKontaktAnlegen");
-    } //GEN-LAST:event_menuNeuerKontaktActionPerformed
+    }//GEN-LAST:event_menuNeuerKontaktActionPerformed
 
-    private void butCancelNeuActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_butCancelNeuActionPerformed
+    private void butCancelNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelNeuActionPerformed
         // TODO add your handling code here:
         //Springe zu Card "Alle Kontakte anzeigen"
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
         jListFuellen(telefonbuch);
-    } //GEN-LAST:event_butCancelNeuActionPerformed
+    }//GEN-LAST:event_butCancelNeuActionPerformed
+
+    private void butZusNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butZusNummerNeuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butZusNummerNeuActionPerformed
+
+    private void TextZusNummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextZusNummerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextZusNummerActionPerformed
+
+    private void butSpeichernZusNummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSpeichernZusNummerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butSpeichernZusNummerActionPerformed
+
+    private void butZuruckZusNummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butZuruckZusNummerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butZuruckZusNummerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -602,6 +682,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TextZusNummer;
     private javax.swing.JPanel alleKontakteAnzeigen;
     private javax.swing.JButton butCancelNeu;
     private javax.swing.JButton butKontaktAnzeigen;
@@ -609,8 +690,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JButton butKontaktSpeichern;
     private javax.swing.JButton butKontaktSuchen;
     private javax.swing.JButton butSpeichernNeu;
+    private javax.swing.JButton butSpeichernZusNummer;
     private javax.swing.JButton butStartBuchLaden;
     private javax.swing.JButton butStartBuchNeu;
+    private javax.swing.JButton butZuruckZusNummer;
     private javax.swing.JButton butZusNummerNeu;
     private javax.swing.JPanel cards;
     private javax.swing.JLabel detailsAdresse;
@@ -621,6 +704,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField detailsNameText;
     private javax.swing.JLabel detailsNummer;
     private javax.swing.JTextField detailsNummerText;
+    private javax.swing.JDialog dialogZusNummer;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel kontaktAnlegen;
     private javax.swing.JLabel labelAdresseNeu;
@@ -643,6 +728,5 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldNameNeu;
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textfieldNummerNeu;
-    private Telefonbuch telefonbuch;
     // End of variables declaration//GEN-END:variables
 }
