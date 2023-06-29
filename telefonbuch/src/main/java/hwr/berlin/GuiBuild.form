@@ -230,11 +230,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Alle Kontakte anzeigen"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuAlleKontakteAnzeigenActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuKontaktSuchen">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Kontakt suchen"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuKontaktSuchenActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuKontaktLoeschen">
               <Properties>
