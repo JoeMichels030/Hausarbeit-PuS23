@@ -427,6 +427,14 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void butKontaktLoeschenActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_butKontaktLoeschenActionPerformed
         // TODO add your handling code here:
+                //Auswahl index
+        int index = jList1.getSelectedIndex();
+
+        //Kontakt auslesen
+        Kontakt details = telefonbuch.telefonbuchArray.get(index);
+        
+        telefonbuch.loescheKontakt(details);
+        jListFuellen(telefonbuch);
     } //GEN-LAST:event_butKontaktLoeschenActionPerformed
 
     private void menuBeendenActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_menuBeendenActionPerformed
