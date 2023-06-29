@@ -52,6 +52,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jRadioButtonEMail = new javax.swing.JRadioButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jButtonDialogSuchen = new javax.swing.JButton();
+        listeSuchergebnis = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
         cards = new javax.swing.JPanel();
         startWindow = new javax.swing.JPanel();
         butStartBuchLaden = new javax.swing.JButton();
@@ -182,39 +184,52 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             }
         });
 
+        listeSuchergebnis.setEnabled(false);
+
+        listeSuchergebnis.setViewportView(jList2);
+
         javax.swing.GroupLayout jDialogSuchenLayout = new javax.swing.GroupLayout(jDialogSuchen.getContentPane());
         jDialogSuchen.getContentPane().setLayout(jDialogSuchenLayout);
         jDialogSuchenLayout.setHorizontalGroup(
             jDialogSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialogSuchenLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel3)
-                .addGap(50, 50, 50)
+                .addGap(18, 18, 18)
                 .addGroup(jDialogSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonDialogSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButtonEMail, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButtonSucheAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButtonSucheName, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldSuche, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addGroup(jDialogSuchenLayout.createSequentialGroup()
+                        .addComponent(jButtonDialogSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jDialogSuchenLayout.createSequentialGroup()
+                        .addGroup(jDialogSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButtonSucheName, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldSuche, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButtonSucheAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButtonEMail, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addComponent(listeSuchergebnis, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(98, 98, 98))))
         );
         jDialogSuchenLayout.setVerticalGroup(
             jDialogSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialogSuchenLayout.createSequentialGroup()
                 .addGap(85, 85, 85)
-                .addGroup(jDialogSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextFieldSuche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButtonSucheName)
+                .addGroup(jDialogSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jDialogSuchenLayout.createSequentialGroup()
+                        .addGroup(jDialogSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jTextFieldSuche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonSucheName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButtonSucheAdresse)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButtonEMail)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton1))
+                    .addComponent(listeSuchergebnis, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButtonSucheAdresse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButtonEMail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
-                .addGap(18, 18, 18)
                 .addComponent(jButtonDialogSuchen)
                 .addContainerGap(32, Short.MAX_VALUE))
         );
@@ -844,6 +859,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButtonEMail;
     private javax.swing.JRadioButton jRadioButtonSucheAdresse;
@@ -855,6 +871,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JLabel labelNameNeu;
     private javax.swing.JLabel labelNummerNeu;
     private javax.swing.JScrollPane listNamen;
+    private javax.swing.JScrollPane listeSuchergebnis;
     private javax.swing.JMenuItem menuAlleKontakteAnzeigen;
     private javax.swing.JMenuItem menuBeenden;
     private javax.swing.JMenu menuKontakt;

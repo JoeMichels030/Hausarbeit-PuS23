@@ -101,18 +101,27 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButtonDialogSuchen" min="-2" pref="75" max="-2" attributes="0"/>
-                      <Component id="jRadioButtonEMail" min="-2" pref="98" max="-2" attributes="0"/>
-                      <Component id="jRadioButtonSucheAdresse" min="-2" pref="98" max="-2" attributes="0"/>
-                      <Component id="jRadioButtonSucheName" min="-2" pref="98" max="-2" attributes="0"/>
-                      <Component id="jTextFieldSuche" min="-2" pref="183" max="-2" attributes="0"/>
-                      <Component id="jRadioButton1" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jButtonDialogSuchen" min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jRadioButtonSucheName" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="jTextFieldSuche" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonSucheAdresse" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonEMail" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="jRadioButton1" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                          <Component id="listeSuchergebnis" min="-2" pref="128" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="32" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -120,19 +129,24 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldSuche" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldSuche" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jRadioButtonSucheName" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jRadioButtonSucheAdresse" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jRadioButtonEMail" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="listeSuchergebnis" pref="154" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jRadioButtonSucheName" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jRadioButtonSucheAdresse" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jRadioButtonEMail" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButtonDialogSuchen" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="32" max="32767" attributes="0"/>
               </Group>
@@ -178,6 +192,28 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDialogSuchenActionPerformed"/>
           </Events>
         </Component>
+        <Container class="javax.swing.JScrollPane" name="listeSuchergebnis">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="jList2">
+              <Properties>
+                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Menu class="javax.swing.JMenuBar" name="menueleiste">
