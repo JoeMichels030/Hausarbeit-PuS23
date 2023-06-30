@@ -570,7 +570,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //Neuer Kontakt erstellen
         Kontakt neuerKontakt = new Kontakt();
 
-        //Test aus Textfeld als Attribute speichern
+        //Text aus Textfeld als Attribute speichern
         neuerKontakt.setName(textFieldNameNeu.getText());
         neuerKontakt.setAdresse(textFieldAdresseNeu.getText());
         neuerKontakt.setEmail(textFieldeMailNeu.getText());
@@ -703,7 +703,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         detailsNameText.setText(details.getName());
         detailsAdresseText.setText(details.getAdresse());
         detailsEmailText.setText(details.getEmail());
-        detailsNummerText.setText(details.nummern.toString());
+        detailsNummerText.setText(details.nummernToString());
     }//GEN-LAST:event_jList1ValueChanged
 
     private void detailsNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsNameTextActionPerformed
@@ -781,8 +781,19 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         
         String suchString = jTextFieldSuche.getText();
         for (Kontakt kontakt: telefonbuch.telefonbuchArray){
-            if (kontakt.getName().contains(suchString));
-                model.addElement(kontakt.getName());
+
+            //Suche nach Name
+            if (jRadioButtonSucheName.isSelected()) {
+                if (kontakt.getName().contains(suchString));
+                    model.addElement(kontakt.getName());
+            }
+
+            //Suche nach Adresse
+            if (jRadioButtonSucheAdresse.isSelected()){
+                if (kontakt.getAdresse().contains(suchString)){
+                    model.addElement(kontakt.getName());
+                }
+            }
         }
         jList2.setModel(model);
         jList2.setVisible(true);

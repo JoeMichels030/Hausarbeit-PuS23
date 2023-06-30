@@ -78,6 +78,16 @@ public class Kontakt implements Serializable {
         }
     }
 
+    public String nummernToString(){
+        String nummerToString = "";
+
+        for (long nummer: nummern){
+            nummerToString += Long.toString(nummer) + "\n" ;
+            
+        }
+        return nummerToString;
+    }
+
     // toString
     @Override
     public String toString() {

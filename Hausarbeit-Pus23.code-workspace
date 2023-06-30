@@ -8,5 +8,7 @@
 			"path": "../Hausarbeit-Pus23-1"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
 }
