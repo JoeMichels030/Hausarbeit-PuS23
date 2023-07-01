@@ -590,6 +590,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         textFieldAdresseNeu.setText("");
         textFieldeMailNeu.setText("");
         textfieldNummerNeu.setText("");
+
+        CardLayout cl = (CardLayout) (cards.getLayout());
+        ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
+        //-> card AllekOntakteanzeigen
     }//GEN-LAST:event_butSpeichernNeuActionPerformed
 
     private void butKontaktLoeschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktLoeschenActionPerformed
