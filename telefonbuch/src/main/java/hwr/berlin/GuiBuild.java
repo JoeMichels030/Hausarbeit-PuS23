@@ -115,6 +115,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
+        telefonbuch = new Telefonbuch();
+        neuerKontakt = new Kontakt();
 
         dialogZusNummer.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -862,7 +864,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
         
         //Auswahl index
-        index = jList1.getSelectedIndex();
+        int index = jList1.getSelectedIndex();
 
         //Kontakt auslesen
         Kontakt details = telefonbuch.telefonbuchArray.get(index);
@@ -1173,5 +1175,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textSuche;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch telefonbuch;
+    private Kontakt neuerKontakt;
     // End of variables declaration//GEN-END:variables
 }
