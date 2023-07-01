@@ -97,6 +97,14 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButtonSuchenDetails = new javax.swing.JButton();
         jButtonSucheZuruck = new javax.swing.JButton();
+        jLabelSucheDetailsName = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextFieldSucheDetailsName = new javax.swing.JTextField();
+        jTextFieldSucheDetailsAdresse = new javax.swing.JTextField();
+        jTextFieldSucheDetailsEmail = new javax.swing.JTextField();
+        jTextFieldSucheDetailsNummer = new javax.swing.JTextField();
         menueleiste = new javax.swing.JMenuBar();
         menuTelefonbuch = new javax.swing.JMenu();
         menuLaden = new javax.swing.JMenuItem();
@@ -107,7 +115,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
-        telefonbuch = new Telefonbuch(); 
 
         dialogZusNummer.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -541,6 +548,14 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             }
         });
 
+        jLabelSucheDetailsName.setText("Name");
+
+        jLabel6.setText("Adresse");
+
+        jLabel7.setText("E-Mail");
+
+        jLabel8.setText("Telefonnummer");
+
         javax.swing.GroupLayout panelKontaktSuchenLayout = new javax.swing.GroupLayout(panelKontaktSuchen);
         panelKontaktSuchen.setLayout(panelKontaktSuchenLayout);
         panelKontaktSuchenLayout.setHorizontalGroup(
@@ -548,9 +563,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             .addGroup(panelKontaktSuchenLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRadioButtonName, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -562,9 +577,25 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
                 .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonSuchenDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSucheZuruck, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(417, Short.MAX_VALUE))
+                    .addComponent(jButtonSucheZuruck, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelKontaktSuchenLayout.createSequentialGroup()
+                        .addComponent(jButtonSuchenDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelSucheDetailsName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45)
+                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldSucheDetailsName)
+                            .addComponent(jTextFieldSucheDetailsAdresse, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(jTextFieldSucheDetailsEmail)))
+                    .addGroup(panelKontaktSuchenLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldSucheDetailsNummer)))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         panelKontaktSuchenLayout.setVerticalGroup(
             panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,7 +620,22 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                         .addComponent(jButtonSuchen))
                     .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(panelKontaktSuchenLayout.createSequentialGroup()
-                            .addComponent(jButtonSuchenDetails)
+                            .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButtonSuchenDetails)
+                                .addComponent(jLabelSucheDetailsName)
+                                .addComponent(jTextFieldSucheDetailsName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel6)
+                                .addComponent(jTextFieldSucheDetailsAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel7)
+                                .addComponent(jTextFieldSucheDetailsEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldSucheDetailsNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel8))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonSucheZuruck))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1082,6 +1128,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabelSucheDetailsName;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jListSuchergebnisse;
@@ -1095,6 +1145,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButtonSucheName;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextFieldSuche;
+    private javax.swing.JTextField jTextFieldSucheDetailsAdresse;
+    private javax.swing.JTextField jTextFieldSucheDetailsEmail;
+    private javax.swing.JTextField jTextFieldSucheDetailsName;
+    private javax.swing.JTextField jTextFieldSucheDetailsNummer;
     private javax.swing.JPanel kontaktAnlegen;
     private javax.swing.JLabel labelAdresseNeu;
     private javax.swing.JLabel labelEMailNeu;
@@ -1119,8 +1173,5 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textSuche;
     private javax.swing.JTextField textfieldNummerNeu;
-    private Telefonbuch telefonbuch;
-    private int index;
-    private Kontakt neuerKontakt;
     // End of variables declaration//GEN-END:variables
 }
