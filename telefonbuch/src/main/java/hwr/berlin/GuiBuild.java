@@ -84,6 +84,19 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         detailsEmailText = new javax.swing.JTextField();
         detailsNummerText = new javax.swing.JTextField();
         butKontaktSpeichern = new javax.swing.JButton();
+        panelKontaktSuchen = new javax.swing.JPanel();
+        textSuche = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jRadioButtonName = new javax.swing.JRadioButton();
+        jRadioButtonAdresse = new javax.swing.JRadioButton();
+        jRadioButtonEmailSuche = new javax.swing.JRadioButton();
+        jRadioButtonNummer = new javax.swing.JRadioButton();
+        jButtonSuchen = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListSuchergebnisse = new javax.swing.JList<>();
+        jLabel5 = new javax.swing.JLabel();
+        jButtonSuchenDetails = new javax.swing.JButton();
+        jButtonSucheZuruck = new javax.swing.JButton();
         menueleiste = new javax.swing.JMenuBar();
         menuTelefonbuch = new javax.swing.JMenu();
         menuLaden = new javax.swing.JMenuItem();
@@ -94,7 +107,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
-        telefonbuch = new Telefonbuch();
 
         dialogZusNummer.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -185,7 +197,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         });
 
         listeSuchergebnis.setEnabled(false);
-        jList2.setVisible(false);
+
         listeSuchergebnis.setViewportView(jList2);
 
         javax.swing.GroupLayout jDialogSuchenLayout = new javax.swing.GroupLayout(jDialogSuchen.getContentPane());
@@ -481,6 +493,110 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         cards.add(alleKontakteAnzeigen, "cardAlleKontakteAnzeigen");
 
+        textSuche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textSucheActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Suche:");
+
+        jRadioButtonName.setText("Name");
+        jRadioButtonName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonNameActionPerformed(evt);
+            }
+        });
+
+        jRadioButtonAdresse.setText("Adresse");
+
+        jRadioButtonEmailSuche.setText("E-Mail");
+
+        jRadioButtonNummer.setText("Telefonnummer");
+
+        jButtonSuchen.setText("Suchen");
+        jButtonSuchen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSuchenActionPerformed(evt);
+            }
+        });
+
+        jListSuchergebnisse.setModel(jList2.getModel());
+        jScrollPane1.setViewportView(jListSuchergebnisse);
+
+        jLabel5.setText("in:");
+
+        jButtonSuchenDetails.setText("Details ");
+        jButtonSuchenDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSuchenDetailsActionPerformed(evt);
+            }
+        });
+
+        jButtonSucheZuruck.setText("Zurück");
+        jButtonSucheZuruck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSucheZuruckActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelKontaktSuchenLayout = new javax.swing.GroupLayout(panelKontaktSuchen);
+        panelKontaktSuchen.setLayout(panelKontaktSuchenLayout);
+        panelKontaktSuchenLayout.setHorizontalGroup(
+            panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelKontaktSuchenLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButtonName, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textSuche, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButtonAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButtonEmailSuche, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButtonNummer))
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonSuchenDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonSucheZuruck, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(417, Short.MAX_VALUE))
+        );
+        panelKontaktSuchenLayout.setVerticalGroup(
+            panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelKontaktSuchenLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelKontaktSuchenLayout.createSequentialGroup()
+                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(textSuche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButtonName)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButtonAdresse)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButtonEmailSuche)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButtonNummer)
+                        .addGap(41, 41, 41)
+                        .addComponent(jButtonSuchen))
+                    .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(panelKontaktSuchenLayout.createSequentialGroup()
+                            .addComponent(jButtonSuchenDetails)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonSucheZuruck))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+
+        cards.add(panelKontaktSuchen, "cardKontaktSuchen");
+
         menuTelefonbuch.setText("Telefonbuch");
 
         menuLaden.setText("Telefonbuch laden");
@@ -537,7 +653,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         menuKontaktLoeschen.setText("Kontakt löschen");
         menuKontakt.add(menuKontaktLoeschen);
-        menuKontakt.setEnabled(false);
+
         menueleiste.add(menuKontakt);
 
         setJMenuBar(menueleiste);
@@ -824,11 +940,31 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private void menuKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuKontaktSuchenActionPerformed
         // TODO add your handling code here:
         jDialogSuchen.setVisible(true);
-    } //GEN-LAST:event_menuKontaktSuchenActionPerformed
+    }//GEN-LAST:event_menuKontaktSuchenActionPerformed
 
     private void menuAlleKontakteAnzeigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAlleKontakteAnzeigenActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menuAlleKontakteAnzeigenActionPerformed
+
+    private void textSucheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSucheActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textSucheActionPerformed
+
+    private void jRadioButtonNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonNameActionPerformed
+
+    private void jButtonSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuchenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSuchenActionPerformed
+
+    private void jButtonSuchenDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuchenDetailsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSuchenDetailsActionPerformed
+
+    private void jButtonSucheZuruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSucheZuruckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSucheZuruckActionPerformed
 
     /**
      * @param args the command line arguments
@@ -890,16 +1026,27 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField detailsNummerText;
     private javax.swing.JDialog dialogZusNummer;
     private javax.swing.JButton jButtonDialogSuchen;
+    private javax.swing.JButton jButtonSucheZuruck;
+    private javax.swing.JButton jButtonSuchen;
+    private javax.swing.JButton jButtonSuchenDetails;
     private javax.swing.JDialog jDialogSuchen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jListSuchergebnisse;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButtonAdresse;
     private javax.swing.JRadioButton jRadioButtonEMail;
+    private javax.swing.JRadioButton jRadioButtonEmailSuche;
+    private javax.swing.JRadioButton jRadioButtonName;
+    private javax.swing.JRadioButton jRadioButtonNummer;
     private javax.swing.JRadioButton jRadioButtonSucheAdresse;
     private javax.swing.JRadioButton jRadioButtonSucheName;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextFieldSuche;
     private javax.swing.JPanel kontaktAnlegen;
     private javax.swing.JLabel labelAdresseNeu;
@@ -918,13 +1065,12 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuSpeichern;
     private javax.swing.JMenu menuTelefonbuch;
     private javax.swing.JMenuBar menueleiste;
+    private javax.swing.JPanel panelKontaktSuchen;
     private javax.swing.JPanel startWindow;
     private javax.swing.JTextField textFieldAdresseNeu;
     private javax.swing.JTextField textFieldNameNeu;
     private javax.swing.JTextField textFieldeMailNeu;
+    private javax.swing.JTextField textSuche;
     private javax.swing.JTextField textfieldNummerNeu;
-    private Telefonbuch telefonbuch;
-    private Kontakt neuerKontakt;
-    private int index;
     // End of variables declaration//GEN-END:variables
 }
