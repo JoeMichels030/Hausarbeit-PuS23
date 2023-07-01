@@ -781,20 +781,38 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void jButtonDialogSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDialogSuchenActionPerformed
         // TODO add your handling code here:
+        System.out.println("starte suche");
+        Kontakt suchErgebnis = new Kontakt();
         DefaultListModel<String> model = new DefaultListModel<>();
-        
         String suchString = jTextFieldSuche.getText();
-        for (Kontakt kontakt: telefonbuch.telefonbuchArray){
-
+        //int index = telefonbuch.telefonbuchArray.indexOf(suchString);
+        System.out.println("Suchstring ="+suchString);
+        for (Kontakt kontakt : telefonbuch.telefonbuchArray){
             //Suche nach Name
             if (jRadioButtonSucheName.isSelected()) {
-                if (kontakt.getName().contains(suchString));
-                    model.addElement(kontakt.getName());
+                System.out.println("Suche nach Name");
+                System.out.println("Name = " + kontakt.getName());
+                System.out.println("Suchstring = "+suchString);
+
+                if (kontakt.getName().equals(suchString)){
+
+                    suchErgebnis.setName(kontakt.getName());
+                    suchErgebnis.setAdresse(kontakt.getAdresse());
+                    suchErgebnis.setEmail(kontakt.getEmail());
+                    suchErgebnis.setNummern(kontakt.getNummern());
+
+                    model.addElement(suchErgebnis.getName());
+                    model.addElement(suchErgebnis.getAdresse());
+                    model.addElement(suchErgebnis.getEmail());
+                    model.addElement(suchErgebnis.nummernToString());
+                    
+                    
             }
+        }
 
             //Suche nach Adresse
             if (jRadioButtonSucheAdresse.isSelected()){
-                if (kontakt.getAdresse().contains(suchString)){
+                if (telefonbuch.telefonbuchArray.indexOf(suchString) != -1){
                     model.addElement(kontakt.getName());
                 }
             }

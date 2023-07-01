@@ -82,7 +82,7 @@ public class Kontakt implements Serializable {
         String nummerToString = "";
 
         for (long nummer: nummern){
-            nummerToString += Long.toString(nummer) + "\n" ;
+            nummerToString += Long.toString(nummer) + " \n" ;
             
         }
         return nummerToString;
