@@ -532,6 +532,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         });
 
         jListSuchergebnisse.setModel(jList2.getModel());
+        jListSuchergebnisse.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jListSuchergebnisseValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(jListSuchergebnisse);
 
         jLabel5.setText("in:");
@@ -1060,6 +1065,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
         jListFuellen(telefonbuch);
     }//GEN-LAST:event_jButtonSucheZuruckActionPerformed
+
+    private void jListSuchergebnisseValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListSuchergebnisseValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListSuchergebnisseValueChanged
 
     /**
      * @param args the command line arguments
