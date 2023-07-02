@@ -115,8 +115,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
-        telefonbuch = new Telefonbuch();
-        neuerKontakt = new Kontakt();
 
         dialogZusNummer.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -268,6 +266,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         });
 
         butStartBuchNeu.setText("Neues Telefonbuch anlegen");
+        butStartBuchNeu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butStartBuchNeuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout startWindowLayout = new javax.swing.GroupLayout(startWindow);
         startWindow.setLayout(startWindowLayout);
@@ -680,7 +683,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menueleiste.add(menuTelefonbuch);
 
         menuKontakt.setText("Kontakt");
-        menuKontakt.setEnabled(false);
 
         menuNeuerKontakt.setText("Neuer Kontakt");
         menuNeuerKontakt.addActionListener(new java.awt.event.ActionListener() {
@@ -1047,6 +1049,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jTextFieldSucheDetailsNummer.setText(details.nummernToString());
     }//GEN-LAST:event_jListSuchergebnisseValueChanged
 
+    private void butStartBuchNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartBuchNeuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butStartBuchNeuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1161,8 +1167,5 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textSuche;
     private javax.swing.JTextField textfieldNummerNeu;
-    private Telefonbuch telefonbuch;
-    private Kontakt neuerKontakt;
-    public int suchErgebnisIndex;
     // End of variables declaration//GEN-END:variables
 }
