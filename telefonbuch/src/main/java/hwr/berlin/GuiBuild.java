@@ -680,6 +680,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menueleiste.add(menuTelefonbuch);
 
         menuKontakt.setText("Kontakt");
+        menuKontakt.setEnabled(false);
 
         menuNeuerKontakt.setText("Neuer Kontakt");
         menuNeuerKontakt.addActionListener(new java.awt.event.ActionListener() {
@@ -753,7 +754,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         telefonbuch.fuegeKontaktHinzu(neuerKontakt);
         
         //jListe aktualisieren
-        jListFuellen(telefonbuch);
+        //jListFuellen(telefonbuch);
 
         //Textfelder resetten
         textFieldNameNeu.setText("");
@@ -763,6 +764,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
+        jListFuellen(telefonbuch);
         //-> card AllekOntakteanzeigen
     }//GEN-LAST:event_butSpeichernNeuActionPerformed
 
@@ -906,7 +908,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //Springe zu Card "Alle Kontakte anzeigen"
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
-        jListFuellen(telefonbuch);
+        //jListFuellen(telefonbuch);
     }//GEN-LAST:event_butCancelNeuActionPerformed
 
     private void butZusNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butZusNummerNeuActionPerformed
@@ -932,6 +934,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         neuerKontakt.fuegeNrHinzu(neu);
         TextZusNummer.setText("");
         jLabel2.setVisible(true);
+        dialogZusNummer.setVisible(false);
         
         
     }//GEN-LAST:event_butSpeichernZusNummerActionPerformed
@@ -955,44 +958,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void jButtonDialogSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDialogSuchenActionPerformed
         // TODO add your handling code here:
-       /*  System.out.println("starte suche");
-        Kontakt suchErgebnis = new Kontakt();
-        DefaultListModel<String> model = new DefaultListModel<>();
-        String suchString = jTextFieldSuche.getText();
-        //int index = telefonbuch.telefonbuchArray.indexOf(suchString);
-        System.out.println("Suchstring ="+suchString);
-        for (Kontakt kontakt : telefonbuch.telefonbuchArray){
-            //Suche nach Name
-            if (jRadioButtonSucheName.isSelected()) {
-                System.out.println("Suche nach Name");
-                System.out.println("Name = " + kontakt.getName());
-                System.out.println("Suchstring = "+suchString);
-
-                if (kontakt.getName().equals(suchString)){
-
-                    suchErgebnis.setName(kontakt.getName());
-                    suchErgebnis.setAdresse(kontakt.getAdresse());
-                    suchErgebnis.setEmail(kontakt.getEmail());
-                    suchErgebnis.setNummern(kontakt.getNummern());
-
-                    model.addElement(suchErgebnis.getName());
-                    model.addElement(suchErgebnis.getAdresse());
-                    model.addElement(suchErgebnis.getEmail());
-                    model.addElement(suchErgebnis.nummernToString());
-                    
-                    
-            }
-        }
-
-            //Suche nach Adresse
-            if (jRadioButtonSucheAdresse.isSelected()){
-                if (telefonbuch.telefonbuchArray.indexOf(suchString) != -1){
-                    model.addElement(kontakt.getName());
-                }
-            }
-        }
-        jList2.setModel(model);
-        jList2.setVisible(true);*/
+       
     }//GEN-LAST:event_jButtonDialogSuchenActionPerformed
 
     private void menuKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuKontaktSuchenActionPerformed
@@ -1016,7 +982,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void jButtonSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuchenActionPerformed
         // TODO add your handling code here:
-        int suchErgebnisIndex;
+        
         //Kontakt suchErgebnis = new Kontakt();
         DefaultListModel<String> model = new DefaultListModel<>();
         String suchString = textSuche.getText();
@@ -1027,7 +993,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 if (kontakt.getName().equals(suchString)){
 
                     model.addElement(kontakt.getName());
-                    
+                    suchErgebnisIndex = telefonbuch.telefonbuchArray.indexOf(kontakt);
                 }
             }
 
@@ -1063,11 +1029,22 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
-        jListFuellen(telefonbuch);
+        //jListFuellen(telefonbuch);
     }//GEN-LAST:event_jButtonSucheZuruckActionPerformed
 
     private void jListSuchergebnisseValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListSuchergebnisseValueChanged
         // TODO add your handling code here:
+                //Auswahl index
+        int index = jListSuchergebnisse.getSelectedIndex();
+
+        //Kontakt auslesen
+        Kontakt details = telefonbuch.telefonbuchArray.get(suchErgebnisIndex);
+
+        //Textfelder befüllen
+        jTextFieldSucheDetailsName.setText(details.getName());
+        jTextFieldSucheDetailsAdresse.setText(details.getAdresse());
+        jTextFieldSucheDetailsEmail.setText(details.getEmail());
+        jTextFieldSucheDetailsNummer.setText(details.nummernToString());
     }//GEN-LAST:event_jListSuchergebnisseValueChanged
 
     /**
@@ -1186,5 +1163,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textfieldNummerNeu;
     private Telefonbuch telefonbuch;
     private Kontakt neuerKontakt;
+    public int suchErgebnisIndex;
     // End of variables declaration//GEN-END:variables
 }
