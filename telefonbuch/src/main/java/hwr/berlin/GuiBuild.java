@@ -116,6 +116,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
+        telefonbuch = new Telefonbuch();
+        neuerKontakt = new Kontakt();
 
         dialogZusNummer.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -684,6 +686,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             }
         });
         menuTelefonbuch.add(menuBeenden);
+        
 
         menueleiste.add(menuTelefonbuch);
 
@@ -715,7 +718,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         menuKontaktLoeschen.setText("Kontakt löschen");
         menuKontakt.add(menuKontaktLoeschen);
-
+        menuKontakt.setEnabled(false);
         menueleiste.add(menuKontakt);
 
         setJMenuBar(menueleiste);
@@ -785,6 +788,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         
         telefonbuch.loescheKontakt(details);
 
+        detailsNameText.setText("");
+        detailsAdresseText.setText("");
+        detailsEmailText.setText("");
+        jTextAreaNummern.setText("");
         //jList updaten
         jListFuellen(telefonbuch);
     }//GEN-LAST:event_butKontaktLoeschenActionPerformed
@@ -887,7 +894,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         detailsNameText.setText(details.getName());
         detailsAdresseText.setText(details.getAdresse());
         detailsEmailText.setText(details.getEmail());
-        detailsNummerText.setText(details.nummernToString());
+        jTextAreaNummern.setText(details.nummernToString());
     }//GEN-LAST:event_jList1ValueChanged
 
     private void detailsNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsNameTextActionPerformed
@@ -906,7 +913,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         details.setName(detailsNameText.getText());
         details.setAdresse(detailsAdresseText.getText());
         details.setEmail(detailsEmailText.getText());
-       // details.setNummern(detailsNummerText.getText());
+        //details.setNummern(jTextAreaNummern.getText());
         jListFuellen(telefonbuch);
 
         //UPDATE FILE
@@ -1011,28 +1018,28 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         for (Kontakt kontakt:telefonbuch.telefonbuchArray){
 
             if (jRadioButtonName.isSelected()){
-                if (kontakt.getName().equals(suchString)){
+                if (kontakt.getName().contains(suchString)){
 
                     model.addElement(kontakt.getName());
-                    suchErgebnisIndex = telefonbuch.telefonbuchArray.indexOf(kontakt);
+                   // suchErgebnisIndex = telefonbuch.telefonbuchArray.indexOf(kontakt);
                 }
             }
 
             if (jRadioButtonAdresse.isSelected()){
-                if (kontakt.getAdresse().equals(suchString)){
+                if (kontakt.getAdresse().contains(suchString)){
                     model.addElement(kontakt.getName());
                 }
             }
 
             if (jRadioButtonEmailSuche.isSelected()){
-                if(kontakt.getEmail().equals(suchString)){
+                if(kontakt.getEmail().contains(suchString)){
                     model.addElement(kontakt.getName());
                 }
             }
 
             if (jRadioButtonNummer.isSelected()){
                 long suchStringlong = Long.parseLong(suchString);
-                if (kontakt.getNummern().equals(suchStringlong)){
+                if (kontakt.getNummern().contains(suchStringlong)){
                     model.addElement(kontakt.getName());
                 }
             }
@@ -1073,6 +1080,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         telefonbuch = new Telefonbuch();
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
+        menuKontakt.setEnabled(true);
     }//GEN-LAST:event_butStartBuchNeuActionPerformed
 
     /**
@@ -1190,5 +1198,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textSuche;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch telefonbuch;
+    private Kontakt neuerKontakt;
     // End of variables declaration//GEN-END:variables
 }
