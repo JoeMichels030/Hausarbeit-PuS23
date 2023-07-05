@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.plaf.DimensionUIResource;
 
@@ -115,6 +116,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
+        telefonbuch = new Telefonbuch();
 
         dialogZusNummer.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -191,18 +193,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jRadioButtonEMail.setText("E-Mail");
 
         jRadioButton1.setText("Telefonnummer");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
+
 
         jButtonDialogSuchen.setText("Suchen");
-        jButtonDialogSuchen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDialogSuchenActionPerformed(evt);
-            }
-        });
+
 
         listeSuchergebnis.setEnabled(false);
 
@@ -516,11 +510,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jLabel4.setText("Suche:");
 
         jRadioButtonName.setText("Name");
-        jRadioButtonName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonNameActionPerformed(evt);
-            }
-        });
+
 
         jRadioButtonAdresse.setText("Adresse");
 
@@ -704,7 +694,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         menuKontaktLoeschen.setText("Kontakt löschen");
         menuKontakt.add(menuKontaktLoeschen);
-
+        menuKontakt.setEnabled(false);
         menueleiste.add(menuKontakt);
 
         setJMenuBar(menueleiste);
@@ -925,14 +915,14 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void butZusNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butZusNummerNeuActionPerformed
         // TODO add your handling code here:
-        DimensionUIResource size = new DimensionUIResource(400, 300);
-        
-        dialogZusNummer.setPreferredSize(size);
-        dialogZusNummer.setLocationRelativeTo(cards);
-        pack();
-        dialogZusNummer.setVisible(true);
-        jLabel2.setVisible(false);
+        getContentPane();
+        JTextField zusNummerText = new JTextField(20); 
+        kontaktAnlegen.add(zusNummerText);
+    
 
+
+        revalidate();
+        repaint();
     }//GEN-LAST:event_butZusNummerNeuActionPerformed
 
     private void TextZusNummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextZusNummerActionPerformed
@@ -941,7 +931,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void butSpeichernZusNummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSpeichernZusNummerActionPerformed
         // TODO add your handling code here:
-        
+       /*  
         butSpeichernNeuActionPerformed(evt);
         String neueNummer = TextZusNummer.getText();
         long neu = Long.parseLong(neueNummer);
@@ -950,7 +940,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jLabel2.setVisible(true);
         dialogZusNummer.setVisible(false);
         
-        
+        */
     }//GEN-LAST:event_butSpeichernZusNummerActionPerformed
 
     private void butZuruckZusNummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butZuruckZusNummerActionPerformed
@@ -1173,5 +1163,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textSuche;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch telefonbuch;
+    private Kontakt neuerKontakt;
     // End of variables declaration//GEN-END:variables
 }
