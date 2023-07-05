@@ -60,6 +60,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         alleKontakteAnzeigen = new javax.swing.JPanel();
         listNamen = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jList2 = new javax.swing.JList<>();
         butKontaktSuchen = new javax.swing.JButton();
         butKontaktLoeschen = new javax.swing.JButton();
         detailsName = new javax.swing.JLabel();
@@ -102,6 +103,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
+        telefonbuch = new Telefonbuch();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -395,11 +397,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jLabel4.setText("Suche:");
 
         jRadioButtonName.setText("Name");
-        jRadioButtonName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonNameActionPerformed(evt);
-            }
-        });
+        
 
         jRadioButtonAdresse.setText("Adresse");
 
@@ -413,7 +411,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 jButtonSuchenActionPerformed(evt);
             }
         });
-
+       // jList jList2 = new 
         jListSuchergebnisse.setModel(jList2.getModel());
         jListSuchergebnisse.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -817,9 +815,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         gridBagConstraintsZusNummer.gridy++;
         
-    
-
-
         revalidate();
         repaint();
     }//GEN-LAST:event_butZusNummerNeuActionPerformed
@@ -987,6 +982,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelSucheDetailsName;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jListSuchergebnisse;
     private javax.swing.JRadioButton jRadioButtonAdresse;
     private javax.swing.JRadioButton jRadioButtonEmailSuche;
@@ -1022,5 +1018,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textSuche;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch telefonbuch;
     // End of variables declaration//GEN-END:variables
 }

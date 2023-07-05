@@ -2,220 +2,6 @@
 
 <Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JDialog" name="dialogZusNummer">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="2"/>
-      </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="butZusNummerNeu"/>
-        </Property>
-      </AccessibilityProperties>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="butSpeichernZusNummer" min="-2" pref="95" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                  <Component id="butZuruckZusNummer" min="-2" pref="75" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel1" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="TextZusNummer" min="-2" pref="158" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="37" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TextZusNummer" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="butSpeichernZusNummer" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="butZuruckZusNummer" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="80" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="zus&#xe4;tzliche Nummer"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="TextZusNummer">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextZusNummerActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="butSpeichernZusNummer">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Speichern"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butSpeichernZusNummerActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="butZuruckZusNummer">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Zur&#xfc;ck"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butZuruckZusNummerActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Kontakt gespeichert!"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JDialog" name="jDialogSuchen">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButtonDialogSuchen" min="-2" pref="75" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jRadioButtonSucheName" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="jTextFieldSuche" alignment="0" min="-2" pref="183" max="-2" attributes="0"/>
-                              <Component id="jRadioButtonSucheAdresse" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="jRadioButtonEMail" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="jRadioButton1" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="54" max="32767" attributes="0"/>
-                          <Component id="listeSuchergebnis" min="-2" pref="128" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldSuche" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jRadioButtonSucheName" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jRadioButtonSucheAdresse" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jRadioButtonEMail" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="listeSuchergebnis" pref="154" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButtonDialogSuchen" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="32" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Suche nach:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldSuche">
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButtonSucheName">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Name"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButtonSucheAdresse">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Adresse"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButtonEMail">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="E-Mail"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="jRadioButton1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Telefonnummer"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton1ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButtonDialogSuchen">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Suchen"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDialogSuchenActionPerformed"/>
-          </Events>
-        </Component>
-        <Container class="javax.swing.JScrollPane" name="listeSuchergebnis">
-          <Properties>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JList" name="jList2">
-              <Properties>
-                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                  <StringArray count="0"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-          </SubComponents>
-        </Container>
-      </SubComponents>
-    </Container>
     <Menu class="javax.swing.JMenuBar" name="menueleiste">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="menuTelefonbuch">
@@ -338,7 +124,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
                       <Component id="butStartBuchLaden" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="423" max="32767" attributes="0"/>
+                      <EmptySpace pref="578" max="32767" attributes="0"/>
                       <Component id="butStartBuchNeu" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                   </Group>
@@ -377,6 +163,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="kontaktAnlegen">
+          <Properties>
+            <Property name="autoscrolls" type="boolean" value="true"/>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="cardKontaktAnlegen"/>
@@ -420,7 +209,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
-                  <GridBagConstraints gridX="0" gridY="0" gridWidth="2" gridHeight="1" fill="0" ipadX="62" ipadY="0" insetsTop="84" insetsLeft="169" insetsBottom="0" insetsRight="0" anchor="18" weightX="0.0" weightY="0.0"/>
+                  <GridBagConstraints gridX="0" gridY="0" gridWidth="2" gridHeight="1" fill="0" ipadX="62" ipadY="0" insetsTop="82" insetsLeft="169" insetsBottom="0" insetsRight="0" anchor="18" weightX="0.0" weightY="0.0"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -463,7 +252,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
-                  <GridBagConstraints gridX="3" gridY="8" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="38" insetsLeft="44" insetsBottom="0" insetsRight="0" anchor="18" weightX="0.0" weightY="0.0"/>
+                  <GridBagConstraints gridX="5" gridY="2" gridWidth="3" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -489,7 +278,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
-                  <GridBagConstraints gridX="3" gridY="9" gridWidth="1" gridHeight="1" fill="0" ipadX="11" ipadY="0" insetsTop="18" insetsLeft="44" insetsBottom="37" insetsRight="0" anchor="18" weightX="0.0" weightY="0.0"/>
+                  <GridBagConstraints gridX="6" gridY="4" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1120,7 +909,7 @@
                 <CodeExpression id="46">
                   <ExpressionOrigin>
                     <Value type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-                      <Insets value="[84, 169, 0, 0]"/>
+                      <Insets value="[82, 169, 0, 0]"/>
                     </Value>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -1468,7 +1257,7 @@
               <Parameters>
                 <CodeExpression id="71">
                   <ExpressionOrigin>
-                    <Value type="int" value="3"/>
+                    <Value type="int" value="5"/>
                   </ExpressionOrigin>
                 </CodeExpression>
               </Parameters>
@@ -1481,7 +1270,7 @@
               <Parameters>
                 <CodeExpression id="72">
                   <ExpressionOrigin>
-                    <Value type="int" value="8"/>
+                    <Value type="int" value="2"/>
                   </ExpressionOrigin>
                 </CodeExpression>
               </Parameters>
@@ -1489,27 +1278,12 @@
             <CodeStatement>
               <CodeExpression id="70_gridBagConstraints"/>
               <StatementProvider type="CodeField">
-                <CodeField name="anchor" class="java.awt.GridBagConstraints"/>
+                <CodeField name="gridwidth" class="java.awt.GridBagConstraints"/>
               </StatementProvider>
               <Parameters>
                 <CodeExpression id="73">
                   <ExpressionOrigin>
-                    <Value type="int" value="18"/>
-                  </ExpressionOrigin>
-                </CodeExpression>
-              </Parameters>
-            </CodeStatement>
-            <CodeStatement>
-              <CodeExpression id="70_gridBagConstraints"/>
-              <StatementProvider type="CodeField">
-                <CodeField name="insets" class="java.awt.GridBagConstraints"/>
-              </StatementProvider>
-              <Parameters>
-                <CodeExpression id="74">
-                  <ExpressionOrigin>
-                    <Value type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-                      <Insets value="[38, 44, 0, 0]"/>
-                    </Value>
+                    <Value type="int" value="3"/>
                   </ExpressionOrigin>
                 </CodeExpression>
               </Parameters>
@@ -1520,7 +1294,7 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="75_butSpeichernNeu">
+                <CodeExpression id="74_butSpeichernNeu">
                   <CodeVariable name="butSpeichernNeu" type="8194" declaredType="javax.swing.JButton"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
@@ -1532,7 +1306,7 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="76_gridBagConstraints">
+              <CodeExpression id="75_gridBagConstraints">
                 <CodeVariable name="gridBagConstraints"/>
                 <ExpressionOrigin>
                   <ExpressionProvider type="CodeConstructor">
@@ -1541,16 +1315,16 @@
                 </ExpressionOrigin>
               </CodeExpression>
               <StatementProvider type="CodeExpression">
-                <CodeExpression id="76_gridBagConstraints"/>
+                <CodeExpression id="75_gridBagConstraints"/>
               </StatementProvider>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="76_gridBagConstraints"/>
+              <CodeExpression id="75_gridBagConstraints"/>
               <StatementProvider type="CodeField">
                 <CodeField name="gridx" class="java.awt.GridBagConstraints"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="77">
+                <CodeExpression id="76">
                   <ExpressionOrigin>
                     <Value type="int" value="3"/>
                   </ExpressionOrigin>
@@ -1558,12 +1332,12 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="76_gridBagConstraints"/>
+              <CodeExpression id="75_gridBagConstraints"/>
               <StatementProvider type="CodeField">
                 <CodeField name="gridy" class="java.awt.GridBagConstraints"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="78">
+                <CodeExpression id="77">
                   <ExpressionOrigin>
                     <Value type="int" value="7"/>
                   </ExpressionOrigin>
@@ -1571,12 +1345,12 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="76_gridBagConstraints"/>
+              <CodeExpression id="75_gridBagConstraints"/>
               <StatementProvider type="CodeField">
                 <CodeField name="gridwidth" class="java.awt.GridBagConstraints"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="79">
+                <CodeExpression id="78">
                   <ExpressionOrigin>
                     <Value type="int" value="2"/>
                   </ExpressionOrigin>
@@ -1584,12 +1358,12 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="76_gridBagConstraints"/>
+              <CodeExpression id="75_gridBagConstraints"/>
               <StatementProvider type="CodeField">
                 <CodeField name="ipadx" class="java.awt.GridBagConstraints"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="80">
+                <CodeExpression id="79">
                   <ExpressionOrigin>
                     <Value type="int" value="63"/>
                   </ExpressionOrigin>
@@ -1597,12 +1371,12 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="76_gridBagConstraints"/>
+              <CodeExpression id="75_gridBagConstraints"/>
               <StatementProvider type="CodeField">
                 <CodeField name="anchor" class="java.awt.GridBagConstraints"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="81">
+                <CodeExpression id="80">
                   <ExpressionOrigin>
                     <Value type="int" value="18"/>
                   </ExpressionOrigin>
@@ -1610,12 +1384,12 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="76_gridBagConstraints"/>
+              <CodeExpression id="75_gridBagConstraints"/>
               <StatementProvider type="CodeField">
                 <CodeField name="insets" class="java.awt.GridBagConstraints"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="82">
+                <CodeExpression id="81">
                   <ExpressionOrigin>
                     <Value type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                       <Insets value="[18, 6, 0, 344]"/>
@@ -1630,7 +1404,7 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="83_butZusNummerNeu">
+                <CodeExpression id="82_butZusNummerNeu">
                   <CodeVariable name="butZusNummerNeu" type="8194" declaredType="javax.swing.JButton"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
@@ -1638,11 +1412,11 @@
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
-                <CodeExpression id="76_gridBagConstraints"/>
+                <CodeExpression id="75_gridBagConstraints"/>
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="84_gridBagConstraints">
+              <CodeExpression id="83_gridBagConstraints">
                 <CodeVariable name="gridBagConstraints"/>
                 <ExpressionOrigin>
                   <ExpressionProvider type="CodeConstructor">
@@ -1651,72 +1425,31 @@
                 </ExpressionOrigin>
               </CodeExpression>
               <StatementProvider type="CodeExpression">
-                <CodeExpression id="84_gridBagConstraints"/>
+                <CodeExpression id="83_gridBagConstraints"/>
               </StatementProvider>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="84_gridBagConstraints"/>
+              <CodeExpression id="83_gridBagConstraints"/>
               <StatementProvider type="CodeField">
                 <CodeField name="gridx" class="java.awt.GridBagConstraints"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="85">
+                <CodeExpression id="84">
                   <ExpressionOrigin>
-                    <Value type="int" value="3"/>
+                    <Value type="int" value="6"/>
                   </ExpressionOrigin>
                 </CodeExpression>
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="84_gridBagConstraints"/>
+              <CodeExpression id="83_gridBagConstraints"/>
               <StatementProvider type="CodeField">
                 <CodeField name="gridy" class="java.awt.GridBagConstraints"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="86">
+                <CodeExpression id="85">
                   <ExpressionOrigin>
-                    <Value type="int" value="9"/>
-                  </ExpressionOrigin>
-                </CodeExpression>
-              </Parameters>
-            </CodeStatement>
-            <CodeStatement>
-              <CodeExpression id="84_gridBagConstraints"/>
-              <StatementProvider type="CodeField">
-                <CodeField name="ipadx" class="java.awt.GridBagConstraints"/>
-              </StatementProvider>
-              <Parameters>
-                <CodeExpression id="87">
-                  <ExpressionOrigin>
-                    <Value type="int" value="11"/>
-                  </ExpressionOrigin>
-                </CodeExpression>
-              </Parameters>
-            </CodeStatement>
-            <CodeStatement>
-              <CodeExpression id="84_gridBagConstraints"/>
-              <StatementProvider type="CodeField">
-                <CodeField name="anchor" class="java.awt.GridBagConstraints"/>
-              </StatementProvider>
-              <Parameters>
-                <CodeExpression id="88">
-                  <ExpressionOrigin>
-                    <Value type="int" value="18"/>
-                  </ExpressionOrigin>
-                </CodeExpression>
-              </Parameters>
-            </CodeStatement>
-            <CodeStatement>
-              <CodeExpression id="84_gridBagConstraints"/>
-              <StatementProvider type="CodeField">
-                <CodeField name="insets" class="java.awt.GridBagConstraints"/>
-              </StatementProvider>
-              <Parameters>
-                <CodeExpression id="89">
-                  <ExpressionOrigin>
-                    <Value type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-                      <Insets value="[18, 44, 37, 0]"/>
-                    </Value>
+                    <Value type="int" value="4"/>
                   </ExpressionOrigin>
                 </CodeExpression>
               </Parameters>
@@ -1727,7 +1460,7 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="90_butCancelNeu">
+                <CodeExpression id="86_butCancelNeu">
                   <CodeVariable name="butCancelNeu" type="8194" declaredType="javax.swing.JButton"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
@@ -1735,7 +1468,7 @@
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
-                <CodeExpression id="84_gridBagConstraints"/>
+                <CodeExpression id="83_gridBagConstraints"/>
               </Parameters>
             </CodeStatement>
           </LayoutCode>
@@ -1763,7 +1496,7 @@
                                       <Component id="butKontaktSpeichern" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="butKontaktLoeschen" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace pref="85" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane2" max="32767" attributes="0"/>
                               </Group>
@@ -1782,7 +1515,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="115" max="32767" attributes="0"/>
+                      <EmptySpace pref="191" max="32767" attributes="0"/>
                       <Component id="butKontaktSuchen" min="-2" pref="118" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                   </Group>
@@ -1969,7 +1702,7 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jTextFieldSucheDetailsName" pref="218" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldSucheDetailsName" pref="373" max="32767" attributes="0"/>
                                           <Component id="jTextFieldSucheDetailsAdresse" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jTextFieldSucheDetailsEmail" alignment="0" max="32767" attributes="0"/>
                                       </Group>
