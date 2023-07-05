@@ -5,6 +5,7 @@
 
 package hwr.berlin;
 
+import java.awt.GridBagConstraints;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.DefaultListModel;
@@ -949,9 +950,19 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void butZusNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butZusNummerNeuActionPerformed
         // TODO add your handling code here:
-        getContentPane();
-        JTextField zusNummerText = new JTextField(20); 
-        kontaktAnlegen.add(zusNummerText);
+        //getContentPane();
+        JTextField zusNummerText = new JTextField(); 
+        GridBagConstraints gridBagConstraintsZusNummer = new java.awt.GridBagConstraints();
+        gridBagConstraintsZusNummer.gridx = 3;
+        gridBagConstraintsZusNummer.gridy = 6;
+        gridBagConstraintsZusNummer.gridwidth = 2;
+        gridBagConstraintsZusNummer.ipadx = 177;
+        gridBagConstraintsZusNummer.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraintsZusNummer.insets = new java.awt.Insets(18, 6, 0, 344);
+        kontaktAnlegen.add(zusNummerText, gridBagConstraintsZusNummer);
+
+        gridBagConstraintsZusNummer.gridy++;
+        
     
 
 
