@@ -37,6 +37,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         dialogZusNummer = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
@@ -295,19 +296,89 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         cards.add(startWindow, "cardStartWindow");
 
+        java.awt.GridBagLayout kontaktAnlegenLayout = new java.awt.GridBagLayout();
+        kontaktAnlegenLayout.columnWeights = new double[] {0.1};
+        kontaktAnlegenLayout.rowWeights = new double[] {0.1};
+        kontaktAnlegen.setLayout(kontaktAnlegenLayout);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 177;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(81, 6, 0, 344);
+        kontaktAnlegen.add(textFieldNameNeu, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 177;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 344);
+        kontaktAnlegen.add(textFieldAdresseNeu, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 177;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 344);
+        kontaktAnlegen.add(textFieldeMailNeu, gridBagConstraints);
+
         textfieldNummerNeu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textfieldNummerNeuActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 177;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 344);
+        kontaktAnlegen.add(textfieldNummerNeu, gridBagConstraints);
 
         labelNameNeu.setText("Nachname, Vorname");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 62;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(84, 169, 0, 0);
+        kontaktAnlegen.add(labelNameNeu, gridBagConstraints);
 
         labelAdresseNeu.setText("Adresse (Straße, NR, PLZ, Ort)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 70;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(21, 169, 0, 0);
+        kontaktAnlegen.add(labelAdresseNeu, gridBagConstraints);
 
         labelEMailNeu.setText("e-Mail Adresse");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 78;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(24, 169, 0, 0);
+        kontaktAnlegen.add(labelEMailNeu, gridBagConstraints);
 
         labelNummerNeu.setText("Telefonnummer");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.ipadx = 72;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(21, 169, 0, 0);
+        kontaktAnlegen.add(labelNummerNeu, gridBagConstraints);
 
         butSpeichernNeu.setText("Speichern");
         butSpeichernNeu.addActionListener(new java.awt.event.ActionListener() {
@@ -315,6 +386,12 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 butSpeichernNeuActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(38, 44, 0, 0);
+        kontaktAnlegen.add(butSpeichernNeu, gridBagConstraints);
 
         butZusNummerNeu.setText("zusätzliche Telefonnummer");
         butZusNummerNeu.addActionListener(new java.awt.event.ActionListener() {
@@ -322,6 +399,14 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 butZusNummerNeuActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 63;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 344);
+        kontaktAnlegen.add(butZusNummerNeu, gridBagConstraints);
 
         butCancelNeu.setText("Zurück");
         butCancelNeu.addActionListener(new java.awt.event.ActionListener() {
@@ -329,64 +414,13 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 butCancelNeuActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout kontaktAnlegenLayout = new javax.swing.GroupLayout(kontaktAnlegen);
-        kontaktAnlegen.setLayout(kontaktAnlegenLayout);
-        kontaktAnlegenLayout.setHorizontalGroup(
-            kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kontaktAnlegenLayout.createSequentialGroup()
-                .addGap(169, 169, 169)
-                .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(labelNummerNeu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                        .addComponent(labelEMailNeu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(kontaktAnlegenLayout.createSequentialGroup()
-                        .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelNameNeu, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelAdresseNeu, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textFieldNameNeu)
-                            .addComponent(textFieldAdresseNeu)
-                            .addComponent(textFieldeMailNeu)
-                            .addComponent(textfieldNummerNeu)
-                            .addComponent(butZusNummerNeu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(344, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kontaktAnlegenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(butSpeichernNeu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(butCancelNeu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(464, 464, 464))
-        );
-        kontaktAnlegenLayout.setVerticalGroup(
-            kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kontaktAnlegenLayout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(kontaktAnlegenLayout.createSequentialGroup()
-                        .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textFieldNameNeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelNameNeu))
-                        .addGap(18, 18, 18)
-                        .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textFieldAdresseNeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelAdresseNeu))
-                        .addGap(18, 18, 18)
-                        .addComponent(textFieldeMailNeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(labelEMailNeu))
-                .addGap(18, 18, 18)
-                .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textfieldNummerNeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelNummerNeu))
-                .addGap(18, 18, 18)
-                .addComponent(butZusNummerNeu)
-                .addGap(38, 38, 38)
-                .addComponent(butSpeichernNeu)
-                .addGap(18, 18, 18)
-                .addComponent(butCancelNeu)
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 44, 37, 0);
+        kontaktAnlegen.add(butCancelNeu, gridBagConstraints);
 
         cards.add(kontaktAnlegen, "cardKontaktAnlegen");
 
