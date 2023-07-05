@@ -194,18 +194,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jRadioButtonEMail.setText("E-Mail");
 
         jRadioButton1.setText("Telefonnummer");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
-
+        
         jButtonDialogSuchen.setText("Suchen");
-        jButtonDialogSuchen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDialogSuchenActionPerformed(evt);
-            }
-        });
+        
 
         listeSuchergebnis.setEnabled(false);
 
@@ -522,11 +513,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jLabel4.setText("Suche:");
 
         jRadioButtonName.setText("Name");
-        jRadioButtonName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonNameActionPerformed(evt);
-            }
-        });
+        
 
         jRadioButtonAdresse.setText("Adresse");
 
@@ -552,11 +539,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jLabel5.setText("in:");
 
         jButtonSuchenDetails.setText("Details ");
-        jButtonSuchenDetails.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSuchenDetailsActionPerformed(evt);
-            }
-        });
+        
 
         jButtonSucheZuruck.setText("Zurück");
         jButtonSucheZuruck.addActionListener(new java.awt.event.ActionListener() {
@@ -771,10 +754,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         textFieldAdresseNeu.setText("");
         textFieldeMailNeu.setText("");
         textfieldNummerNeu.setText("");
-
+        jListFuellen(telefonbuch);
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
-        jListFuellen(telefonbuch);
+        
         //-> card AllekOntakteanzeigen
     }//GEN-LAST:event_butSpeichernNeuActionPerformed
 
@@ -939,9 +922,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void butZusNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butZusNummerNeuActionPerformed
         // TODO add your handling code here:
+        DimensionUIResource size = new DimensionUIResource(400, 300);
         
-        dialogZusNummer.setPreferredSize(new DimensionUIResource(400, 300));
+        dialogZusNummer.setPreferredSize(size);
         dialogZusNummer.setLocationRelativeTo(cards);
+        pack();
         dialogZusNummer.setVisible(true);
         jLabel2.setVisible(false);
 
@@ -978,14 +963,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     }//GEN-LAST:event_butKontaktSuchenActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void jButtonDialogSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDialogSuchenActionPerformed
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_jButtonDialogSuchenActionPerformed
+    
 
     private void menuKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuKontaktSuchenActionPerformed
         // TODO add your handling code here:
@@ -1004,10 +982,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textSucheActionPerformed
 
-    private void jRadioButtonNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButtonNameActionPerformed
-
+    
     private void jButtonSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuchenActionPerformed
         // TODO add your handling code here:
         
@@ -1048,10 +1023,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jListSuchergebnisse.setVisible(true);
     }//GEN-LAST:event_jButtonSuchenActionPerformed
 
-    private void jButtonSuchenDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuchenDetailsActionPerformed
-        // TODO add your handling code here:
-        //getIndex in telefonbucharray of selected item
-    }//GEN-LAST:event_jButtonSuchenDetailsActionPerformed
+
 
     private void jButtonSucheZuruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSucheZuruckActionPerformed
         // TODO add your handling code here:
@@ -1064,6 +1036,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         // TODO add your handling code here:
                 //Auswahl index
         int index = jListSuchergebnisse.getSelectedIndex();
+        System.out.println("index=" +index);
 
         //Kontakt auslesen
         Kontakt details = telefonbuch.telefonbuchArray.get(index);
@@ -1200,5 +1173,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textfieldNummerNeu;
     private Telefonbuch telefonbuch;
     private Kontakt neuerKontakt;
+    private int searchIndex;
     // End of variables declaration//GEN-END:variables
 }
