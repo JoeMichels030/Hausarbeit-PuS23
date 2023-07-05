@@ -60,7 +60,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         alleKontakteAnzeigen = new javax.swing.JPanel();
         listNamen = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jList2 = new javax.swing.JList<>();
         butKontaktSuchen = new javax.swing.JButton();
         butKontaktLoeschen = new javax.swing.JButton();
         detailsName = new javax.swing.JLabel();
@@ -103,10 +102,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
-        telefonbuch = new Telefonbuch();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(640, 480));
 
         cards.setLayout(new java.awt.CardLayout());
 
@@ -138,7 +135,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         startWindowLayout.setVerticalGroup(
             startWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startWindowLayout.createSequentialGroup()
-                .addContainerGap(297, Short.MAX_VALUE)
+                .addContainerGap(374, Short.MAX_VALUE)
                 .addGroup(startWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butStartBuchLaden)
                     .addComponent(butStartBuchNeu))
@@ -336,7 +333,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                             .addComponent(detailsAdresseText)
                             .addComponent(detailsEmailText)
                             .addComponent(detailsNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 0, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(butKontaktSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
@@ -345,7 +342,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -385,7 +382,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jLabel4.setText("Suche:");
 
         jRadioButtonName.setText("Name");
-        
+        jRadioButtonName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonNameActionPerformed(evt);
+            }
+        });
 
         jRadioButtonAdresse.setText("Adresse");
 
@@ -399,8 +400,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 jButtonSuchenActionPerformed(evt);
             }
         });
-       // jList jList2 = new 
-        jListSuchergebnisse.setModel(jList2.getModel());
+
         jListSuchergebnisse.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 jListSuchergebnisseValueChanged(evt);
@@ -506,7 +506,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                             .addComponent(jTextFieldSucheDetailsNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addComponent(jButtonSucheZuruck)
                 .addGap(42, 42, 42))
         );
@@ -970,7 +970,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelSucheDetailsName;
     private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jListSuchergebnisse;
     private javax.swing.JRadioButton jRadioButtonAdresse;
     private javax.swing.JRadioButton jRadioButtonEmailSuche;
@@ -1006,6 +1005,5 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textSuche;
     private javax.swing.JTextField textfieldNummerNeu;
-    private Telefonbuch telefonbuch;
     // End of variables declaration//GEN-END:variables
 }
