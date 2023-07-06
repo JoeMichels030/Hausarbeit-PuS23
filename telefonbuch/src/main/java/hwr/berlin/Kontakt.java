@@ -35,7 +35,6 @@ public class Kontakt implements Serializable {
         this.nummern = nummern;
     }
 
-    //Getter Methoden
     public String getName() {
         return name;
     }
