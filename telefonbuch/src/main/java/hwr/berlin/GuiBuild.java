@@ -924,6 +924,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void butSucheZuruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSucheZuruckActionPerformed
         // TODO add your handling code here:
+                CardLayout cl = (CardLayout) (cards.getLayout());
+        ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
     }//GEN-LAST:event_butSucheZuruckActionPerformed
 
     /**
