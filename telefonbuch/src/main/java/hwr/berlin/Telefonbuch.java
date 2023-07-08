@@ -48,7 +48,7 @@ public class Telefonbuch implements Serializable {
             System.out.println(kontakt.getName());
             System.out.println(kontakt.getAdresse());
             System.out.println(kontakt.getEmail());
-            //kontakt.nummerAusgeben();
+            kontakt.nummerAusgeben();
         }
         System.out.println("Alle Kontakte erfolgreich angezeigt!");
     }

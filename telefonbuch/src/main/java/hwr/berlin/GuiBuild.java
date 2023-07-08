@@ -105,6 +105,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         telefonbuch = new Telefonbuch();
         suchergebnisse = new Telefonbuch();
         neuerKontakt = new Kontakt();
+        telefonnummer = new Telefonnummer();
 
 
         //dialogZusNummer.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -816,10 +817,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         detailsNameText.setText(details.getName());
         detailsAdresseText.setText(details.getAdresse());
         detailsEmailText.setText(details.getEmail());
-        //jTextAreaNummern.setText(details.getNummern());
-        for (int i = 0; i<=details.nummern.size();i++){
-            jTextAreaNummern.setText(details.getNummern().toString());
-        }
+        jTextAreaNummern.setText(details.getNummern().toString());
+       // for (int i = 0; i<=details.nummern.size();i++){
+       //     jTextAreaNummern.setText(details.nummernToString());
+       // }
     }//GEN-LAST:event_jList1ValueChanged
 
 
@@ -984,19 +985,21 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private void jListSuchergebnisseValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListSuchergebnisseValueChanged
         // TODO add your handling code here:
 
-        
+        int index = 0;
                 //Auswahl index
-        int index = jListSuchergebnisse.getSelectedIndex();
+        index = jListSuchergebnisse.getSelectedIndex();
         System.out.println("index=" +index);
 
         //Kontakt auslesen
         Kontakt details = suchergebnisse.telefonbuchArray.get(index);
-
+        Kontakt suchDetails = new Kontakt();
+        suchDetails.setName(details.getName());
+        suchDetails.setAdresse(details.getAdresse());
         //Textfelder befüllen
-        jTextFieldSucheDetailsName.setText(details.getName());
+        jTextFieldSucheDetailsName.setText(suchDetails.getName());
         jTextFieldSucheDetailsAdresse.setText(details.getAdresse());
         jTextFieldSucheDetailsEmail.setText(details.getEmail());
-        jTextFieldSucheDetailsNummer.setText(details.nummernToString());
+        jTextFieldSucheDetailsNummer.setText(details.getNummern().toString());
     }//GEN-LAST:event_jListSuchergebnisseValueChanged
 
     private void butStartBuchNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartBuchNeuActionPerformed
@@ -1108,6 +1111,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private Telefonbuch telefonbuch;
     private Telefonbuch suchergebnisse;
     private Kontakt neuerKontakt;
+    private Telefonnummer telefonnummer;
     
     // End of variables declaration//GEN-END:variables
 }

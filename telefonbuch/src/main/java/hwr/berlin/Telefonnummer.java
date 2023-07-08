@@ -1,8 +1,11 @@
 package hwr.berlin;
 
-public class Telefonnummer {
+import java.io.Serializable;
+
+public class Telefonnummer implements Serializable{
     private long nummer;
     private String beschreibung;
+    private static final long serialVersionUID = -1L;
 
 
     public Telefonnummer(){
@@ -45,7 +48,7 @@ public class Telefonnummer {
 
     @Override
     public String toString() {
-        return "Telefonnummer " + nummer + " : " + beschreibung + "\n";
+        return  nummer + " : " + beschreibung + "\n";
     }
 
     

@@ -92,6 +92,6 @@ public class Kontakt implements Serializable {
     // toString
     @Override
     public String toString() {
-        return "[name=" + name + ", adresse=" + adresse + ", email=" + email + ", nummern=" + nummern + "]";
+        return nummern + " \n";
     }
 }
