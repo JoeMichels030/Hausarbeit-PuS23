@@ -917,14 +917,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
     }//GEN-LAST:event_menuAlleKontakteAnzeigenActionPerformed
 
-    private void textSucheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSucheActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textSucheActionPerformed
-
-    private void jRadioButtonNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButtonNameActionPerformed
-
     private void jButtonSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuchenActionPerformed
         // TODO add your handling code here:
         
