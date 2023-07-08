@@ -48,7 +48,7 @@ public class Telefonbuch implements Serializable {
             System.out.println(kontakt.getName());
             System.out.println(kontakt.getAdresse());
             System.out.println(kontakt.getEmail());
-            kontakt.nummerAusgeben();
+            //kontakt.nummerAusgeben();
         }
         System.out.println("Alle Kontakte erfolgreich angezeigt!");
     }
@@ -65,7 +65,7 @@ public class Telefonbuch implements Serializable {
             oos.writeObject(telefonbuchArray);
             oos.flush();
             oos.close();
-            System.out.println("FileOutPutStream erfolgreich");
+            System.out.println("Speichern erfolgreich!");
             //alleKontakteAnzeigen();
 
         } catch (FileNotFoundException e) {
@@ -84,7 +84,7 @@ public class Telefonbuch implements Serializable {
             ois = new ObjectInputStream(fis);
             Object obj = ois.readObject();
             telefonbuchArray = (ArrayList<Kontakt>) obj;
-        //System.out.println("Telefonbuch erfolgreich geladen!");
+            System.out.println("Telefonbuch erfolgreich geladen!");
         }
             catch (IOException e){
                 e.printStackTrace();

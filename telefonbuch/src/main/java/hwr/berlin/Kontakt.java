@@ -10,11 +10,11 @@ public class Kontakt implements Serializable {
     private String name;
     private String adresse;
     private String email;
-    protected ArrayList<Long> nummern;
+    protected ArrayList<Telefonnummer> nummern;
 
     //Konstruktor
     public Kontakt() {
-        ArrayList<Long> nummern = new ArrayList<>();
+        ArrayList<Telefonnummer> nummern = new ArrayList<>();
         this.nummern = nummern;
         this.name = null;
         this.adresse = null;
@@ -22,20 +22,19 @@ public class Kontakt implements Serializable {
     }
 
     public Kontakt(String name) {
-        ArrayList<Long> nummern = new ArrayList<>();
+        ArrayList<Telefonnummer> nummern = new ArrayList<>();
         this.nummern = nummern;
         this.name = name;
     }
 
-    public ArrayList<Long> getNummern() {
+    public ArrayList<Telefonnummer> getNummern() {
         return nummern;
     }
 
-    public void setNummern(ArrayList<Long> nummern) {
+    public void setNummern(ArrayList<Telefonnummer> nummern) {
         this.nummern = nummern;
     }
 
-    //Getter Methoden
     public String getName() {
         return name;
     }
@@ -62,18 +61,20 @@ public class Kontakt implements Serializable {
     }
 
     //Telefonnummer zu ArrayList<Long> hinzufügen
-    public void fuegeNrHinzu(long telefonnummer) {
+    public void fuegeNrHinzu(Telefonnummer telefonnummer) {
         nummern.add(telefonnummer);
     }
 
     //beim laden aus Datei Telefonbuch.ser
     public void fuegeNrHinzu(String nummerString) {
-        long l = Long.parseLong(nummerString);
+
+        Telefonnummer l = new Telefonnummer();
+        l = l.stringToTelefonnummer(nummerString);
         nummern.add(l);
     }
 
     public void nummerAusgeben() {
-        for(long nummer: nummern){
+        for(Telefonnummer nummer: nummern){
             System.out.println(nummer);
         }
     }
@@ -81,8 +82,8 @@ public class Kontakt implements Serializable {
     public String nummernToString(){
         String nummerToString = "";
 
-        for (long nummer: nummern){
-            nummerToString += Long.toString(nummer) + " \n" ;
+        for (Telefonnummer nummer: nummern){
+            nummerToString += nummer.telefonnummerToString() + " \n" ;
             
         }
         return nummerToString;

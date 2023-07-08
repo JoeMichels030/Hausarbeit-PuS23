@@ -16,20 +16,20 @@ public class Test {
     Kontakt testKontakt = new Kontakt("test");
     testKontakt.setAdresse("teststraße");
     testKontakt.setEmail("test@test.com");
-    testKontakt.fuegeNrHinzu(12223455);
-    testKontakt.fuegeNrHinzu(213423525);
+    //testKontakt.fuegeNrHinzu(12223455);
+    //testKontakt.fuegeNrHinzu(213423525);
 
     Kontakt testKontakt2 = new Kontakt("test2");
     testKontakt2.setAdresse("straßetest");
     testKontakt2.setEmail("test2@test2.com");
-    testKontakt2.fuegeNrHinzu(999999999);
-    testKontakt2.fuegeNrHinzu(888888777);
+    //testKontakt2.fuegeNrHinzu(999999999);
+    //testKontakt2.fuegeNrHinzu(888888777);
 
     Kontakt testKontakt3 = new Kontakt("Joe");
     testKontakt3.setAdresse("straßetest3");
     testKontakt3.setEmail("test3@test3.com");
-    testKontakt3.fuegeNrHinzu(11111111);
-    testKontakt3.fuegeNrHinzu(222222771);
+    //testKontakt3.fuegeNrHinzu(11111111);
+    //testKontakt3.fuegeNrHinzu(222222771);
 
     testBuch.fuegeKontaktHinzu(testKontakt);
     testBuch.fuegeKontaktHinzu(testKontakt2);
