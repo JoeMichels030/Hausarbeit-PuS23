@@ -1491,7 +1491,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jButtonSucheZuruck" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="butSucheZuruck" min="-2" pref="75" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -1580,9 +1580,9 @@
                           </Group>
                           <Component id="jScrollPane1" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="111" max="32767" attributes="0"/>
-                      <Component id="jButtonSucheZuruck" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace pref="98" max="32767" attributes="0"/>
+                      <Component id="butSucheZuruck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1656,14 +1656,6 @@
                 <Property name="text" type="java.lang.String" value="in:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButtonSucheZuruck">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Zur&#xfc;ck"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSucheZuruckActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabelSucheDetailsName">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Name"/>
@@ -1691,6 +1683,14 @@
             <Component class="javax.swing.JTextField" name="jTextFieldSucheDetailsEmail">
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldSucheDetailsNummer">
+            </Component>
+            <Component class="javax.swing.JButton" name="butSucheZuruck">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Zur&#xfc;ck"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butSucheZuruckActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
