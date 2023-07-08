@@ -962,18 +962,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jListSuchergebnisse.setVisible(true);
     }//GEN-LAST:event_jButtonSuchenActionPerformed
 
-    private void jButtonSuchenDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuchenDetailsActionPerformed
-        // TODO add your handling code here:
-        //getIndex in telefonbucharray of selected item
-    }//GEN-LAST:event_jButtonSuchenDetailsActionPerformed
-
-    private void jButtonSucheZuruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSucheZuruckActionPerformed
-        // TODO add your handling code here:
-        CardLayout cl = (CardLayout) (cards.getLayout());
-        ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
-        //jListFuellen(telefonbuch);
-    }//GEN-LAST:event_jButtonSucheZuruckActionPerformed
-
     private void jListSuchergebnisseValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListSuchergebnisseValueChanged
         // TODO add your handling code here:
 
