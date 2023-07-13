@@ -14,6 +14,8 @@ import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.plaf.DimensionUIResource;
 
+import org.testng.TestListenerAdapter;
+
 //import org.testng.collections.Lists;
 
 /**
@@ -116,7 +118,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
-
+        telefonbuch = new Telefonbuch();
+        neueNummer = new Telefonnummer();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         cards.setLayout(new java.awt.CardLayout());
@@ -185,11 +188,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         kontaktAnlegen.add(textFieldeMailNeu, gridBagConstraints);
 
-        textfieldNummerNeu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldNummerNeuActionPerformed(evt);
-            }
-        });
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 8;
@@ -278,11 +277,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(jLabel1, gridBagConstraints);
 
-        jTextFieldBeschreibungNeu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBeschreibungNeuActionPerformed(evt);
-            }
-        });
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 10;
@@ -296,11 +291,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(neueNummer2, gridBagConstraints);
 
-        textfieldNeueNummer2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldNeueNummer2ActionPerformed(evt);
-            }
-        });
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 12;
@@ -342,11 +333,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(neueBeschreibung4, gridBagConstraints);
 
-        textfieldBeschreibung2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldBeschreibung2ActionPerformed(evt);
-            }
-        });
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 14;
@@ -372,6 +359,24 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.gridy = 22;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(textfieldBeschreibung4, gridBagConstraints);
+
+        
+            neueNummer2.setVisible(false);
+            neueBeschreibung2.setVisible(false);
+            textfieldBeschreibung2.setVisible(false);
+            textfieldNeueNummer2.setVisible(false);
+
+            neueNummer3.setVisible(false);
+            neueBeschreibung3.setVisible(false);
+            textfieldBeschreibung3.setVisible(false);
+            textfieldNeueNummer3.setVisible(false);
+
+            neueNummer4.setVisible(false);
+            neueBeschreibung4.setVisible(false);
+            textfieldBeschreibung4.setVisible(false);
+            textfieldNeueNummer4.setVisible(false);
+        
+
 
         cards.add(kontaktAnlegen, "cardKontaktAnlegen");
 
@@ -406,11 +411,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         detailsNummer.setText("Telefonnummer");
 
-        detailsNameText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                detailsNameTextActionPerformed(evt);
-            }
-        });
+
 
         butKontaktSpeichern.setText("Kontakt speichern");
         butKontaktSpeichern.addActionListener(new java.awt.event.ActionListener() {
@@ -492,20 +493,12 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         cards.add(alleKontakteAnzeigen, "cardAlleKontakteAnzeigen");
 
-        textSuche.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textSucheActionPerformed(evt);
-            }
-        });
+
 
         jLabel4.setText("Suche:");
 
         jRadioButtonName.setText("Name");
-        jRadioButtonName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonNameActionPerformed(evt);
-            }
-        });
+
 
         jRadioButtonAdresse.setText("Adresse");
 
@@ -713,9 +706,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         }
 //GEN-LAST:event_butStartBuchLadenActionPerformed
 
-    private void textfieldNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldNummerNeuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldNummerNeuActionPerformed
+
 
     private void butSpeichernNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSpeichernNeuActionPerformed
         //Neuer Kontakt erstellen
@@ -728,10 +719,31 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //Telefonnummer
         neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());
         neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());
+
+        if (zusNummerCounter == 1){
+            Telefonnummer neueNummer2 = new Telefonnummer();
+            neueNummer2.stringToTelefonnummer(textfieldNeueNummer2.getText());
+            neueNummer2.setBeschreibung(textfieldBeschreibung2.getText());
+            neuerKontakt.fuegeNrHinzu(neueNummer2);
+        }
+
+        if (zusNummerCounter == 2){
+            Telefonnummer neueNummer3 = new Telefonnummer();
+            neueNummer3.stringToTelefonnummer(textfieldNeueNummer3.getText());
+            neueNummer3.setBeschreibung(textfieldBeschreibung3.getText());
+            neuerKontakt.fuegeNrHinzu(neueNummer3);
+        }      
+        
+        if (zusNummerCounter == 3){
+            Telefonnummer neueNummer4 = new Telefonnummer();
+            neueNummer4.stringToTelefonnummer(textfieldNeueNummer4.getText());
+            neueNummer4.setBeschreibung(textfieldBeschreibung4.getText());
+            neuerKontakt.fuegeNrHinzu(neueNummer4);
+        } 
         //Telefonnummer zu Kontakt hinzufügen
         neuerKontakt.fuegeNrHinzu(neueNummer);
 
-        //Kontakt hinzufügen
+        //Kontakt zu Telefonbuch hinzufügen
         telefonbuch.fuegeKontaktHinzu(neuerKontakt);
         
         //Textfelder resetten
@@ -740,10 +752,18 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         textFieldeMailNeu.setText("");
         textfieldNummerNeu.setText("");
         jTextFieldBeschreibungNeu.setText("");
+        textfieldNeueNummer2.setText("");
+        textfieldBeschreibung2.setText("");
+        textfieldNeueNummer3.setText("");
+        textfieldBeschreibung3.setText("");
+        textfieldNeueNummer4.setText("");
+        textfieldBeschreibung4.setText("");
         jListFuellen(telefonbuch);
+        //counter resetten
+        
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
-        
+        zusNummerCounter = 0;
         //-> card AllekOntakteanzeigen
     }//GEN-LAST:event_butSpeichernNeuActionPerformed
 
@@ -871,7 +891,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
 
     private void butKontaktSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktSpeichernActionPerformed
-
+        //Kontakt im Telefonbuch ändern
         // TODO add your handling code here:
                 //Auswahl index
         int index = jList1.getSelectedIndex();
@@ -885,13 +905,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         details.setEmail(detailsEmailText.getText());
         neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());
         neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());
-        //neueNummer = Long.parseLong(textfieldNummerNeu.getText());
-        //neueNummer.setNummer(textfieldNummerNeu.getText());
-        //neueNummer = textfieldNummerNeu.getText();
         details.fuegeNrHinzu(neueNummer);
-
-        //details.
-        //jListFuellen(telefonbuch);
         
     }//GEN-LAST:event_butKontaktSpeichernActionPerformed
 
@@ -900,10 +914,17 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //Springe zu Card "Neuer Kontakt anlegen"
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardKontaktAnlegen");
+        zusNummerCounter = 0;
+        revalidate();
+        repaint();
     }//GEN-LAST:event_menuNeuerKontaktActionPerformed
 
     private void butCancelNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelNeuActionPerformed
         // TODO add your handling code here:
+        //counter resetten
+        zusNummerCounter = 0;
+        revalidate();
+        repaint();
         //Springe zu Card "Alle Kontakte anzeigen"
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
@@ -911,21 +932,27 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     private void butZusNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butZusNummerNeuActionPerformed
         // TODO add your handling code here:
-        //getContentPane();
-        JTextField zusNummerText = new JTextField(); 
-        GridBagConstraints gridBagConstraintsZusNummer = new java.awt.GridBagConstraints();
-        gridBagConstraintsZusNummer.gridx = 3;
-        gridBagConstraintsZusNummer.gridy = 6;
-        gridBagConstraintsZusNummer.gridwidth = 2;
-        gridBagConstraintsZusNummer.ipadx = 177;
-        gridBagConstraintsZusNummer.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraintsZusNummer.insets = new java.awt.Insets(18, 6, 0, 344);
-        kontaktAnlegen.add(zusNummerText, gridBagConstraintsZusNummer);
+        zusNummerCounter++;
 
-        gridBagConstraintsZusNummer.gridy++;
-        
-        revalidate();
-        repaint();
+        if (zusNummerCounter == 1){
+            neueNummer2.setVisible(true);
+            neueBeschreibung2.setVisible(true);
+            textfieldBeschreibung2.setVisible(true);
+            textfieldNeueNummer2.setVisible(true);
+        }
+        if (zusNummerCounter == 2){
+            neueNummer3.setVisible(true);
+            neueBeschreibung3.setVisible(true);
+            textfieldBeschreibung3.setVisible(true);
+            textfieldNeueNummer3.setVisible(true);
+        }
+        if (zusNummerCounter == 3){
+            neueNummer4.setVisible(true);
+            neueBeschreibung4.setVisible(true);
+            textfieldBeschreibung4.setVisible(true);
+            textfieldNeueNummer4.setVisible(true);
+        }
+
     }//GEN-LAST:event_butZusNummerNeuActionPerformed
 
     private void butKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktSuchenActionPerformed
@@ -1008,11 +1035,13 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         Kontakt suchDetails = new Kontakt();
         suchDetails.setName(details.getName());
         suchDetails.setAdresse(details.getAdresse());
+        suchDetails.setEmail(details.getEmail());
+        suchDetails.setNummern(details.getNummern());
         //Textfelder befüllen
         jTextFieldSucheDetailsName.setText(suchDetails.getName());
-        jTextFieldSucheDetailsAdresse.setText(details.getAdresse());
-        jTextFieldSucheDetailsEmail.setText(details.getEmail());
-        jTextFieldSucheDetailsNummer.setText(details.getNummern().toString());
+        jTextFieldSucheDetailsAdresse.setText(suchDetails.getAdresse());
+        jTextFieldSucheDetailsEmail.setText(suchDetails.getEmail());
+        jTextFieldSucheDetailsNummer.setText(suchDetails.getNummern().toString());
     }//GEN-LAST:event_jListSuchergebnisseValueChanged
 
     private void butStartBuchNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartBuchNeuActionPerformed
@@ -1029,13 +1058,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
     }//GEN-LAST:event_butSucheZuruckActionPerformed
 
-    private void textfieldNeueNummer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldNeueNummer2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldNeueNummer2ActionPerformed
-
-    private void textfieldBeschreibung2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldBeschreibung2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldBeschreibung2ActionPerformed
 
 
 
@@ -1151,5 +1173,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textfieldNeueNummer3;
     private javax.swing.JTextField textfieldNeueNummer4;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch telefonbuch;
+    private Telefonbuch suchergebnisse;
+    private Telefonnummer neueNummer;
+    private int zusNummerCounter =0;
     // End of variables declaration//GEN-END:variables
 }
