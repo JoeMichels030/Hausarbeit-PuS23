@@ -683,7 +683,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontakt.add(menuKontaktLoeschen);
 
         menueleiste.add(menuKontakt);
-
+        menuKontakt.setEnabled(false);
         setJMenuBar(menueleiste);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
