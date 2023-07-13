@@ -915,6 +915,20 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardKontaktAnlegen");
         zusNummerCounter = 0;
+        neueNummer2.setVisible(false);
+        neueBeschreibung2.setVisible(false);
+        textfieldBeschreibung2.setVisible(false);
+        textfieldNeueNummer2.setVisible(false);
+
+        neueNummer3.setVisible(false);
+        neueBeschreibung3.setVisible(false);
+        textfieldBeschreibung3.setVisible(false);
+        textfieldNeueNummer3.setVisible(false);
+
+        neueNummer4.setVisible(false);
+        neueBeschreibung4.setVisible(false);
+        textfieldBeschreibung4.setVisible(false);
+        textfieldNeueNummer4.setVisible(false);
         revalidate();
         repaint();
     }//GEN-LAST:event_menuNeuerKontaktActionPerformed
@@ -923,6 +937,20 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         // TODO add your handling code here:
         //counter resetten
         zusNummerCounter = 0;
+        neueNummer2.setVisible(false);
+        neueBeschreibung2.setVisible(false);
+        textfieldBeschreibung2.setVisible(false);
+        textfieldNeueNummer2.setVisible(false);
+
+        neueNummer3.setVisible(false);
+        neueBeschreibung3.setVisible(false);
+        textfieldBeschreibung3.setVisible(false);
+        textfieldNeueNummer3.setVisible(false);
+
+        neueNummer4.setVisible(false);
+        neueBeschreibung4.setVisible(false);
+        textfieldBeschreibung4.setVisible(false);
+        textfieldNeueNummer4.setVisible(false);
         revalidate();
         repaint();
         //Springe zu Card "Alle Kontakte anzeigen"
