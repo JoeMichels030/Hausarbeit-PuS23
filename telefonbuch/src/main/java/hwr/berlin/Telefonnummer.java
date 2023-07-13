@@ -35,7 +35,7 @@ public class Telefonnummer implements Serializable{
 
     public Telefonnummer  stringToTelefonnummer(String string){
         Telefonnummer nummerAlsTelefonnummer = new Telefonnummer();
-        nummer = Long.parseLong(string);
+        this.nummer = Long.parseLong(string);
         return nummerAlsTelefonnummer;
 
     }

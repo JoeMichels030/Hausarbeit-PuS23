@@ -104,6 +104,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
+        telefonbuch = new Telefonbuch();
+        neueNummer = new Telefonnummer();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -263,11 +265,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(jLabel1, gridBagConstraints);
 
-        jTextFieldBeschreibungNeu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBeschreibungNeuActionPerformed(evt);
-            }
-        });
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 10;
@@ -307,11 +305,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         detailsNummer.setText("Telefonnummer");
 
-        detailsNameText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                detailsNameTextActionPerformed(evt);
-            }
-        });
+
 
         butKontaktSpeichern.setText("Kontakt speichern");
         butKontaktSpeichern.addActionListener(new java.awt.event.ActionListener() {
@@ -393,20 +387,12 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         cards.add(alleKontakteAnzeigen, "cardAlleKontakteAnzeigen");
 
-        textSuche.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textSucheActionPerformed(evt);
-            }
-        });
+
 
         jLabel4.setText("Suche:");
 
         jRadioButtonName.setText("Name");
-        jRadioButtonName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonNameActionPerformed(evt);
-            }
-        });
+
 
         jRadioButtonAdresse.setText("Adresse");
 
@@ -591,6 +577,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontakt.add(menuKontaktLoeschen);
 
         menueleiste.add(menuKontakt);
+        menuKontakt.setEnabled(false);
 
         setJMenuBar(menueleiste);
 
@@ -626,26 +613,21 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         neuerKontakt.setName(textFieldNameNeu.getText());
         neuerKontakt.setAdresse(textFieldAdresseNeu.getText());
         neuerKontakt.setEmail(textFieldeMailNeu.getText());
-
-        String neueNummer = textfieldNummerNeu.getText();
-        Telefonnummer neu = new Telefonnummer();
-        
-        
-       // neu.setNummer();
-        //long neu = Long.parseLong(neueNummer);
-        neuerKontakt.fuegeNrHinzu(neu);
+        //Telefonnummer
+        neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());
+        neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());
+        //Telefonnummer zu Kontakt hinzufügen
+        neuerKontakt.fuegeNrHinzu(neueNummer);
 
         //Kontakt hinzufügen
         telefonbuch.fuegeKontaktHinzu(neuerKontakt);
         
-        //jListe aktualisieren
-        //jListFuellen(telefonbuch);
-
         //Textfelder resetten
         textFieldNameNeu.setText("");
         textFieldAdresseNeu.setText("");
         textFieldeMailNeu.setText("");
         textfieldNummerNeu.setText("");
+        jTextFieldBeschreibungNeu.setText("");
         jListFuellen(telefonbuch);
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
@@ -781,6 +763,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         // TODO add your handling code here:
                 //Auswahl index
         int index = jList1.getSelectedIndex();
+        //Telefonnummer neueNummer = new Telefonnummer();
 
         //Kontakt auslesen
         Kontakt details = telefonbuch.telefonbuchArray.get(index);
@@ -788,8 +771,15 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         details.setName(detailsNameText.getText());
         details.setAdresse(detailsAdresseText.getText());
         details.setEmail(detailsEmailText.getText());
-        //details.setNummern(jTextAreaNummern.getText());
-        jListFuellen(telefonbuch);
+        neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());
+        neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());
+        //neueNummer = Long.parseLong(textfieldNummerNeu.getText());
+        //neueNummer.setNummer(textfieldNummerNeu.getText());
+        //neueNummer = textfieldNummerNeu.getText();
+        details.fuegeNrHinzu(neueNummer);
+
+        //details.
+        //jListFuellen(telefonbuch);
         
     }//GEN-LAST:event_butKontaktSpeichernActionPerformed
 
@@ -927,9 +917,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
     }//GEN-LAST:event_butSucheZuruckActionPerformed
 
-    private void jTextFieldBeschreibungNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBeschreibungNeuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBeschreibungNeuActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -1031,5 +1019,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldeMailNeu;
     private javax.swing.JTextField textSuche;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch telefonbuch;
+    private Telefonbuch suchergebnisse;
+    private Telefonnummer neueNummer;
     // End of variables declaration//GEN-END:variables
 }
