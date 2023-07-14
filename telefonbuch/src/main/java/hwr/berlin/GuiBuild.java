@@ -744,6 +744,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //Telefonnummer zu Kontakt hinzufügen
         neuerKontakt.fuegeNrHinzu(neueNummer);
 
+        //Fehlermeldungen
+        //Icons
         //Kontakt zu Telefonbuch hinzufügen
         telefonbuch.fuegeKontaktHinzu(neuerKontakt);
         
@@ -872,7 +874,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 
                 } catch (IOException e) {
                     System.out.println("Fehler beim erstellen einer neuen Datei");
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
             //TODO Cancel Button Action1
