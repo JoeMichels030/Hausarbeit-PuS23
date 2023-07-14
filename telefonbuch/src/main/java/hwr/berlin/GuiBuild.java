@@ -119,6 +119,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
         telefonbuch = new Telefonbuch();
+        suchergebnisse = new Telefonbuch();
         neueNummer = new Telefonnummer();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -361,20 +362,20 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         kontaktAnlegen.add(textfieldBeschreibung4, gridBagConstraints);
 
         
-            neueNummer2.setVisible(false);
-            neueBeschreibung2.setVisible(false);
-            textfieldBeschreibung2.setVisible(false);
-            textfieldNeueNummer2.setVisible(false);
+        neueNummer2.setVisible(false);
+        neueBeschreibung2.setVisible(false);
+        textfieldBeschreibung2.setVisible(false);
+        textfieldNeueNummer2.setVisible(false);
 
-            neueNummer3.setVisible(false);
-            neueBeschreibung3.setVisible(false);
-            textfieldBeschreibung3.setVisible(false);
-            textfieldNeueNummer3.setVisible(false);
+        neueNummer3.setVisible(false);
+        neueBeschreibung3.setVisible(false);
+        textfieldBeschreibung3.setVisible(false);
+        textfieldNeueNummer3.setVisible(false);
 
-            neueNummer4.setVisible(false);
-            neueBeschreibung4.setVisible(false);
-            textfieldBeschreibung4.setVisible(false);
-            textfieldNeueNummer4.setVisible(false);
+        neueNummer4.setVisible(false);
+        neueBeschreibung4.setVisible(false);
+        textfieldBeschreibung4.setVisible(false);
+        textfieldNeueNummer4.setVisible(false);
         
 
 
@@ -696,7 +697,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
+        
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -720,21 +721,21 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());
         neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());
 
-        if (zusNummerCounter == 1){
+        if (1 <= zusNummerCounter && zusNummerCounter <4){
             Telefonnummer neueNummer2 = new Telefonnummer();
             neueNummer2.stringToTelefonnummer(textfieldNeueNummer2.getText());
             neueNummer2.setBeschreibung(textfieldBeschreibung2.getText());
             neuerKontakt.fuegeNrHinzu(neueNummer2);
         }
 
-        if (zusNummerCounter == 2){
+        if (2 <= zusNummerCounter && zusNummerCounter < 4){
             Telefonnummer neueNummer3 = new Telefonnummer();
             neueNummer3.stringToTelefonnummer(textfieldNeueNummer3.getText());
             neueNummer3.setBeschreibung(textfieldBeschreibung3.getText());
             neuerKontakt.fuegeNrHinzu(neueNummer3);
         }      
         
-        if (zusNummerCounter == 3){
+        if (3 <= zusNummerCounter && zusNummerCounter < 4){
             Telefonnummer neueNummer4 = new Telefonnummer();
             neueNummer4.stringToTelefonnummer(textfieldNeueNummer4.getText());
             neueNummer4.setBeschreibung(textfieldBeschreibung4.getText());
@@ -759,11 +760,27 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         textfieldNeueNummer4.setText("");
         textfieldBeschreibung4.setText("");
         jListFuellen(telefonbuch);
+        neueNummer2.setVisible(false);
+        neueBeschreibung2.setVisible(false);
+        textfieldBeschreibung2.setVisible(false);
+        textfieldNeueNummer2.setVisible(false);
+
+        neueNummer3.setVisible(false);
+        neueBeschreibung3.setVisible(false);
+        textfieldBeschreibung3.setVisible(false);
+        textfieldNeueNummer3.setVisible(false);
+
+        neueNummer4.setVisible(false);
+        neueBeschreibung4.setVisible(false);
+        textfieldBeschreibung4.setVisible(false);
+        textfieldNeueNummer4.setVisible(false);
+        revalidate();
+        repaint();
         //counter resetten
+        zusNummerCounter = 0;
         
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
-        zusNummerCounter = 0;
         //-> card AllekOntakteanzeigen
     }//GEN-LAST:event_butSpeichernNeuActionPerformed
 
@@ -883,7 +900,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         detailsNameText.setText(details.getName());
         detailsAdresseText.setText(details.getAdresse());
         detailsEmailText.setText(details.getEmail());
-        jTextAreaNummern.setText(details.getNummern().toString());
+        jTextAreaNummern.setText(details.nummernToString());
+       // System.out.println("toString");
+       // System.out.println(details.getNummern().toString1());
        // for (int i = 0; i<=details.nummern.size();i++){
        //     jTextAreaNummern.setText(details.nummernToString());
        // }
@@ -1011,7 +1030,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //Kontakt suchErgebnis = new Kontakt();
         DefaultListModel<String> model = new DefaultListModel<>();
         String suchString = textSuche.getText();
-        Telefonbuch suchergebnisse = new Telefonbuch();
+       
 
         for (Kontakt kontakt:telefonbuch.telefonbuchArray){
 
@@ -1069,7 +1088,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jTextFieldSucheDetailsName.setText(suchDetails.getName());
         jTextFieldSucheDetailsAdresse.setText(suchDetails.getAdresse());
         jTextFieldSucheDetailsEmail.setText(suchDetails.getEmail());
-        jTextFieldSucheDetailsNummer.setText(suchDetails.getNummern().toString());
+        jTextFieldSucheDetailsNummer.setText(suchDetails.nummernToString());
     }//GEN-LAST:event_jListSuchergebnisseValueChanged
 
     private void butStartBuchNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartBuchNeuActionPerformed

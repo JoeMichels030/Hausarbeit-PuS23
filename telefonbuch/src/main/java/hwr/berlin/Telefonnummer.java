@@ -6,6 +6,7 @@ public class Telefonnummer implements Serializable{
     private long nummer;
     private String beschreibung;
     private static final long serialVersionUID = -1L;
+    private static final Telefonnummer[] Kontakt = null;
 
 
     public Telefonnummer(){
@@ -48,8 +49,11 @@ public class Telefonnummer implements Serializable{
 
     @Override
     public String toString() {
-        return  nummer + " : " + beschreibung + "\n";
+        return  nummer + ": " + beschreibung;
     }
+
+
+
 
     
 }

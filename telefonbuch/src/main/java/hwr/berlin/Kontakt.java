@@ -79,19 +79,20 @@ public class Kontakt implements Serializable {
         }
     }
 
+
     public String nummernToString(){
         String nummerToString = "";
 
         for (Telefonnummer nummer: nummern){
-            nummerToString += nummer.telefonnummerToString() + " \n" ;
+            nummerToString += nummer.telefonnummerToString() + " : "+nummer.getBeschreibung() +" \n" ;
             
         }
         return nummerToString;
     }
 
     // toString
-    @Override
-    public String toString() {
+   // @Override
+    public String NummerArraytoString1() {
         return nummern + " \n";
     }
 }
