@@ -10,6 +10,7 @@ import java.io.IOException;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 //import org.testng.collections.Lists;
@@ -117,6 +118,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         telefonbuch = new Telefonbuch();
         suchergebnisse = new Telefonbuch();
         neueNummer = new Telefonnummer();
+        fehlermeldung = new javax.swing.JOptionPane();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         cards.setLayout(new java.awt.CardLayout());
@@ -713,81 +715,92 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     //Fügt Kontakt zu Telefonbuch hinzu
     //Resettet danach den Counter und die Eingabefelder und springt zu "Alle Kontakte anzeigen"
     private void butSpeichernNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSpeichernNeuActionPerformed
+        int status = 1;
+        
         //Neuer Kontakt erstellen
         Kontakt neuerKontakt = new Kontakt();
 
-        //Text aus Textfeld als Attribute speichern
+
         neuerKontakt.setName(textFieldNameNeu.getText());
         neuerKontakt.setAdresse(textFieldAdresseNeu.getText());
         neuerKontakt.setEmail(textFieldeMailNeu.getText());
+
         //Telefonnummer
         neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());
         neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());
+
+        if (textFieldNameNeu.getText().isEmpty() && status == 1){
+            JOptionPane.showMessageDialog(null, "Bitte geben Sie einen Namen ein.");
+        }
 
         if (1 <= zusNummerCounter && zusNummerCounter <4){
             Telefonnummer neueNummer2 = new Telefonnummer();
             neueNummer2.stringToTelefonnummer(textfieldNeueNummer2.getText());
             neueNummer2.setBeschreibung(textfieldBeschreibung2.getText());
             neuerKontakt.fuegeNrHinzu(neueNummer2);
-        }
+          }
 
-        if (2 <= zusNummerCounter && zusNummerCounter < 4){
+         if (2 <= zusNummerCounter && zusNummerCounter < 4){
             Telefonnummer neueNummer3 = new Telefonnummer();
             neueNummer3.stringToTelefonnummer(textfieldNeueNummer3.getText());
             neueNummer3.setBeschreibung(textfieldBeschreibung3.getText());
             neuerKontakt.fuegeNrHinzu(neueNummer3);
-        }      
+         }      
         
         if (3 <= zusNummerCounter && zusNummerCounter < 4){
             Telefonnummer neueNummer4 = new Telefonnummer();
             neueNummer4.stringToTelefonnummer(textfieldNeueNummer4.getText());
             neueNummer4.setBeschreibung(textfieldBeschreibung4.getText());
             neuerKontakt.fuegeNrHinzu(neueNummer4);
-        } 
-        //Telefonnummer zu Kontakt hinzufügen
-        neuerKontakt.fuegeNrHinzu(neueNummer);
+            } 
 
-        //Fehlermeldungen
-        //Icons
-        //Kontakt zu Telefonbuch hinzufügen
-        telefonbuch.fuegeKontaktHinzu(neuerKontakt);
-        
-        //Textfelder resetten
-        textFieldNameNeu.setText("");
-        textFieldAdresseNeu.setText("");
-        textFieldeMailNeu.setText("");
-        textfieldNummerNeu.setText("");
-        jTextFieldBeschreibungNeu.setText("");
-        textfieldNeueNummer2.setText("");
-        textfieldBeschreibung2.setText("");
-        textfieldNeueNummer3.setText("");
-        textfieldBeschreibung3.setText("");
-        textfieldNeueNummer4.setText("");
-        textfieldBeschreibung4.setText("");
-        jListFuellen(telefonbuch);
-        neueNummer2.setVisible(false);
-        neueBeschreibung2.setVisible(false);
-        textfieldBeschreibung2.setVisible(false);
-        textfieldNeueNummer2.setVisible(false);
+            //Telefonnummer zu Kontakt hinzufügen
+            neuerKontakt.fuegeNrHinzu(neueNummer);
 
-        neueNummer3.setVisible(false);
-        neueBeschreibung3.setVisible(false);
-        textfieldBeschreibung3.setVisible(false);
-        textfieldNeueNummer3.setVisible(false);
+            //Kontakt zu Telefonbuch hinzufügen
+            telefonbuch.fuegeKontaktHinzu(neuerKontakt);
 
-        neueNummer4.setVisible(false);
-        neueBeschreibung4.setVisible(false);
-        textfieldBeschreibung4.setVisible(false);
-        textfieldNeueNummer4.setVisible(false);
-        revalidate();
-        repaint();
-        //counter resetten
-        zusNummerCounter = 0;
-        
+            //Textfelder resetten
+            status = 0;
+            textFieldNameNeu.setText("");
+            textFieldAdresseNeu.setText("");
+            textFieldeMailNeu.setText("");
+            textfieldNummerNeu.setText("");
+            jTextFieldBeschreibungNeu.setText("");
+            textfieldNeueNummer2.setText("");
+            textfieldBeschreibung2.setText("");
+            textfieldNeueNummer3.setText("");
+            textfieldBeschreibung3.setText("");
+            textfieldNeueNummer4.setText("");
+            textfieldBeschreibung4.setText("");
+            jListFuellen(telefonbuch);
+            neueNummer2.setVisible(false);
+            neueBeschreibung2.setVisible(false);
+            textfieldBeschreibung2.setVisible(false);
+            textfieldNeueNummer2.setVisible(false);
+
+            neueNummer3.setVisible(false);
+            neueBeschreibung3.setVisible(false);
+            textfieldBeschreibung3.setVisible(false);
+            textfieldNeueNummer3.setVisible(false);
+
+            neueNummer4.setVisible(false);
+            neueBeschreibung4.setVisible(false);
+            textfieldBeschreibung4.setVisible(false);
+            textfieldNeueNummer4.setVisible(false);
+            revalidate();
+            repaint();
+            //counter resetten
+            zusNummerCounter = 0;
+            
+
+
+
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
+    }
         //-> card AllekOntakteanzeigen
-    }//GEN-LAST:event_butSpeichernNeuActionPerformed
+    //GEN-LAST:event_butSpeichernNeuActionPerformed
 
     //mit getSelectedIndex den aktuellen Index abfragen (Kontakt auswählen)
     //Kontakt aus Telefonbuch löschen
@@ -919,11 +932,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         detailsAdresseText.setText(details.getAdresse());
         detailsEmailText.setText(details.getEmail());
         jTextAreaNummern.setText(details.nummernToString());
-       // System.out.println("toString");
-       // System.out.println(details.getNummern().toString1());
-       // for (int i = 0; i<=details.nummern.size();i++){
-       //     jTextAreaNummern.setText(details.nummernToString());
-       // }
+
     }//GEN-LAST:event_jList1ValueChanged
 
 
@@ -1261,5 +1270,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private Telefonbuch suchergebnisse;
     private Telefonnummer neueNummer;
     private int zusNummerCounter =0;
+    private JOptionPane fehlermeldung;
     // End of variables declaration//GEN-END:variables
 }
