@@ -75,9 +75,9 @@ public class Telefonbuch implements Serializable {
 
         } catch (FileNotFoundException e) {
             
-            e.printStackTrace();
+          //  e.printStackTrace();
         } catch (IOException e){
-            e.printStackTrace();
+          //  e.printStackTrace();
         }
        
     }
@@ -92,9 +92,9 @@ public class Telefonbuch implements Serializable {
             System.out.println("Telefonbuch erfolgreich geladen!");
         }
             catch (IOException e){
-                e.printStackTrace();
+               // e.printStackTrace();
             } catch (ClassNotFoundException e){
-                e.printStackTrace();
+               // e.printStackTrace();
             }
     
         try {
@@ -104,6 +104,8 @@ public class Telefonbuch implements Serializable {
         }
         return telefonbuchArray; 
     }
+
+    
 }
 
   
