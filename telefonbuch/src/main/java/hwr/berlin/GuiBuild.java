@@ -946,6 +946,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         
     }//GEN-LAST:event_butKontaktSpeichernActionPerformed
 
+    //Bei Klick auf Menu "Neuer Kontakt"
+    //setze counter auf 0
+    //setze zusätliche Felder unsichtbar
     private void menuNeuerKontaktActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNeuerKontaktActionPerformed
         // TODO add your handling code here:
         //Springe zu Card "Neuer Kontakt anlegen"
@@ -970,6 +973,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         repaint();
     }//GEN-LAST:event_menuNeuerKontaktActionPerformed
 
+    //Button Neuer Kontakt -> Zurück
+    //Counter und Felder resetten
+    //Zu Alle Kontakte anzeigen springen
     private void butCancelNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelNeuActionPerformed
         // TODO add your handling code here:
         //counter resetten
@@ -995,6 +1001,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
     }//GEN-LAST:event_butCancelNeuActionPerformed
 
+    //Button zusätzliche Nummer
+    //Bei Klick erscheinen Textfelder für Nummer und Beschreibung
+    //Counter zählt wie oft der Button gedrückt wurde
     private void butZusNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butZusNummerNeuActionPerformed
         // TODO add your handling code here:
         zusNummerCounter++;
@@ -1020,6 +1029,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
     }//GEN-LAST:event_butZusNummerNeuActionPerformed
 
+    //Button Kontakt Suchen
+    //Springt zu Kontakt suchen
     private void butKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktSuchenActionPerformed
         // TODO add your handling code here:
         CardLayout cl = (CardLayout) (cards.getLayout());
@@ -1028,7 +1039,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     }//GEN-LAST:event_butKontaktSuchenActionPerformed
 
     
-
+    //Menu Kontakt suchen
     private void menuKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuKontaktSuchenActionPerformed
         // TODO add your handling code here:
         //jDialogSuchen.setVisible(true);
@@ -1042,6 +1053,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
     }//GEN-LAST:event_menuAlleKontakteAnzeigenActionPerformed
 
+
+    //User kann mittels Radiobutton auswählen wo gesucht werden soll, Mehrfachauswahl möglich
+    //Vergleicht input String mit den ausgewählten Feldern
+    //if true, fügt Kontakt zu neuen Telefonbuch Suchergebnisse hinzu
+    //Telefonbuch Suchergebnisse wird in der jList angezeigt
     private void jButtonSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuchenActionPerformed
         // TODO add your handling code here:
         
@@ -1087,6 +1103,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jListSuchergebnisse.setVisible(true);
     }//GEN-LAST:event_jButtonSuchenActionPerformed
 
+    //Anzeige Details eines Kontakts nach Suche in einer jList
     private void jListSuchergebnisseValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListSuchergebnisseValueChanged
         // TODO add your handling code here:
 
@@ -1109,6 +1126,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jTextFieldSucheDetailsNummer.setText(suchDetails.nummernToString());
     }//GEN-LAST:event_jListSuchergebnisseValueChanged
 
+    //Lädt ein neues, leeres Telefonbuch und springt zu Alle Kontakte anzeigen
     private void butStartBuchNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartBuchNeuActionPerformed
         // TODO add your handling code here:
         telefonbuch = new Telefonbuch();
@@ -1117,6 +1135,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontakt.setEnabled(true);
     }//GEN-LAST:event_butStartBuchNeuActionPerformed
 
+    
     private void butSucheZuruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSucheZuruckActionPerformed
         // TODO add your handling code here:
                 CardLayout cl = (CardLayout) (cards.getLayout());
