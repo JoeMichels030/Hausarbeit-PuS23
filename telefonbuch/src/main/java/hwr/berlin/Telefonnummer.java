@@ -7,32 +7,34 @@ public class Telefonnummer implements Serializable{
     private String beschreibung;
     private static final long serialVersionUID = -1L;
 
-
+    //Standard Konstruktor
     public Telefonnummer(){
         this.nummer = 0;
         this.beschreibung = null;
     }
 
-
+    //get Telefonnummer
     public long getNummer() {
         return nummer;
     }
 
-
+    //set Telefonnummer
     public void setNummer(long nummer) {
         this.nummer = nummer;
     }
 
-
+    //get Beschreibung
     public String getBeschreibung() {
         return beschreibung;
     }
 
-
+    //set Beschreibung
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
     }
 
+    //stringToTelefonnummer
+    //wandelt Eingabe (String) aus jTextfield in Telefonnummer um, String wird als long geparst
     public Telefonnummer  stringToTelefonnummer(String string){
         Telefonnummer nummerAlsTelefonnummer = new Telefonnummer();
         this.nummer = Long.parseLong(string);
@@ -40,12 +42,15 @@ public class Telefonnummer implements Serializable{
 
     }
 
+    //telefonnummerToString
+    //wandelt Telefonnummer in String um
     public String telefonnummerToString(){
         String nummerToString = Long.toString(nummer);
         return nummerToString;
     }
 
-
+    //Telefonnummer toString, Rückgabe der Telefonnummer als String
+    //Ausgabe
     @Override
     public String toString() {
         return  nummer + " : " + beschreibung + "\n";

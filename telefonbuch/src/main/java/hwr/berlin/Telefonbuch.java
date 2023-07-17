@@ -23,16 +23,18 @@ public class Telefonbuch implements Serializable {
     public ArrayList<Kontakt> telefonbuchArray;
     
     //Konstruktor
+    //Erstellt ein neues, leeres Telefonbuch
     public Telefonbuch() {
         ArrayList<Kontakt> telefonbuch = new ArrayList<>();
         this.telefonbuchArray = telefonbuch;
     }
 
+    //Erstellt ein neues Telefonbuch aus file
     public Telefonbuch(File file) {
         this.telefonbuchArray = buchLaden(file);
     }
 
-    //Kontakt zu ArrayList<Kontakt> hinzufügen
+    //Kontakt zu ArrayList<Kontakt> (Telefonbuch) hinzufügen
     public void fuegeKontaktHinzu(Kontakt kontakt) {
         telefonbuchArray.add(kontakt);
     }
@@ -42,7 +44,9 @@ public class Telefonbuch implements Serializable {
         telefonbuchArray.remove(kontakt);
     }
 
+    //Testmethode zum Überprüfen der geladenen/gespeicherten Werte
     //Kontakte anzeigen
+    //Ausgabe Telefonbuch in der Konsole
     public void alleKontakteAnzeigen() {
         for (Kontakt kontakt:telefonbuchArray){
             System.out.println(kontakt.getName());
@@ -53,6 +57,7 @@ public class Telefonbuch implements Serializable {
         System.out.println("Alle Kontakte erfolgreich angezeigt!");
     }
 
+    //??
     public String alleNameToStrings() {
         return  telefonbuchArray.toString();
     }

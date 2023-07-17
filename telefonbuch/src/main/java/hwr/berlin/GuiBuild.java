@@ -5,16 +5,12 @@
 
 package hwr.berlin;
 
-import java.awt.GridBagConstraints;
 import java.io.File;
 import java.io.IOException;
+
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
-import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.plaf.DimensionUIResource;
-
-import org.testng.TestListenerAdapter;
 
 //import org.testng.collections.Lists;
 
@@ -360,7 +356,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(textfieldBeschreibung4, gridBagConstraints);
 
-        
+        // Felder Zusätzliche Nummern + Beschreibung unsichtbar per Default, werden sichtbar durch klick auf Button "zusätzliche Nummer"
             neueNummer2.setVisible(false);
             neueBeschreibung2.setVisible(false);
             textfieldBeschreibung2.setVisible(false);
@@ -700,6 +696,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //wie menuLaden
     private void butStartBuchLadenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartBuchLadenActionPerformed
         //menuLadenActionPerformed lädt das Telefonbuch
         menuLadenActionPerformed(evt);
@@ -707,7 +704,13 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 //GEN-LAST:event_butStartBuchLadenActionPerformed
 
 
-
+    //Button Neuer Kontakt -> Speichern
+    //Erstellt neuen Kontakt, Zuweisung der Attribute per textfield.getText() und setter Methoden
+    //zusNummerCounter zählt wie oft der Button "zusätzliche Nummer" betätigt wurde
+    //Anzeige zusätzlicher Felder je nach Wert des Counters
+    //Fügt Telefonnummer zu Kontakt hinzu
+    //Fügt Kontakt zu Telefonbuch hinzu
+    //Resettet danach den Counter und die Eingabefelder und springt zu "Alle Kontakte anzeigen"
     private void butSpeichernNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSpeichernNeuActionPerformed
         //Neuer Kontakt erstellen
         Kontakt neuerKontakt = new Kontakt();
@@ -767,6 +770,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //-> card AllekOntakteanzeigen
     }//GEN-LAST:event_butSpeichernNeuActionPerformed
 
+    //mit getSelectedIndex den aktuellen Index abfragen (Kontakt auswählen)
+    //Kontakt aus Telefonbuch löschen
+    //Felder resetten
     private void butKontaktLoeschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktLoeschenActionPerformed
         // TODO add your handling code here:
                 //Auswahl index
@@ -791,6 +797,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_menuBeendenActionPerformed
 
+    //Füllt und aktualisiert die jList
+    //vielleicht überflüssig aber Programm läuft
     private void jListFuellen(Telefonbuch telefonbuch){
         //Befüllt und aktualisiert die jListe
         DefaultListModel<String> model = new DefaultListModel<>();
@@ -801,6 +809,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jList1.setModel(model);
     }
 
+    //Öffnet einen Filechooser mit "Telefonbuch" Filter und festgelegtem Ordner (Projektordner)
+    //Lädt die ausgewählte Datei als Telefonbuch
     private void menuLadenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLadenActionPerformed
         
         final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser";
@@ -810,22 +820,28 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         fc.addChoosableFileFilter(filter);
         int a = fc.showOpenDialog(null);
         
+        //Bei Klick auf "Öffnen"
         if (a == JFileChooser.APPROVE_OPTION) {
             File file = fc.getSelectedFile();
            
             System.out.println("Telefonbuch wurde geladen!");
             
             telefonbuch.buchLaden(file);
+
+            //Ausgabe in Konsole zur Verifizierung
             telefonbuch.alleKontakteAnzeigen();
            
+            //Springe zu "Alle Kontakte anzeigen"
             CardLayout cl = (CardLayout) (cards.getLayout());
             ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
 
             jListFuellen(telefonbuch);
+            //Menupunkt "Kontakt" wird enabled
             menuKontakt.setEnabled(true);
         } 
     }//GEN-LAST:event_menuLadenActionPerformed
 
+    //Öffnet Filechooser mit "Telefonbuch" Filter und festgelegtem Ordner
     private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSpeichernActionPerformed
         String filelocation = "telefonbuch/src/main/java/hwr/berlin/";                      // Standard Location für File
         JFileChooser fc = new JFileChooser(filelocation);  

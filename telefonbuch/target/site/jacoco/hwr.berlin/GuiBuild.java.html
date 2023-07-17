@@ -5,11 +5,16 @@
 
 package hwr.berlin;
 
+import java.awt.GridBagConstraints;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.plaf.DimensionUIResource;
+
+import org.testng.TestListenerAdapter;
 
 //import org.testng.collections.Lists;
 
@@ -24,9 +29,9 @@ public class GuiBuild&lt;CardLayout&gt; extends javax.swing.JFrame {
      * Creates new form GuiBuild
      */
     
-<span class="nc" id="L27">    public GuiBuild() {</span>
-<span class="nc" id="L28">        initComponents();</span>
-<span class="nc" id="L29">    }</span>
+<span class="nc" id="L32">    public GuiBuild() {</span>
+<span class="nc" id="L33">        initComponents();</span>
+<span class="nc" id="L34">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,526 +41,1053 @@ public class GuiBuild&lt;CardLayout&gt; extends javax.swing.JFrame {
     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-<span class="nc" id="L40">        cards = new javax.swing.JPanel();</span>
-<span class="nc" id="L41">        startWindow = new javax.swing.JPanel();</span>
-<span class="nc" id="L42">        butStartBuchLaden = new javax.swing.JButton();</span>
-<span class="nc" id="L43">        butStartBuchNeu = new javax.swing.JButton();</span>
-<span class="nc" id="L44">        kontaktAnlegen = new javax.swing.JPanel();</span>
-<span class="nc" id="L45">        textFieldNameNeu = new javax.swing.JTextField();</span>
-<span class="nc" id="L46">        textFieldAdresseNeu = new javax.swing.JTextField();</span>
-<span class="nc" id="L47">        textFieldeMailNeu = new javax.swing.JTextField();</span>
-<span class="nc" id="L48">        textfieldNummerNeu = new javax.swing.JTextField();</span>
-<span class="nc" id="L49">        labelNameNeu = new javax.swing.JLabel();</span>
-<span class="nc" id="L50">        labelAdresseNeu = new javax.swing.JLabel();</span>
-<span class="nc" id="L51">        labelEMailNeu = new javax.swing.JLabel();</span>
-<span class="nc" id="L52">        labelNummerNeu = new javax.swing.JLabel();</span>
-<span class="nc" id="L53">        butSpeichernNeu = new javax.swing.JButton();</span>
-<span class="nc" id="L54">        butZusNummerNeu = new javax.swing.JButton();</span>
-<span class="nc" id="L55">        butCancelNeu = new javax.swing.JButton();</span>
-<span class="nc" id="L56">        alleKontakteAnzeigen = new javax.swing.JPanel();</span>
-<span class="nc" id="L57">        listNamen = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L58">        jList1 = new javax.swing.JList&lt;&gt;();</span>
-<span class="nc" id="L59">        butKontaktSuchen = new javax.swing.JButton();</span>
-<span class="nc" id="L60">        butKontaktAnzeigen = new javax.swing.JButton();</span>
-<span class="nc" id="L61">        butKontaktLoeschen = new javax.swing.JButton();</span>
-<span class="nc" id="L62">        detailsName = new javax.swing.JLabel();</span>
-<span class="nc" id="L63">        detailsAdresse = new javax.swing.JLabel();</span>
-<span class="nc" id="L64">        detailsEmail = new javax.swing.JLabel();</span>
-<span class="nc" id="L65">        detailsNummer = new javax.swing.JLabel();</span>
-<span class="nc" id="L66">        detailsNameText = new javax.swing.JTextField();</span>
-<span class="nc" id="L67">        detailsAdresseText = new javax.swing.JTextField();</span>
-<span class="nc" id="L68">        detailsEmailText = new javax.swing.JTextField();</span>
-<span class="nc" id="L69">        detailsNummerText = new javax.swing.JTextField();</span>
-<span class="nc" id="L70">        butKontaktSpeichern = new javax.swing.JButton();</span>
-<span class="nc" id="L71">        menueleiste = new javax.swing.JMenuBar();</span>
-<span class="nc" id="L72">        menuTelefonbuch = new javax.swing.JMenu();</span>
-<span class="nc" id="L73">        menuLaden = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L74">        menuSpeichern = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L75">        menuBeenden = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L76">        menuKontakt = new javax.swing.JMenu();</span>
-<span class="nc" id="L77">        menuNeuerKontakt = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L78">        menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L79">        menuKontaktSuchen = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L80">        menuKontaktLoeschen = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L81">        telefonbuch = new Telefonbuch();</span>
-       
+<span class="nc" id="L46">        cards = new javax.swing.JPanel();</span>
+<span class="nc" id="L47">        startWindow = new javax.swing.JPanel();</span>
+<span class="nc" id="L48">        butStartBuchLaden = new javax.swing.JButton();</span>
+<span class="nc" id="L49">        butStartBuchNeu = new javax.swing.JButton();</span>
+<span class="nc" id="L50">        kontaktAnlegen = new javax.swing.JPanel();</span>
+<span class="nc" id="L51">        textFieldNameNeu = new javax.swing.JTextField();</span>
+<span class="nc" id="L52">        textFieldAdresseNeu = new javax.swing.JTextField();</span>
+<span class="nc" id="L53">        textFieldeMailNeu = new javax.swing.JTextField();</span>
+<span class="nc" id="L54">        textfieldNummerNeu = new javax.swing.JTextField();</span>
+<span class="nc" id="L55">        labelNameNeu = new javax.swing.JLabel();</span>
+<span class="nc" id="L56">        labelAdresseNeu = new javax.swing.JLabel();</span>
+<span class="nc" id="L57">        labelEMailNeu = new javax.swing.JLabel();</span>
+<span class="nc" id="L58">        labelNummerNeu = new javax.swing.JLabel();</span>
+<span class="nc" id="L59">        butSpeichernNeu = new javax.swing.JButton();</span>
+<span class="nc" id="L60">        butZusNummerNeu = new javax.swing.JButton();</span>
+<span class="nc" id="L61">        butCancelNeu = new javax.swing.JButton();</span>
+<span class="nc" id="L62">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L63">        jTextFieldBeschreibungNeu = new javax.swing.JTextField();</span>
+<span class="nc" id="L64">        neueNummer2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L65">        textfieldNeueNummer2 = new javax.swing.JTextField();</span>
+<span class="nc" id="L66">        neueBeschreibung2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L67">        neueNummer3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L68">        neueBeschreibung3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L69">        neueNummer4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L70">        neueBeschreibung4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L71">        textfieldBeschreibung2 = new javax.swing.JTextField();</span>
+<span class="nc" id="L72">        textfieldNeueNummer3 = new javax.swing.JTextField();</span>
+<span class="nc" id="L73">        textfieldBeschreibung3 = new javax.swing.JTextField();</span>
+<span class="nc" id="L74">        textfieldNeueNummer4 = new javax.swing.JTextField();</span>
+<span class="nc" id="L75">        textfieldBeschreibung4 = new javax.swing.JTextField();</span>
+<span class="nc" id="L76">        alleKontakteAnzeigen = new javax.swing.JPanel();</span>
+<span class="nc" id="L77">        listNamen = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L78">        jList1 = new javax.swing.JList&lt;&gt;();</span>
+<span class="nc" id="L79">        butKontaktSuchen = new javax.swing.JButton();</span>
+<span class="nc" id="L80">        butKontaktLoeschen = new javax.swing.JButton();</span>
+<span class="nc" id="L81">        detailsName = new javax.swing.JLabel();</span>
+<span class="nc" id="L82">        detailsAdresse = new javax.swing.JLabel();</span>
+<span class="nc" id="L83">        detailsEmail = new javax.swing.JLabel();</span>
+<span class="nc" id="L84">        detailsNummer = new javax.swing.JLabel();</span>
+<span class="nc" id="L85">        detailsNameText = new javax.swing.JTextField();</span>
+<span class="nc" id="L86">        detailsAdresseText = new javax.swing.JTextField();</span>
+<span class="nc" id="L87">        detailsEmailText = new javax.swing.JTextField();</span>
+<span class="nc" id="L88">        butKontaktSpeichern = new javax.swing.JButton();</span>
+<span class="nc" id="L89">        jScrollPane2 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L90">        jTextAreaNummern = new javax.swing.JTextArea();</span>
+<span class="nc" id="L91">        panelKontaktSuchen = new javax.swing.JPanel();</span>
+<span class="nc" id="L92">        textSuche = new javax.swing.JTextField();</span>
+<span class="nc" id="L93">        jLabel4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L94">        jRadioButtonName = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L95">        jRadioButtonAdresse = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L96">        jRadioButtonEmailSuche = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L97">        jRadioButtonNummer = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L98">        jButtonSuchen = new javax.swing.JButton();</span>
+<span class="nc" id="L99">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L100">        jListSuchergebnisse = new javax.swing.JList&lt;&gt;();</span>
+<span class="nc" id="L101">        jLabel5 = new javax.swing.JLabel();</span>
+<span class="nc" id="L102">        jLabelSucheDetailsName = new javax.swing.JLabel();</span>
+<span class="nc" id="L103">        jLabel6 = new javax.swing.JLabel();</span>
+<span class="nc" id="L104">        jLabel7 = new javax.swing.JLabel();</span>
+<span class="nc" id="L105">        jLabel8 = new javax.swing.JLabel();</span>
+<span class="nc" id="L106">        jTextFieldSucheDetailsName = new javax.swing.JTextField();</span>
+<span class="nc" id="L107">        jTextFieldSucheDetailsAdresse = new javax.swing.JTextField();</span>
+<span class="nc" id="L108">        jTextFieldSucheDetailsEmail = new javax.swing.JTextField();</span>
+<span class="nc" id="L109">        jTextFieldSucheDetailsNummer = new javax.swing.JTextField();</span>
+<span class="nc" id="L110">        butSucheZuruck = new javax.swing.JButton();</span>
+<span class="nc" id="L111">        menueleiste = new javax.swing.JMenuBar();</span>
+<span class="nc" id="L112">        menuTelefonbuch = new javax.swing.JMenu();</span>
+<span class="nc" id="L113">        menuLaden = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L114">        menuSpeichern = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L115">        menuBeenden = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L116">        menuKontakt = new javax.swing.JMenu();</span>
+<span class="nc" id="L117">        menuNeuerKontakt = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L118">        menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L119">        menuKontaktSuchen = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L120">        menuKontaktLoeschen = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L121">        telefonbuch = new Telefonbuch();</span>
+<span class="nc" id="L122">        neueNummer = new Telefonnummer();</span>
+<span class="nc" id="L123">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
 
-<span class="nc" id="L84">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L125">        cards.setLayout(new java.awt.CardLayout());</span>
 
-<span class="nc" id="L86">        cards.setLayout(new java.awt.CardLayout());</span>
-
-<span class="nc" id="L88">        butStartBuchLaden.setText(&quot;Telefonbuch laden&quot;);</span>
-<span class="nc" id="L89">        butStartBuchLaden.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L127">        butStartBuchLaden.setText(&quot;Telefonbuch laden&quot;);</span>
+<span class="nc" id="L128">        butStartBuchLaden.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L91">                butStartBuchLadenActionPerformed(evt);</span>
-<span class="nc" id="L92">            }</span>
+<span class="nc" id="L130">                butStartBuchLadenActionPerformed(evt);</span>
+<span class="nc" id="L131">            }</span>
         });
 
-<span class="nc" id="L95">        butStartBuchNeu.setText(&quot;Neues Telefonbuch anlegen&quot;);</span>
-
-<span class="nc" id="L97">        javax.swing.GroupLayout startWindowLayout = new javax.swing.GroupLayout(startWindow);</span>
-<span class="nc" id="L98">        startWindow.setLayout(startWindowLayout);</span>
-<span class="nc" id="L99">        startWindowLayout.setHorizontalGroup(</span>
-<span class="nc" id="L100">            startWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L101">            .addGroup(startWindowLayout.createSequentialGroup()</span>
-<span class="nc" id="L102">                .addGap(131, 131, 131)</span>
-<span class="nc" id="L103">                .addComponent(butStartBuchLaden)</span>
-<span class="nc" id="L104">                .addGap(128, 128, 128)</span>
-<span class="nc" id="L105">                .addComponent(butStartBuchNeu)</span>
-<span class="nc" id="L106">                .addContainerGap(416, Short.MAX_VALUE))</span>
-        );
-<span class="nc" id="L108">        startWindowLayout.setVerticalGroup(</span>
-<span class="nc" id="L109">            startWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L110">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startWindowLayout.createSequentialGroup()</span>
-<span class="nc" id="L111">                .addContainerGap(297, Short.MAX_VALUE)</span>
-<span class="nc" id="L112">                .addGroup(startWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L113">                    .addComponent(butStartBuchLaden)</span>
-<span class="nc" id="L114">                    .addComponent(butStartBuchNeu))</span>
-<span class="nc" id="L115">                .addGap(83, 83, 83))</span>
-        );
-
-<span class="nc" id="L118">        cards.add(startWindow, &quot;cardStartWindow&quot;);</span>
-
-<span class="nc" id="L120">        textfieldNummerNeu.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L134">        butStartBuchNeu.setText(&quot;Neues Telefonbuch anlegen&quot;);</span>
+<span class="nc" id="L135">        butStartBuchNeu.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L122">                textfieldNummerNeuActionPerformed(evt);</span>
-<span class="nc" id="L123">            }</span>
-        });
-
-<span class="nc" id="L126">        labelNameNeu.setText(&quot;Nachname, Vorname&quot;);</span>
-
-<span class="nc" id="L128">        labelAdresseNeu.setText(&quot;Adresse (Straße, NR, PLZ, Ort)&quot;);</span>
-
-<span class="nc" id="L130">        labelEMailNeu.setText(&quot;e-Mail Adresse&quot;);</span>
-
-<span class="nc" id="L132">        labelNummerNeu.setText(&quot;Telefonnummer&quot;);</span>
-
-<span class="nc" id="L134">        butSpeichernNeu.setText(&quot;Speichern&quot;);</span>
-<span class="nc" id="L135">        butSpeichernNeu.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L137">                butSpeichernNeuActionPerformed(evt);</span>
+<span class="nc" id="L137">                butStartBuchNeuActionPerformed(evt);</span>
 <span class="nc" id="L138">            }</span>
         });
 
-<span class="nc" id="L141">        butZusNummerNeu.setText(&quot;zusätzliche Telefonnummer&quot;);</span>
+<span class="nc" id="L141">        javax.swing.GroupLayout startWindowLayout = new javax.swing.GroupLayout(startWindow);</span>
+<span class="nc" id="L142">        startWindow.setLayout(startWindowLayout);</span>
+<span class="nc" id="L143">        startWindowLayout.setHorizontalGroup(</span>
+<span class="nc" id="L144">            startWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L145">            .addGroup(startWindowLayout.createSequentialGroup()</span>
+<span class="nc" id="L146">                .addGap(131, 131, 131)</span>
+<span class="nc" id="L147">                .addComponent(butStartBuchLaden)</span>
+<span class="nc" id="L148">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, Short.MAX_VALUE)</span>
+<span class="nc" id="L149">                .addComponent(butStartBuchNeu)</span>
+<span class="nc" id="L150">                .addGap(121, 121, 121))</span>
+        );
+<span class="nc" id="L152">        startWindowLayout.setVerticalGroup(</span>
+<span class="nc" id="L153">            startWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L154">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startWindowLayout.createSequentialGroup()</span>
+<span class="nc" id="L155">                .addContainerGap(374, Short.MAX_VALUE)</span>
+<span class="nc" id="L156">                .addGroup(startWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L157">                    .addComponent(butStartBuchLaden)</span>
+<span class="nc" id="L158">                    .addComponent(butStartBuchNeu))</span>
+<span class="nc" id="L159">                .addGap(83, 83, 83))</span>
+        );
 
-<span class="nc" id="L143">        butCancelNeu.setText(&quot;Zurück&quot;);</span>
-<span class="nc" id="L144">        butCancelNeu.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L162">        cards.add(startWindow, &quot;cardStartWindow&quot;);</span>
+
+<span class="nc" id="L164">        kontaktAnlegen.setAutoscrolls(true);</span>
+<span class="nc" id="L165">        java.awt.GridBagLayout kontaktAnlegenLayout1 = new java.awt.GridBagLayout();</span>
+<span class="nc" id="L166">        kontaktAnlegenLayout1.columnWidths = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};</span>
+<span class="nc" id="L167">        kontaktAnlegenLayout1.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};</span>
+<span class="nc" id="L168">        kontaktAnlegen.setLayout(kontaktAnlegenLayout1);</span>
+<span class="nc" id="L169">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L170">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L171">        gridBagConstraints.gridy = 2;</span>
+<span class="nc" id="L172">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L173">        gridBagConstraints.ipadx = 178;</span>
+<span class="nc" id="L174">        gridBagConstraints.ipady = 4;</span>
+<span class="nc" id="L175">        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;</span>
+<span class="nc" id="L176">        kontaktAnlegen.add(textFieldNameNeu, gridBagConstraints);</span>
+<span class="nc" id="L177">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L178">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L179">        gridBagConstraints.gridy = 4;</span>
+<span class="nc" id="L180">        gridBagConstraints.ipadx = 178;</span>
+<span class="nc" id="L181">        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;</span>
+<span class="nc" id="L182">        kontaktAnlegen.add(textFieldAdresseNeu, gridBagConstraints);</span>
+<span class="nc" id="L183">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L184">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L185">        gridBagConstraints.gridy = 6;</span>
+<span class="nc" id="L186">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L187">        gridBagConstraints.ipadx = 177;</span>
+<span class="nc" id="L188">        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;</span>
+<span class="nc" id="L189">        kontaktAnlegen.add(textFieldeMailNeu, gridBagConstraints);</span>
+
+
+<span class="nc" id="L192">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L193">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L194">        gridBagConstraints.gridy = 8;</span>
+<span class="nc" id="L195">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L196">        gridBagConstraints.ipadx = 178;</span>
+<span class="nc" id="L197">        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;</span>
+<span class="nc" id="L198">        kontaktAnlegen.add(textfieldNummerNeu, gridBagConstraints);</span>
+
+<span class="nc" id="L200">        labelNameNeu.setText(&quot;Nachname, Vorname&quot;);</span>
+<span class="nc" id="L201">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L202">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L203">        gridBagConstraints.gridy = 2;</span>
+<span class="nc" id="L204">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L205">        gridBagConstraints.ipadx = 54;</span>
+<span class="nc" id="L206">        gridBagConstraints.ipady = 10;</span>
+<span class="nc" id="L207">        gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;</span>
+<span class="nc" id="L208">        kontaktAnlegen.add(labelNameNeu, gridBagConstraints);</span>
+
+<span class="nc" id="L210">        labelAdresseNeu.setText(&quot;Adresse (Straße, NR, PLZ, Ort)&quot;);</span>
+<span class="nc" id="L211">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L212">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L213">        gridBagConstraints.gridy = 4;</span>
+<span class="nc" id="L214">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L215">        gridBagConstraints.ipadx = 3;</span>
+<span class="nc" id="L216">        gridBagConstraints.ipady = 8;</span>
+<span class="nc" id="L217">        gridBagConstraints.weightx = 1.0;</span>
+<span class="nc" id="L218">        kontaktAnlegen.add(labelAdresseNeu, gridBagConstraints);</span>
+
+<span class="nc" id="L220">        labelEMailNeu.setText(&quot;e-Mail Adresse&quot;);</span>
+<span class="nc" id="L221">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L222">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L223">        gridBagConstraints.gridy = 6;</span>
+<span class="nc" id="L224">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L225">        gridBagConstraints.ipadx = 167;</span>
+<span class="nc" id="L226">        gridBagConstraints.ipady = 7;</span>
+<span class="nc" id="L227">        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;</span>
+<span class="nc" id="L228">        kontaktAnlegen.add(labelEMailNeu, gridBagConstraints);</span>
+
+<span class="nc" id="L230">        labelNummerNeu.setText(&quot;Telefonnummer #1&quot;);</span>
+<span class="nc" id="L231">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L232">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L233">        gridBagConstraints.gridy = 8;</span>
+<span class="nc" id="L234">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L235">        gridBagConstraints.ipadx = 158;</span>
+<span class="nc" id="L236">        gridBagConstraints.ipady = 6;</span>
+<span class="nc" id="L237">        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;</span>
+<span class="nc" id="L238">        kontaktAnlegen.add(labelNummerNeu, gridBagConstraints);</span>
+
+<span class="nc" id="L240">        butSpeichernNeu.setText(&quot;Speichern&quot;);</span>
+<span class="nc" id="L241">        butSpeichernNeu.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L146">                butCancelNeuActionPerformed(evt);</span>
-<span class="nc" id="L147">            }</span>
+<span class="nc" id="L243">                butSpeichernNeuActionPerformed(evt);</span>
+<span class="nc" id="L244">            }</span>
         });
+<span class="nc" id="L246">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L247">        gridBagConstraints.gridx = 10;</span>
+<span class="nc" id="L248">        gridBagConstraints.gridy = 6;</span>
+<span class="nc" id="L249">        kontaktAnlegen.add(butSpeichernNeu, gridBagConstraints);</span>
 
-<span class="nc" id="L150">        javax.swing.GroupLayout kontaktAnlegenLayout = new javax.swing.GroupLayout(kontaktAnlegen);</span>
-<span class="nc" id="L151">        kontaktAnlegen.setLayout(kontaktAnlegenLayout);</span>
-<span class="nc" id="L152">        kontaktAnlegenLayout.setHorizontalGroup(</span>
-<span class="nc" id="L153">            kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L154">            .addGroup(kontaktAnlegenLayout.createSequentialGroup()</span>
-<span class="nc" id="L155">                .addGap(169, 169, 169)</span>
-<span class="nc" id="L156">                .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L157">                    .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
-<span class="nc" id="L158">                        .addComponent(labelNummerNeu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)</span>
-<span class="nc" id="L159">                        .addComponent(labelEMailNeu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L160">                    .addGroup(kontaktAnlegenLayout.createSequentialGroup()</span>
-<span class="nc" id="L161">                        .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L162">                            .addComponent(labelNameNeu, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L163">                            .addComponent(labelAdresseNeu, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L164">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L165">                        .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L166">                            .addComponent(textFieldNameNeu)</span>
-<span class="nc" id="L167">                            .addComponent(textFieldAdresseNeu)</span>
-<span class="nc" id="L168">                            .addComponent(textFieldeMailNeu)</span>
-<span class="nc" id="L169">                            .addComponent(textfieldNummerNeu)</span>
-<span class="nc" id="L170">                            .addComponent(butZusNummerNeu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
-<span class="nc" id="L171">                .addContainerGap(344, Short.MAX_VALUE))</span>
-<span class="nc" id="L172">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kontaktAnlegenLayout.createSequentialGroup()</span>
-<span class="nc" id="L173">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L174">                .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L175">                    .addComponent(butSpeichernNeu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L176">                    .addComponent(butCancelNeu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L177">                .addGap(464, 464, 464))</span>
-        );
-<span class="nc" id="L179">        kontaktAnlegenLayout.setVerticalGroup(</span>
-<span class="nc" id="L180">            kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L181">            .addGroup(kontaktAnlegenLayout.createSequentialGroup()</span>
-<span class="nc" id="L182">                .addGap(81, 81, 81)</span>
-<span class="nc" id="L183">                .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
-<span class="nc" id="L184">                    .addGroup(kontaktAnlegenLayout.createSequentialGroup()</span>
-<span class="nc" id="L185">                        .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L186">                            .addComponent(textFieldNameNeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L187">                            .addComponent(labelNameNeu))</span>
-<span class="nc" id="L188">                        .addGap(18, 18, 18)</span>
-<span class="nc" id="L189">                        .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L190">                            .addComponent(textFieldAdresseNeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L191">                            .addComponent(labelAdresseNeu))</span>
-<span class="nc" id="L192">                        .addGap(18, 18, 18)</span>
-<span class="nc" id="L193">                        .addComponent(textFieldeMailNeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L194">                    .addComponent(labelEMailNeu))</span>
-<span class="nc" id="L195">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L196">                .addGroup(kontaktAnlegenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L197">                    .addComponent(textfieldNummerNeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L198">                    .addComponent(labelNummerNeu))</span>
-<span class="nc" id="L199">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L200">                .addComponent(butZusNummerNeu)</span>
-<span class="nc" id="L201">                .addGap(38, 38, 38)</span>
-<span class="nc" id="L202">                .addComponent(butSpeichernNeu)</span>
-<span class="nc" id="L203">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L204">                .addComponent(butCancelNeu)</span>
-<span class="nc" id="L205">                .addContainerGap(37, Short.MAX_VALUE))</span>
-        );
+<span class="nc" id="L251">        butZusNummerNeu.setText(&quot;zusätzliche Telefonnummer&quot;);</span>
+<span class="nc" id="L252">        butZusNummerNeu.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L254">                butZusNummerNeuActionPerformed(evt);</span>
+<span class="nc" id="L255">            }</span>
+        });
+<span class="nc" id="L257">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L258">        gridBagConstraints.gridx = 10;</span>
+<span class="nc" id="L259">        gridBagConstraints.gridy = 12;</span>
+<span class="nc" id="L260">        kontaktAnlegen.add(butZusNummerNeu, gridBagConstraints);</span>
 
-<span class="nc" id="L208">        cards.add(kontaktAnlegen, &quot;cardKontaktAnlegen&quot;);</span>
+<span class="nc" id="L262">        butCancelNeu.setText(&quot;Zurück&quot;);</span>
+<span class="nc" id="L263">        butCancelNeu.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L265">                butCancelNeuActionPerformed(evt);</span>
+<span class="nc" id="L266">            }</span>
+        });
+<span class="nc" id="L268">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L269">        gridBagConstraints.gridx = 10;</span>
+<span class="nc" id="L270">        gridBagConstraints.gridy = 8;</span>
+<span class="nc" id="L271">        kontaktAnlegen.add(butCancelNeu, gridBagConstraints);</span>
 
-<span class="nc" id="L210">        jList1.setModel(jList1.getModel());</span>
-<span class="nc" id="L211">        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);</span>
-<span class="nc" id="L212">        jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {</span>
+<span class="nc" id="L273">        jLabel1.setText(&quot;Beschreibung &quot;);</span>
+<span class="nc" id="L274">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L275">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L276">        gridBagConstraints.gridy = 10;</span>
+<span class="nc" id="L277">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L278">        kontaktAnlegen.add(jLabel1, gridBagConstraints);</span>
+
+
+<span class="nc" id="L281">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L282">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L283">        gridBagConstraints.gridy = 10;</span>
+<span class="nc" id="L284">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L285">        kontaktAnlegen.add(jTextFieldBeschreibungNeu, gridBagConstraints);</span>
+
+<span class="nc" id="L287">        neueNummer2.setText(&quot;Telefonnummer #2&quot;);</span>
+<span class="nc" id="L288">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L289">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L290">        gridBagConstraints.gridy = 12;</span>
+<span class="nc" id="L291">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L292">        kontaktAnlegen.add(neueNummer2, gridBagConstraints);</span>
+
+
+<span class="nc" id="L295">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L296">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L297">        gridBagConstraints.gridy = 12;</span>
+<span class="nc" id="L298">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L299">        kontaktAnlegen.add(textfieldNeueNummer2, gridBagConstraints);</span>
+
+<span class="nc" id="L301">        neueBeschreibung2.setText(&quot;Beschreibung #2&quot;);</span>
+<span class="nc" id="L302">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L303">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L304">        gridBagConstraints.gridy = 14;</span>
+<span class="nc" id="L305">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L306">        kontaktAnlegen.add(neueBeschreibung2, gridBagConstraints);</span>
+
+<span class="nc" id="L308">        neueNummer3.setText(&quot;Telefonnummer #3&quot;);</span>
+<span class="nc" id="L309">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L310">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L311">        gridBagConstraints.gridy = 16;</span>
+<span class="nc" id="L312">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L313">        kontaktAnlegen.add(neueNummer3, gridBagConstraints);</span>
+
+<span class="nc" id="L315">        neueBeschreibung3.setText(&quot;Beschreibung #3&quot;);</span>
+<span class="nc" id="L316">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L317">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L318">        gridBagConstraints.gridy = 18;</span>
+<span class="nc" id="L319">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L320">        kontaktAnlegen.add(neueBeschreibung3, gridBagConstraints);</span>
+
+<span class="nc" id="L322">        neueNummer4.setText(&quot;Telefonnummer #4&quot;);</span>
+<span class="nc" id="L323">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L324">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L325">        gridBagConstraints.gridy = 20;</span>
+<span class="nc" id="L326">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L327">        kontaktAnlegen.add(neueNummer4, gridBagConstraints);</span>
+
+<span class="nc" id="L329">        neueBeschreibung4.setText(&quot;Beschreibung #4&quot;);</span>
+<span class="nc" id="L330">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L331">        gridBagConstraints.gridx = 4;</span>
+<span class="nc" id="L332">        gridBagConstraints.gridy = 22;</span>
+<span class="nc" id="L333">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L334">        kontaktAnlegen.add(neueBeschreibung4, gridBagConstraints);</span>
+
+
+<span class="nc" id="L337">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L338">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L339">        gridBagConstraints.gridy = 14;</span>
+<span class="nc" id="L340">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L341">        kontaktAnlegen.add(textfieldBeschreibung2, gridBagConstraints);</span>
+<span class="nc" id="L342">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L343">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L344">        gridBagConstraints.gridy = 16;</span>
+<span class="nc" id="L345">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L346">        kontaktAnlegen.add(textfieldNeueNummer3, gridBagConstraints);</span>
+<span class="nc" id="L347">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L348">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L349">        gridBagConstraints.gridy = 18;</span>
+<span class="nc" id="L350">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L351">        kontaktAnlegen.add(textfieldBeschreibung3, gridBagConstraints);</span>
+<span class="nc" id="L352">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L353">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L354">        gridBagConstraints.gridy = 20;</span>
+<span class="nc" id="L355">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L356">        kontaktAnlegen.add(textfieldNeueNummer4, gridBagConstraints);</span>
+<span class="nc" id="L357">        gridBagConstraints = new java.awt.GridBagConstraints();</span>
+<span class="nc" id="L358">        gridBagConstraints.gridx = 8;</span>
+<span class="nc" id="L359">        gridBagConstraints.gridy = 22;</span>
+<span class="nc" id="L360">        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L361">        kontaktAnlegen.add(textfieldBeschreibung4, gridBagConstraints);</span>
+
+        
+<span class="nc" id="L364">            neueNummer2.setVisible(false);</span>
+<span class="nc" id="L365">            neueBeschreibung2.setVisible(false);</span>
+<span class="nc" id="L366">            textfieldBeschreibung2.setVisible(false);</span>
+<span class="nc" id="L367">            textfieldNeueNummer2.setVisible(false);</span>
+
+<span class="nc" id="L369">            neueNummer3.setVisible(false);</span>
+<span class="nc" id="L370">            neueBeschreibung3.setVisible(false);</span>
+<span class="nc" id="L371">            textfieldBeschreibung3.setVisible(false);</span>
+<span class="nc" id="L372">            textfieldNeueNummer3.setVisible(false);</span>
+
+<span class="nc" id="L374">            neueNummer4.setVisible(false);</span>
+<span class="nc" id="L375">            neueBeschreibung4.setVisible(false);</span>
+<span class="nc" id="L376">            textfieldBeschreibung4.setVisible(false);</span>
+<span class="nc" id="L377">            textfieldNeueNummer4.setVisible(false);</span>
+        
+
+
+<span class="nc" id="L381">        cards.add(kontaktAnlegen, &quot;cardKontaktAnlegen&quot;);</span>
+
+<span class="nc" id="L383">        jList1.setModel(jList1.getModel());</span>
+<span class="nc" id="L384">        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);</span>
+<span class="nc" id="L385">        jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {</span>
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-<span class="nc" id="L214">                jList1ValueChanged(evt);</span>
-<span class="nc" id="L215">            }</span>
+<span class="nc" id="L387">                jList1ValueChanged(evt);</span>
+<span class="nc" id="L388">            }</span>
         });
-<span class="nc" id="L217">        listNamen.setViewportView(jList1);</span>
+<span class="nc" id="L390">        listNamen.setViewportView(jList1);</span>
 
-<span class="nc" id="L219">        butKontaktSuchen.setText(&quot;Suchen&quot;);</span>
-
-<span class="nc" id="L221">        butKontaktAnzeigen.setText(&quot;Details anzeigen&quot;);</span>
-
-<span class="nc" id="L223">        butKontaktLoeschen.setText(&quot;Kontakt Löschen&quot;);</span>
-<span class="nc" id="L224">        butKontaktLoeschen.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L392">        butKontaktSuchen.setText(&quot;Suchen&quot;);</span>
+<span class="nc" id="L393">        butKontaktSuchen.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L226">                butKontaktLoeschenActionPerformed(evt);</span>
-<span class="nc" id="L227">            }</span>
+<span class="nc" id="L395">                butKontaktSuchenActionPerformed(evt);</span>
+<span class="nc" id="L396">            }</span>
         });
 
-<span class="nc" id="L230">        detailsName.setText(&quot;Name&quot;);</span>
-
-<span class="nc" id="L232">        detailsAdresse.setText(&quot;Adresse&quot;);</span>
-
-<span class="nc" id="L234">        detailsEmail.setText(&quot;E-Mail&quot;);</span>
-
-<span class="nc" id="L236">        detailsNummer.setText(&quot;Telefonnummer&quot;);</span>
-
-<span class="nc" id="L238">        detailsNameText.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L399">        butKontaktLoeschen.setText(&quot;Kontakt Löschen&quot;);</span>
+<span class="nc" id="L400">        butKontaktLoeschen.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L240">                detailsNameTextActionPerformed(evt);</span>
-<span class="nc" id="L241">            }</span>
+<span class="nc" id="L402">                butKontaktLoeschenActionPerformed(evt);</span>
+<span class="nc" id="L403">            }</span>
         });
 
-<span class="nc" id="L244">        butKontaktSpeichern.setText(&quot;Kontakt speichern&quot;);</span>
-<span class="nc" id="L245">        butKontaktSpeichern.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L406">        detailsName.setText(&quot;Name&quot;);</span>
+
+<span class="nc" id="L408">        detailsAdresse.setText(&quot;Adresse&quot;);</span>
+
+<span class="nc" id="L410">        detailsEmail.setText(&quot;E-Mail&quot;);</span>
+
+<span class="nc" id="L412">        detailsNummer.setText(&quot;Telefonnummer&quot;);</span>
+
+
+
+<span class="nc" id="L416">        butKontaktSpeichern.setText(&quot;Kontakt speichern&quot;);</span>
+<span class="nc" id="L417">        butKontaktSpeichern.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L247">                butKontaktSpeichernActionPerformed(evt);</span>
-<span class="nc" id="L248">            }</span>
+<span class="nc" id="L419">                butKontaktSpeichernActionPerformed(evt);</span>
+<span class="nc" id="L420">            }</span>
         });
 
-<span class="nc" id="L251">        javax.swing.GroupLayout alleKontakteAnzeigenLayout = new javax.swing.GroupLayout(alleKontakteAnzeigen);</span>
-<span class="nc" id="L252">        alleKontakteAnzeigen.setLayout(alleKontakteAnzeigenLayout);</span>
-<span class="nc" id="L253">        alleKontakteAnzeigenLayout.setHorizontalGroup(</span>
-<span class="nc" id="L254">            alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L255">            .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
-<span class="nc" id="L256">                .addGap(57, 57, 57)</span>
-<span class="nc" id="L257">                .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L258">                .addGap(49, 49, 49)</span>
-<span class="nc" id="L259">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L260">                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
-<span class="nc" id="L261">                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L262">                            .addComponent(detailsName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L263">                            .addComponent(detailsAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L264">                            .addComponent(detailsEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L265">                        .addGap(50, 50, 50)</span>
-<span class="nc" id="L266">                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L267">                            .addComponent(detailsNameText)</span>
-<span class="nc" id="L268">                            .addComponent(detailsAdresseText)</span>
-<span class="nc" id="L269">                            .addComponent(detailsEmailText, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))</span>
-<span class="nc" id="L270">                        .addGap(23, 23, 23))</span>
-<span class="nc" id="L271">                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
-<span class="nc" id="L272">                        .addComponent(detailsNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L273">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L274">                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L275">                            .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
-<span class="nc" id="L276">                                .addComponent(detailsNummerText, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)</span>
-<span class="nc" id="L277">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))</span>
-<span class="nc" id="L278">                            .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
-<span class="nc" id="L279">                                .addComponent(butKontaktSpeichern)</span>
-<span class="nc" id="L280">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))</span>
-<span class="nc" id="L281">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L282">                    .addComponent(butKontaktSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L283">                    .addComponent(butKontaktAnzeigen)</span>
-<span class="nc" id="L284">                    .addComponent(butKontaktLoeschen))</span>
-<span class="nc" id="L285">                .addContainerGap(306, Short.MAX_VALUE))</span>
+<span class="nc" id="L423">        jTextAreaNummern.setColumns(8);</span>
+<span class="nc" id="L424">        jTextAreaNummern.setRows(3);</span>
+<span class="nc" id="L425">        jScrollPane2.setViewportView(jTextAreaNummern);</span>
+
+<span class="nc" id="L427">        javax.swing.GroupLayout alleKontakteAnzeigenLayout = new javax.swing.GroupLayout(alleKontakteAnzeigen);</span>
+<span class="nc" id="L428">        alleKontakteAnzeigen.setLayout(alleKontakteAnzeigenLayout);</span>
+<span class="nc" id="L429">        alleKontakteAnzeigenLayout.setHorizontalGroup(</span>
+<span class="nc" id="L430">            alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L431">            .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
+<span class="nc" id="L432">                .addGap(57, 57, 57)</span>
+<span class="nc" id="L433">                .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L434">                .addGap(49, 49, 49)</span>
+<span class="nc" id="L435">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L436">                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
+<span class="nc" id="L437">                        .addComponent(detailsNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L438">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L439">                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L440">                            .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
+<span class="nc" id="L441">                                .addComponent(butKontaktSpeichern)</span>
+<span class="nc" id="L442">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L443">                                .addComponent(butKontaktLoeschen)</span>
+<span class="nc" id="L444">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE))</span>
+<span class="nc" id="L445">                            .addComponent(jScrollPane2)))</span>
+<span class="nc" id="L446">                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
+<span class="nc" id="L447">                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L448">                            .addComponent(detailsName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L449">                            .addComponent(detailsAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L450">                            .addComponent(detailsEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L451">                        .addGap(50, 50, 50)</span>
+<span class="nc" id="L452">                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L453">                            .addComponent(detailsAdresseText)</span>
+<span class="nc" id="L454">                            .addComponent(detailsEmailText)</span>
+<span class="nc" id="L455">                            .addComponent(detailsNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L456">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L457">                .addComponent(butKontaktSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L458">                .addGap(68, 68, 68))</span>
         );
-<span class="nc" id="L287">        alleKontakteAnzeigenLayout.setVerticalGroup(</span>
-<span class="nc" id="L288">            alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L289">            .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
-<span class="nc" id="L290">                .addGap(53, 53, 53)</span>
-<span class="nc" id="L291">                .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L292">                .addContainerGap(34, Short.MAX_VALUE))</span>
-<span class="nc" id="L293">            .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
-<span class="nc" id="L294">                .addGap(51, 51, 51)</span>
-<span class="nc" id="L295">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
-<span class="nc" id="L296">                    .addComponent(detailsName)</span>
-<span class="nc" id="L297">                    .addComponent(detailsNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L298">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L299">                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
-<span class="nc" id="L300">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L301">                        .addComponent(butKontaktSuchen)</span>
-<span class="nc" id="L302">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L303">                        .addComponent(butKontaktAnzeigen))</span>
-<span class="nc" id="L304">                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
-<span class="nc" id="L305">                        .addGap(24, 24, 24)</span>
-<span class="nc" id="L306">                        .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L307">                            .addComponent(detailsAdresse)</span>
-<span class="nc" id="L308">                            .addComponent(detailsAdresseText, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
-<span class="nc" id="L309">                .addGap(19, 19, 19)</span>
-<span class="nc" id="L310">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L311">                    .addComponent(detailsEmail)</span>
-<span class="nc" id="L312">                    .addComponent(detailsEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L313">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L314">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L315">                    .addComponent(detailsNummer)</span>
-<span class="nc" id="L316">                    .addComponent(detailsNummerText, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L317">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L318">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L319">                    .addComponent(butKontaktLoeschen)</span>
-<span class="nc" id="L320">                    .addComponent(butKontaktSpeichern))</span>
-<span class="nc" id="L321">                .addGap(51, 51, 51))</span>
+<span class="nc" id="L460">        alleKontakteAnzeigenLayout.setVerticalGroup(</span>
+<span class="nc" id="L461">            alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L462">            .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
+<span class="nc" id="L463">                .addGap(53, 53, 53)</span>
+<span class="nc" id="L464">                .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L465">                .addContainerGap(111, Short.MAX_VALUE))</span>
+<span class="nc" id="L466">            .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
+<span class="nc" id="L467">                .addGap(51, 51, 51)</span>
+<span class="nc" id="L468">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L469">                    .addComponent(detailsName)</span>
+<span class="nc" id="L470">                    .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L471">                        .addComponent(detailsNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L472">                        .addComponent(butKontaktSuchen)))</span>
+<span class="nc" id="L473">                .addGap(23, 23, 23)</span>
+<span class="nc" id="L474">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L475">                    .addComponent(detailsAdresse)</span>
+<span class="nc" id="L476">                    .addComponent(detailsAdresseText, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L477">                .addGap(19, 19, 19)</span>
+<span class="nc" id="L478">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L479">                    .addComponent(detailsEmail)</span>
+<span class="nc" id="L480">                    .addComponent(detailsEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L481">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L482">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L483">                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L484">                    .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()</span>
+<span class="nc" id="L485">                        .addGap(36, 36, 36)</span>
+<span class="nc" id="L486">                        .addComponent(detailsNummer)))</span>
+<span class="nc" id="L487">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L488">                .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L489">                    .addComponent(butKontaktLoeschen)</span>
+<span class="nc" id="L490">                    .addComponent(butKontaktSpeichern))</span>
+<span class="nc" id="L491">                .addGap(51, 51, 51))</span>
         );
 
-<span class="nc" id="L324">        cards.add(alleKontakteAnzeigen, &quot;cardAlleKontakteAnzeigen&quot;);</span>
+<span class="nc" id="L494">        cards.add(alleKontakteAnzeigen, &quot;cardAlleKontakteAnzeigen&quot;);</span>
 
-<span class="nc" id="L326">        menuTelefonbuch.setText(&quot;Telefonbuch&quot;);</span>
 
-<span class="nc" id="L328">        menuLaden.setText(&quot;Telefonbuch laden&quot;);</span>
-<span class="nc" id="L329">        menuLaden.addActionListener(new java.awt.event.ActionListener() {</span>
+
+<span class="nc" id="L498">        jLabel4.setText(&quot;Suche:&quot;);</span>
+
+<span class="nc" id="L500">        jRadioButtonName.setText(&quot;Name&quot;);</span>
+
+
+<span class="nc" id="L503">        jRadioButtonAdresse.setText(&quot;Adresse&quot;);</span>
+
+<span class="nc" id="L505">        jRadioButtonEmailSuche.setText(&quot;E-Mail&quot;);</span>
+
+<span class="nc" id="L507">        jRadioButtonNummer.setText(&quot;Telefonnummer&quot;);</span>
+
+<span class="nc" id="L509">        jButtonSuchen.setText(&quot;Suchen&quot;);</span>
+<span class="nc" id="L510">        jButtonSuchen.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L331">                menuLadenActionPerformed(evt);</span>
-<span class="nc" id="L332">            }</span>
+<span class="nc" id="L512">                jButtonSuchenActionPerformed(evt);</span>
+<span class="nc" id="L513">            }</span>
         });
-<span class="nc" id="L334">        menuTelefonbuch.add(menuLaden);</span>
 
-<span class="nc" id="L336">        menuSpeichern.setText(&quot;Telefonbuch speichern&quot;);</span>
-<span class="nc" id="L337">        menuSpeichern.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L516">        jListSuchergebnisse.addListSelectionListener(new javax.swing.event.ListSelectionListener() {</span>
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+<span class="nc" id="L518">                jListSuchergebnisseValueChanged(evt);</span>
+<span class="nc" id="L519">            }</span>
+        });
+<span class="nc" id="L521">        jScrollPane1.setViewportView(jListSuchergebnisse);</span>
+
+<span class="nc" id="L523">        jLabel5.setText(&quot;in:&quot;);</span>
+
+<span class="nc" id="L525">        jLabelSucheDetailsName.setText(&quot;Name&quot;);</span>
+
+<span class="nc" id="L527">        jLabel6.setText(&quot;Adresse&quot;);</span>
+
+<span class="nc" id="L529">        jLabel7.setText(&quot;E-Mail&quot;);</span>
+
+<span class="nc" id="L531">        jLabel8.setText(&quot;Telefonnummer&quot;);</span>
+
+<span class="nc" id="L533">        butSucheZuruck.setText(&quot;Zurück&quot;);</span>
+<span class="nc" id="L534">        butSucheZuruck.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L339">                menuSpeichernActionPerformed(evt);</span>
-<span class="nc" id="L340">            }</span>
+<span class="nc" id="L536">                butSucheZuruckActionPerformed(evt);</span>
+<span class="nc" id="L537">            }</span>
         });
-<span class="nc" id="L342">        menuTelefonbuch.add(menuSpeichern);</span>
 
-<span class="nc" id="L344">        menuBeenden.setText(&quot;Beenden&quot;);</span>
-<span class="nc" id="L345">        menuBeenden.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L347">                menuBeendenActionPerformed(evt);</span>
-<span class="nc" id="L348">            }</span>
-        });
-<span class="nc" id="L350">        menuTelefonbuch.add(menuBeenden);</span>
-
-<span class="nc" id="L352">        menueleiste.add(menuTelefonbuch);</span>
-
-<span class="nc" id="L354">        menuKontakt.setText(&quot;Kontakt&quot;);</span>
-
-<span class="nc" id="L356">        menuNeuerKontakt.setText(&quot;Neuer Kontakt&quot;);</span>
-<span class="nc" id="L357">        menuNeuerKontakt.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L359">                menuNeuerKontaktActionPerformed(evt);</span>
-<span class="nc" id="L360">            }</span>
-        });
-<span class="nc" id="L362">        menuKontakt.add(menuNeuerKontakt);</span>
-
-<span class="nc" id="L364">        menuAlleKontakteAnzeigen.setText(&quot;Alle Kontakte anzeigen&quot;);</span>
-<span class="nc" id="L365">        menuKontakt.add(menuAlleKontakteAnzeigen);</span>
-
-<span class="nc" id="L367">        menuKontaktSuchen.setText(&quot;Kontakt suchen&quot;);</span>
-<span class="nc" id="L368">        menuKontakt.add(menuKontaktSuchen);</span>
-
-<span class="nc" id="L370">        menuKontaktLoeschen.setText(&quot;Kontakt löschen&quot;);</span>
-<span class="nc" id="L371">        menuKontakt.add(menuKontaktLoeschen);</span>
-<span class="nc" id="L372">        menuKontakt.setEnabled(false);</span>
-
-<span class="nc" id="L374">        menueleiste.add(menuKontakt);</span>
-
-<span class="nc" id="L376">        setJMenuBar(menueleiste);</span>
-
-<span class="nc" id="L378">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L379">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L380">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L381">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L382">            .addComponent(cards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L540">        javax.swing.GroupLayout panelKontaktSuchenLayout = new javax.swing.GroupLayout(panelKontaktSuchen);</span>
+<span class="nc" id="L541">        panelKontaktSuchen.setLayout(panelKontaktSuchenLayout);</span>
+<span class="nc" id="L542">        panelKontaktSuchenLayout.setHorizontalGroup(</span>
+<span class="nc" id="L543">            panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L544">            .addGroup(panelKontaktSuchenLayout.createSequentialGroup()</span>
+<span class="nc" id="L545">                .addGap(44, 44, 44)</span>
+<span class="nc" id="L546">                .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L547">                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L548">                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L549">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L550">                .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L551">                    .addGroup(panelKontaktSuchenLayout.createSequentialGroup()</span>
+<span class="nc" id="L552">                        .addComponent(butSucheZuruck, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L553">                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L554">                    .addGroup(panelKontaktSuchenLayout.createSequentialGroup()</span>
+<span class="nc" id="L555">                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L556">                            .addComponent(jButtonSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L557">                            .addComponent(jRadioButtonName, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L558">                            .addComponent(textSuche, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L559">                            .addComponent(jRadioButtonAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L560">                            .addComponent(jRadioButtonEmailSuche, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L561">                            .addComponent(jRadioButtonNummer))</span>
+<span class="nc" id="L562">                        .addGap(45, 45, 45)</span>
+<span class="nc" id="L563">                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L564">                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L565">                            .addGroup(panelKontaktSuchenLayout.createSequentialGroup()</span>
+<span class="nc" id="L566">                                .addGap(182, 182, 182)</span>
+<span class="nc" id="L567">                                .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L568">                                    .addComponent(jLabelSucheDetailsName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L569">                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L570">                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L571">                                .addGap(45, 45, 45)</span>
+<span class="nc" id="L572">                                .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L573">                                    .addComponent(jTextFieldSucheDetailsName, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)</span>
+<span class="nc" id="L574">                                    .addComponent(jTextFieldSucheDetailsAdresse)</span>
+<span class="nc" id="L575">                                    .addComponent(jTextFieldSucheDetailsEmail)))</span>
+<span class="nc" id="L576">                            .addGroup(panelKontaktSuchenLayout.createSequentialGroup()</span>
+<span class="nc" id="L577">                                .addGap(176, 176, 176)</span>
+<span class="nc" id="L578">                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L579">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L580">                                .addComponent(jTextFieldSucheDetailsNummer)))</span>
+<span class="nc" id="L581">                        .addGap(49, 49, 49))))</span>
         );
-<span class="nc" id="L384">        layout.setVerticalGroup(</span>
-<span class="nc" id="L385">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L386">            .addComponent(cards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L583">        panelKontaktSuchenLayout.setVerticalGroup(</span>
+<span class="nc" id="L584">            panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L585">            .addGroup(panelKontaktSuchenLayout.createSequentialGroup()</span>
+<span class="nc" id="L586">                .addGap(51, 51, 51)</span>
+<span class="nc" id="L587">                .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L588">                    .addGroup(panelKontaktSuchenLayout.createSequentialGroup()</span>
+<span class="nc" id="L589">                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L590">                            .addComponent(jLabel4)</span>
+<span class="nc" id="L591">                            .addComponent(textSuche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L592">                        .addGap(18, 18, 18)</span>
+<span class="nc" id="L593">                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L594">                            .addComponent(jRadioButtonName)</span>
+<span class="nc" id="L595">                            .addComponent(jLabel5))</span>
+<span class="nc" id="L596">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L597">                        .addComponent(jRadioButtonAdresse)</span>
+<span class="nc" id="L598">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L599">                        .addComponent(jRadioButtonEmailSuche)</span>
+<span class="nc" id="L600">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L601">                        .addComponent(jRadioButtonNummer)</span>
+<span class="nc" id="L602">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L603">                        .addComponent(jButtonSuchen))</span>
+<span class="nc" id="L604">                    .addGroup(panelKontaktSuchenLayout.createSequentialGroup()</span>
+<span class="nc" id="L605">                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L606">                            .addComponent(jLabelSucheDetailsName)</span>
+<span class="nc" id="L607">                            .addComponent(jTextFieldSucheDetailsName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L608">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L609">                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L610">                            .addComponent(jLabel6)</span>
+<span class="nc" id="L611">                            .addComponent(jTextFieldSucheDetailsAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L612">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L613">                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L614">                            .addComponent(jLabel7)</span>
+<span class="nc" id="L615">                            .addComponent(jTextFieldSucheDetailsEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L616">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L617">                        .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L618">                            .addComponent(jTextFieldSucheDetailsNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L619">                            .addComponent(jLabel8)))</span>
+<span class="nc" id="L620">                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L621">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)</span>
+<span class="nc" id="L622">                .addComponent(butSucheZuruck)</span>
+<span class="nc" id="L623">                .addGap(55, 55, 55))</span>
         );
 
-<span class="nc" id="L389">        pack();</span>
-<span class="nc" id="L390">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L626">        cards.add(panelKontaktSuchen, &quot;cardKontaktSuchen&quot;);</span>
+
+<span class="nc" id="L628">        menuTelefonbuch.setText(&quot;Telefonbuch&quot;);</span>
+
+<span class="nc" id="L630">        menuLaden.setText(&quot;Telefonbuch laden&quot;);</span>
+<span class="nc" id="L631">        menuLaden.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L633">                menuLadenActionPerformed(evt);</span>
+<span class="nc" id="L634">            }</span>
+        });
+<span class="nc" id="L636">        menuTelefonbuch.add(menuLaden);</span>
+
+<span class="nc" id="L638">        menuSpeichern.setText(&quot;Telefonbuch speichern&quot;);</span>
+<span class="nc" id="L639">        menuSpeichern.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L641">                menuSpeichernActionPerformed(evt);</span>
+<span class="nc" id="L642">            }</span>
+        });
+<span class="nc" id="L644">        menuTelefonbuch.add(menuSpeichern);</span>
+
+<span class="nc" id="L646">        menuBeenden.setText(&quot;Beenden&quot;);</span>
+<span class="nc" id="L647">        menuBeenden.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L649">                menuBeendenActionPerformed(evt);</span>
+<span class="nc" id="L650">            }</span>
+        });
+<span class="nc" id="L652">        menuTelefonbuch.add(menuBeenden);</span>
+
+<span class="nc" id="L654">        menueleiste.add(menuTelefonbuch);</span>
+
+<span class="nc" id="L656">        menuKontakt.setText(&quot;Kontakt&quot;);</span>
+
+<span class="nc" id="L658">        menuNeuerKontakt.setText(&quot;Neuer Kontakt&quot;);</span>
+<span class="nc" id="L659">        menuNeuerKontakt.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L661">                menuNeuerKontaktActionPerformed(evt);</span>
+<span class="nc" id="L662">            }</span>
+        });
+<span class="nc" id="L664">        menuKontakt.add(menuNeuerKontakt);</span>
+
+<span class="nc" id="L666">        menuAlleKontakteAnzeigen.setText(&quot;Alle Kontakte anzeigen&quot;);</span>
+<span class="nc" id="L667">        menuAlleKontakteAnzeigen.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L669">                menuAlleKontakteAnzeigenActionPerformed(evt);</span>
+<span class="nc" id="L670">            }</span>
+        });
+<span class="nc" id="L672">        menuKontakt.add(menuAlleKontakteAnzeigen);</span>
+
+<span class="nc" id="L674">        menuKontaktSuchen.setText(&quot;Kontakt suchen&quot;);</span>
+<span class="nc" id="L675">        menuKontaktSuchen.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L677">                menuKontaktSuchenActionPerformed(evt);</span>
+<span class="nc" id="L678">            }</span>
+        });
+<span class="nc" id="L680">        menuKontakt.add(menuKontaktSuchen);</span>
+
+<span class="nc" id="L682">        menuKontaktLoeschen.setText(&quot;Kontakt löschen&quot;);</span>
+<span class="nc" id="L683">        menuKontakt.add(menuKontaktLoeschen);</span>
+
+<span class="nc" id="L685">        menueleiste.add(menuKontakt);</span>
+<span class="nc" id="L686">        menuKontakt.setEnabled(false);</span>
+<span class="nc" id="L687">        setJMenuBar(menueleiste);</span>
+
+<span class="nc" id="L689">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L690">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L691">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L692">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L693">            .addComponent(cards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+        );
+<span class="nc" id="L695">        layout.setVerticalGroup(</span>
+<span class="nc" id="L696">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L697">            .addComponent(cards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+        );
+
+<span class="nc" id="L700">        pack();</span>
+<span class="nc" id="L701">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void butStartBuchLadenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartBuchLadenActionPerformed
         //menuLadenActionPerformed lädt das Telefonbuch
-<span class="nc" id="L394">        menuLadenActionPerformed(evt);</span>
-<span class="nc" id="L395">        }</span>
-    //GEN-LAST:event_butStartBuchLadenActionPerformed
+<span class="nc" id="L705">        menuLadenActionPerformed(evt);</span>
+<span class="nc" id="L706">        }</span>
+//GEN-LAST:event_butStartBuchLadenActionPerformed
 
-    private void textfieldNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldNummerNeuActionPerformed
-        // TODO add your handling code here:
-<span class="nc" id="L400">    }//GEN-LAST:event_textfieldNummerNeuActionPerformed</span>
+
 
     private void butSpeichernNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSpeichernNeuActionPerformed
         //Neuer Kontakt erstellen
-<span class="nc" id="L404">        Kontakt neuerKontakt = new Kontakt();</span>
+<span class="nc" id="L713">        Kontakt neuerKontakt = new Kontakt();</span>
 
-        //Test aus Textfeld als Attribute speichern
-<span class="nc" id="L407">        neuerKontakt.setName(textFieldNameNeu.getText());</span>
-<span class="nc" id="L408">        neuerKontakt.setAdresse(textFieldAdresseNeu.getText());</span>
-<span class="nc" id="L409">        neuerKontakt.setEmail(textFieldeMailNeu.getText());</span>
+        //Text aus Textfeld als Attribute speichern
+<span class="nc" id="L716">        neuerKontakt.setName(textFieldNameNeu.getText());</span>
+<span class="nc" id="L717">        neuerKontakt.setAdresse(textFieldAdresseNeu.getText());</span>
+<span class="nc" id="L718">        neuerKontakt.setEmail(textFieldeMailNeu.getText());</span>
+        //Telefonnummer
+<span class="nc" id="L720">        neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());</span>
+<span class="nc" id="L721">        neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());</span>
 
-<span class="nc" id="L411">        String neueNummer = textfieldNummerNeu.getText();</span>
-<span class="nc" id="L412">        long neu = Long.parseLong(neueNummer);</span>
-<span class="nc" id="L413">        neuerKontakt.fuegeNrHinzu(neu);</span>
+<span class="nc bnc" id="L723" title="All 2 branches missed.">        if (zusNummerCounter == 1){</span>
+<span class="nc" id="L724">            Telefonnummer neueNummer2 = new Telefonnummer();</span>
+<span class="nc" id="L725">            neueNummer2.stringToTelefonnummer(textfieldNeueNummer2.getText());</span>
+<span class="nc" id="L726">            neueNummer2.setBeschreibung(textfieldBeschreibung2.getText());</span>
+<span class="nc" id="L727">            neuerKontakt.fuegeNrHinzu(neueNummer2);</span>
+        }
 
-        //Kontakt hinzufügen
-<span class="nc" id="L416">        telefonbuch.fuegeKontaktHinzu(neuerKontakt);</span>
+<span class="nc bnc" id="L730" title="All 2 branches missed.">        if (zusNummerCounter == 2){</span>
+<span class="nc" id="L731">            Telefonnummer neueNummer3 = new Telefonnummer();</span>
+<span class="nc" id="L732">            neueNummer3.stringToTelefonnummer(textfieldNeueNummer3.getText());</span>
+<span class="nc" id="L733">            neueNummer3.setBeschreibung(textfieldBeschreibung3.getText());</span>
+<span class="nc" id="L734">            neuerKontakt.fuegeNrHinzu(neueNummer3);</span>
+        }      
         
-        //jListe aktualisieren
-<span class="nc" id="L419">        jListFuellen(telefonbuch);</span>
+<span class="nc bnc" id="L737" title="All 2 branches missed.">        if (zusNummerCounter == 3){</span>
+<span class="nc" id="L738">            Telefonnummer neueNummer4 = new Telefonnummer();</span>
+<span class="nc" id="L739">            neueNummer4.stringToTelefonnummer(textfieldNeueNummer4.getText());</span>
+<span class="nc" id="L740">            neueNummer4.setBeschreibung(textfieldBeschreibung4.getText());</span>
+<span class="nc" id="L741">            neuerKontakt.fuegeNrHinzu(neueNummer4);</span>
+        } 
+        //Telefonnummer zu Kontakt hinzufügen
+<span class="nc" id="L744">        neuerKontakt.fuegeNrHinzu(neueNummer);</span>
 
+        //Kontakt zu Telefonbuch hinzufügen
+<span class="nc" id="L747">        telefonbuch.fuegeKontaktHinzu(neuerKontakt);</span>
+        
         //Textfelder resetten
-<span class="nc" id="L422">        textFieldNameNeu.setText(&quot;&quot;);</span>
-<span class="nc" id="L423">        textFieldAdresseNeu.setText(&quot;&quot;);</span>
-<span class="nc" id="L424">        textFieldeMailNeu.setText(&quot;&quot;);</span>
-<span class="nc" id="L425">        textfieldNummerNeu.setText(&quot;&quot;);</span>
-<span class="nc" id="L426">    } //GEN-LAST:event_butSpeichernNeuActionPerformed</span>
+<span class="nc" id="L750">        textFieldNameNeu.setText(&quot;&quot;);</span>
+<span class="nc" id="L751">        textFieldAdresseNeu.setText(&quot;&quot;);</span>
+<span class="nc" id="L752">        textFieldeMailNeu.setText(&quot;&quot;);</span>
+<span class="nc" id="L753">        textfieldNummerNeu.setText(&quot;&quot;);</span>
+<span class="nc" id="L754">        jTextFieldBeschreibungNeu.setText(&quot;&quot;);</span>
+<span class="nc" id="L755">        textfieldNeueNummer2.setText(&quot;&quot;);</span>
+<span class="nc" id="L756">        textfieldBeschreibung2.setText(&quot;&quot;);</span>
+<span class="nc" id="L757">        textfieldNeueNummer3.setText(&quot;&quot;);</span>
+<span class="nc" id="L758">        textfieldBeschreibung3.setText(&quot;&quot;);</span>
+<span class="nc" id="L759">        textfieldNeueNummer4.setText(&quot;&quot;);</span>
+<span class="nc" id="L760">        textfieldBeschreibung4.setText(&quot;&quot;);</span>
+<span class="nc" id="L761">        jListFuellen(telefonbuch);</span>
+        //counter resetten
+        
+<span class="nc" id="L764">        CardLayout cl = (CardLayout) (cards.getLayout());</span>
+<span class="nc" id="L765">        ((java.awt.CardLayout) cl).show(cards, &quot;cardAlleKontakteAnzeigen&quot;);</span>
+<span class="nc" id="L766">        zusNummerCounter = 0;</span>
+        //-&gt; card AllekOntakteanzeigen
+<span class="nc" id="L768">    }//GEN-LAST:event_butSpeichernNeuActionPerformed</span>
 
-    private void butKontaktLoeschenActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_butKontaktLoeschenActionPerformed
+    private void butKontaktLoeschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktLoeschenActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L430">    } //GEN-LAST:event_butKontaktLoeschenActionPerformed</span>
+                //Auswahl index
+<span class="nc" id="L773">        int index = jList1.getSelectedIndex();</span>
 
-    private void menuBeendenActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_menuBeendenActionPerformed
+        //Kontakt auslesen
+<span class="nc" id="L776">        Kontakt details = telefonbuch.telefonbuchArray.get(index);</span>
+        
+<span class="nc" id="L778">        telefonbuch.loescheKontakt(details);</span>
+
+<span class="nc" id="L780">        detailsNameText.setText(&quot;&quot;);</span>
+<span class="nc" id="L781">        detailsAdresseText.setText(&quot;&quot;);</span>
+<span class="nc" id="L782">        detailsEmailText.setText(&quot;&quot;);</span>
+<span class="nc" id="L783">        jTextAreaNummern.setText(&quot;&quot;);</span>
+        //jList updaten
+<span class="nc" id="L785">        jListFuellen(telefonbuch);</span>
+<span class="nc" id="L786">    }//GEN-LAST:event_butKontaktLoeschenActionPerformed</span>
+
+    private void menuBeendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuBeendenActionPerformed
         //Programm schließen
-<span class="nc" id="L434">        System.out.println(&quot;Programm wurde beendet!&quot;);</span>
-<span class="nc" id="L435">        System.exit(0);</span>
-<span class="nc" id="L436">    } //GEN-LAST:event_menuBeendenActionPerformed</span>
+<span class="nc" id="L790">        System.out.println(&quot;Programm wurde beendet!&quot;);</span>
+<span class="nc" id="L791">        System.exit(0);</span>
+<span class="nc" id="L792">    }//GEN-LAST:event_menuBeendenActionPerformed</span>
 
     private void jListFuellen(Telefonbuch telefonbuch){
         //Befüllt und aktualisiert die jListe
-<span class="nc" id="L440">        DefaultListModel&lt;String&gt; model = new DefaultListModel&lt;&gt;();</span>
+<span class="nc" id="L796">        DefaultListModel&lt;String&gt; model = new DefaultListModel&lt;&gt;();</span>
 
-<span class="nc bnc" id="L442" title="All 2 branches missed.">        for (Kontakt kontakt:telefonbuch.telefonbuchArray){</span>
-<span class="nc" id="L443">             model.addElement(kontakt.getName());</span>
-<span class="nc" id="L444">        }</span>
-<span class="nc" id="L445">        jList1.setModel(model);</span>
-<span class="nc" id="L446">    }</span>
+<span class="nc bnc" id="L798" title="All 2 branches missed.">        for (Kontakt kontakt:telefonbuch.telefonbuchArray){</span>
+<span class="nc" id="L799">             model.addElement(kontakt.getName());</span>
+<span class="nc" id="L800">        }</span>
+<span class="nc" id="L801">        jList1.setModel(model);</span>
+<span class="nc" id="L802">    }</span>
 
-    private void menuLadenActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_menuLadenActionPerformed
-<span class="nc" id="L449">        final String filelocation = &quot;telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser&quot;;</span>
-<span class="nc" id="L450">        JFileChooser fc = new JFileChooser(filelocation);</span>
-<span class="nc" id="L451">        FileNameExtensionFilter filter = new FileNameExtensionFilter(&quot;Telefonbuch&quot;, &quot;ser&quot;);  </span>
-<span class="nc" id="L452">        fc.setAcceptAllFileFilterUsed(false);</span>
-<span class="nc" id="L453">        fc.addChoosableFileFilter(filter);</span>
-<span class="nc" id="L454">        int a = fc.showOpenDialog(null);</span>
+    private void menuLadenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLadenActionPerformed
         
-<span class="nc bnc" id="L456" title="All 2 branches missed.">        if (a == JFileChooser.APPROVE_OPTION) {</span>
-<span class="nc" id="L457">            File file = fc.getSelectedFile();</span>
+<span class="nc" id="L806">        final String filelocation = &quot;telefonbuch/src/main/java/hwr/berlin/Telefonbuch.ser&quot;;</span>
+<span class="nc" id="L807">        JFileChooser fc = new JFileChooser(filelocation);</span>
+<span class="nc" id="L808">        FileNameExtensionFilter filter = new FileNameExtensionFilter(&quot;Telefonbuch&quot;, &quot;ser&quot;);  </span>
+<span class="nc" id="L809">        fc.setAcceptAllFileFilterUsed(false);</span>
+<span class="nc" id="L810">        fc.addChoosableFileFilter(filter);</span>
+<span class="nc" id="L811">        int a = fc.showOpenDialog(null);</span>
+        
+<span class="nc bnc" id="L813" title="All 2 branches missed.">        if (a == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L814">            File file = fc.getSelectedFile();</span>
            
-<span class="nc" id="L459">            System.out.println(&quot;Telefonbuch wurde geladen!&quot;);</span>
+<span class="nc" id="L816">            System.out.println(&quot;Telefonbuch wurde geladen!&quot;);</span>
             
-<span class="nc" id="L461">            telefonbuch.buchLaden(file);</span>
-<span class="nc" id="L462">            telefonbuch.alleKontakteAnzeigen();</span>
+<span class="nc" id="L818">            telefonbuch.buchLaden(file);</span>
+<span class="nc" id="L819">            telefonbuch.alleKontakteAnzeigen();</span>
            
-<span class="nc" id="L464">            CardLayout cl = (CardLayout) (cards.getLayout());</span>
-<span class="nc" id="L465">            ((java.awt.CardLayout) cl).show(cards, &quot;cardAlleKontakteAnzeigen&quot;);</span>
+<span class="nc" id="L821">            CardLayout cl = (CardLayout) (cards.getLayout());</span>
+<span class="nc" id="L822">            ((java.awt.CardLayout) cl).show(cards, &quot;cardAlleKontakteAnzeigen&quot;);</span>
 
-<span class="nc" id="L467">            jListFuellen(telefonbuch);</span>
-<span class="nc" id="L468">            menuKontakt.setEnabled(true);</span>
+<span class="nc" id="L824">            jListFuellen(telefonbuch);</span>
+<span class="nc" id="L825">            menuKontakt.setEnabled(true);</span>
         } 
-<span class="nc" id="L470">    }   //GEN-LAST:event_menuLadenActionPerformed</span>
+<span class="nc" id="L827">    }//GEN-LAST:event_menuLadenActionPerformed</span>
 
-    private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_menuSpeichernActionPerformed
-<span class="nc" id="L473">        String filelocation = &quot;telefonbuch/src/main/java/hwr/berlin/&quot;;                      // Standard Location für File</span>
-<span class="nc" id="L474">        JFileChooser fc = new JFileChooser(filelocation);  </span>
-<span class="nc" id="L475">        fc.setSelectedFile(new File(filelocation));                         </span>
+    private void menuSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSpeichernActionPerformed
+<span class="nc" id="L830">        String filelocation = &quot;telefonbuch/src/main/java/hwr/berlin/&quot;;                      // Standard Location für File</span>
+<span class="nc" id="L831">        JFileChooser fc = new JFileChooser(filelocation);  </span>
+<span class="nc" id="L832">        fc.setSelectedFile(new File(filelocation));                         </span>
 
         //setze Filter auf Typ &quot;Telefonbuch&quot; mit Endung &quot;.ser&quot;
-<span class="nc" id="L478">        FileNameExtensionFilter filter = new FileNameExtensionFilter(&quot;Telefonbuch&quot;, &quot;ser&quot;);  </span>
-<span class="nc" id="L479">        fc.setAcceptAllFileFilterUsed(false);</span>
-<span class="nc" id="L480">        fc.addChoosableFileFilter(filter);</span>
+<span class="nc" id="L835">        FileNameExtensionFilter filter = new FileNameExtensionFilter(&quot;Telefonbuch&quot;, &quot;ser&quot;);  </span>
+<span class="nc" id="L836">        fc.setAcceptAllFileFilterUsed(false);</span>
+<span class="nc" id="L837">        fc.addChoosableFileFilter(filter);</span>
 
-<span class="nc" id="L482">        int a = fc.showSaveDialog(null);</span>
+<span class="nc" id="L839">        int a = fc.showSaveDialog(null);</span>
         
         //bei klick auf &quot;Speichern&quot;
-<span class="nc bnc" id="L485" title="All 2 branches missed.">        if (a == JFileChooser.APPROVE_OPTION) {</span>
-<span class="nc" id="L486">            File outputFile = fc.getSelectedFile();</span>
-<span class="nc" id="L487">            String filename = fc.getSelectedFile().getName().toString();</span>
+<span class="nc bnc" id="L842" title="All 2 branches missed.">        if (a == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L843">            File outputFile = fc.getSelectedFile();</span>
+<span class="nc" id="L844">            String filename = fc.getSelectedFile().getName().toString();</span>
             
-<span class="nc" id="L489">            System.out.println(&quot;Überprüfe ob &quot;+filename+&quot; existiert...&quot;);</span>
-<span class="nc bnc" id="L490" title="All 2 branches missed.">            if (!outputFile.exists()) {</span>
+<span class="nc" id="L846">            System.out.println(&quot;Überprüfe ob &quot;+filename+&quot; existiert...&quot;);</span>
+<span class="nc bnc" id="L847" title="All 2 branches missed.">            if (!outputFile.exists()) {</span>
                 try {
                     //Neue Datei erstellen mit Endung .ser
-<span class="nc" id="L493">                    outputFile.createNewFile();</span>
-<span class="nc bnc" id="L494" title="All 2 branches missed.">                    if (!filename.endsWith(&quot;.ser&quot;)) {</span>
-<span class="nc" id="L495">                    filename += &quot;.ser&quot;;</span>
+<span class="nc" id="L850">                    outputFile.createNewFile();</span>
+<span class="nc bnc" id="L851" title="All 2 branches missed.">                    if (!filename.endsWith(&quot;.ser&quot;)) {</span>
+<span class="nc" id="L852">                    filename += &quot;.ser&quot;;</span>
                 }
-<span class="nc" id="L497">                   System.out.println(&quot;Datei &quot; + filename + &quot; wurde erfolgreich erstellt&quot;);</span>
+<span class="nc" id="L854">                   System.out.println(&quot;Datei &quot; + filename + &quot; wurde erfolgreich erstellt&quot;);</span>
                 
-<span class="nc" id="L499">                } catch (IOException e) {</span>
-<span class="nc" id="L500">                    System.out.println(&quot;Fehler beim erstellen einer neuen Datei&quot;);</span>
-<span class="nc" id="L501">                    e.printStackTrace();</span>
-<span class="nc" id="L502">                }</span>
+<span class="nc" id="L856">                } catch (IOException e) {</span>
+<span class="nc" id="L857">                    System.out.println(&quot;Fehler beim erstellen einer neuen Datei&quot;);</span>
+<span class="nc" id="L858">                    e.printStackTrace();</span>
+<span class="nc" id="L859">                }</span>
             }
             //TODO Cancel Button Action1
         
-<span class="nc" id="L506">            System.out.println(&quot;Versuche zu speichern...&quot;);</span>
-<span class="nc" id="L507">            telefonbuch.alleKontakteAnzeigen();                 //Bug Hunting</span>
+<span class="nc" id="L863">            System.out.println(&quot;Versuche zu speichern...&quot;);</span>
+<span class="nc" id="L864">            telefonbuch.alleKontakteAnzeigen();                 //Bug Hunting</span>
 
             //Speichern
-<span class="nc" id="L510">            telefonbuch.speichern(outputFile);</span>
+<span class="nc" id="L867">            telefonbuch.speichern(outputFile);</span>
         }
-<span class="nc" id="L512">        System.out.println(&quot;Telefonbuch wurde gespeichert!&quot;);</span>
+<span class="nc" id="L869">        System.out.println(&quot;Telefonbuch wurde gespeichert!&quot;);</span>
 
     // TODO add your handling code here:
-<span class="nc" id="L515">    } //GEN-LAST:event_menuSpeichernActionPerformed</span>
+<span class="nc" id="L872">    }//GEN-LAST:event_menuSpeichernActionPerformed</span>
 
-    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) { //GEN-FIRST:event_jList1ValueChanged
-        
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+<span class="nc" id="L875">        int index = 0;</span>
         //Auswahl index
-<span class="nc" id="L520">        int index = jList1.getSelectedIndex();</span>
+<span class="nc" id="L877">        index = jList1.getSelectedIndex();</span>
 
         //Kontakt auslesen
-<span class="nc" id="L523">        Kontakt details = telefonbuch.telefonbuchArray.get(index);</span>
+<span class="nc" id="L880">        Kontakt details = telefonbuch.telefonbuchArray.get(index);</span>
 
         //Textfelder befüllen
-<span class="nc" id="L526">        detailsNameText.setText(details.getName());</span>
-<span class="nc" id="L527">        detailsAdresseText.setText(details.getAdresse());</span>
-<span class="nc" id="L528">        detailsEmailText.setText(details.getEmail());</span>
-<span class="nc" id="L529">        detailsNummerText.setText(details.nummern.toString());</span>
-<span class="nc" id="L530">    } //GEN-LAST:event_jList1ValueChanged</span>
+<span class="nc" id="L883">        detailsNameText.setText(details.getName());</span>
+<span class="nc" id="L884">        detailsAdresseText.setText(details.getAdresse());</span>
+<span class="nc" id="L885">        detailsEmailText.setText(details.getEmail());</span>
+<span class="nc" id="L886">        jTextAreaNummern.setText(details.getNummern().toString());</span>
+       // for (int i = 0; i&lt;=details.nummern.size();i++){
+       //     jTextAreaNummern.setText(details.nummernToString());
+       // }
+<span class="nc" id="L890">    }//GEN-LAST:event_jList1ValueChanged</span>
 
-    private void detailsNameTextActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_detailsNameTextActionPerformed
+
+    private void butKontaktSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktSpeichernActionPerformed
+        //Kontakt im Telefonbuch ändern
         // TODO add your handling code here:
-<span class="nc" id="L534">    } //GEN-LAST:event_detailsNameTextActionPerformed</span>
+                //Auswahl index
+<span class="nc" id="L897">        int index = jList1.getSelectedIndex();</span>
+        //Telefonnummer neueNummer = new Telefonnummer();
 
-    private void butKontaktSpeichernActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_butKontaktSpeichernActionPerformed
+        //Kontakt auslesen
+<span class="nc" id="L901">        Kontakt details = telefonbuch.telefonbuchArray.get(index);</span>
 
-        // TODO add your handling code here:
-        //UPDATE FILE
-        //Wie speichern nur ohne FileChooser
-        //get.currentpath, file..
+<span class="nc" id="L903">        details.setName(detailsNameText.getText());</span>
+<span class="nc" id="L904">        details.setAdresse(detailsAdresseText.getText());</span>
+<span class="nc" id="L905">        details.setEmail(detailsEmailText.getText());</span>
+<span class="nc" id="L906">        neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());</span>
+<span class="nc" id="L907">        neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());</span>
+<span class="nc" id="L908">        details.fuegeNrHinzu(neueNummer);</span>
         
-<span class="nc" id="L543">    } //GEN-LAST:event_butKontaktSpeichernActionPerformed</span>
+<span class="nc" id="L910">    }//GEN-LAST:event_butKontaktSpeichernActionPerformed</span>
 
-    private void menuNeuerKontaktActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_menuNeuerKontaktActionPerformed
+    private void menuNeuerKontaktActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNeuerKontaktActionPerformed
         // TODO add your handling code here:
         //Springe zu Card &quot;Neuer Kontakt anlegen&quot;
-<span class="nc" id="L548">        CardLayout cl = (CardLayout) (cards.getLayout());</span>
-<span class="nc" id="L549">        ((java.awt.CardLayout) cl).show(cards, &quot;cardKontaktAnlegen&quot;);</span>
-<span class="nc" id="L550">    } //GEN-LAST:event_menuNeuerKontaktActionPerformed</span>
+<span class="nc" id="L915">        CardLayout cl = (CardLayout) (cards.getLayout());</span>
+<span class="nc" id="L916">        ((java.awt.CardLayout) cl).show(cards, &quot;cardKontaktAnlegen&quot;);</span>
+<span class="nc" id="L917">        zusNummerCounter = 0;</span>
+<span class="nc" id="L918">        neueNummer2.setVisible(false);</span>
+<span class="nc" id="L919">        neueBeschreibung2.setVisible(false);</span>
+<span class="nc" id="L920">        textfieldBeschreibung2.setVisible(false);</span>
+<span class="nc" id="L921">        textfieldNeueNummer2.setVisible(false);</span>
 
-    private void butCancelNeuActionPerformed(java.awt.event.ActionEvent evt) { //GEN-FIRST:event_butCancelNeuActionPerformed
+<span class="nc" id="L923">        neueNummer3.setVisible(false);</span>
+<span class="nc" id="L924">        neueBeschreibung3.setVisible(false);</span>
+<span class="nc" id="L925">        textfieldBeschreibung3.setVisible(false);</span>
+<span class="nc" id="L926">        textfieldNeueNummer3.setVisible(false);</span>
+
+<span class="nc" id="L928">        neueNummer4.setVisible(false);</span>
+<span class="nc" id="L929">        neueBeschreibung4.setVisible(false);</span>
+<span class="nc" id="L930">        textfieldBeschreibung4.setVisible(false);</span>
+<span class="nc" id="L931">        textfieldNeueNummer4.setVisible(false);</span>
+<span class="nc" id="L932">        revalidate();</span>
+<span class="nc" id="L933">        repaint();</span>
+<span class="nc" id="L934">    }//GEN-LAST:event_menuNeuerKontaktActionPerformed</span>
+
+    private void butCancelNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelNeuActionPerformed
         // TODO add your handling code here:
+        //counter resetten
+<span class="nc" id="L939">        zusNummerCounter = 0;</span>
+<span class="nc" id="L940">        neueNummer2.setVisible(false);</span>
+<span class="nc" id="L941">        neueBeschreibung2.setVisible(false);</span>
+<span class="nc" id="L942">        textfieldBeschreibung2.setVisible(false);</span>
+<span class="nc" id="L943">        textfieldNeueNummer2.setVisible(false);</span>
+
+<span class="nc" id="L945">        neueNummer3.setVisible(false);</span>
+<span class="nc" id="L946">        neueBeschreibung3.setVisible(false);</span>
+<span class="nc" id="L947">        textfieldBeschreibung3.setVisible(false);</span>
+<span class="nc" id="L948">        textfieldNeueNummer3.setVisible(false);</span>
+
+<span class="nc" id="L950">        neueNummer4.setVisible(false);</span>
+<span class="nc" id="L951">        neueBeschreibung4.setVisible(false);</span>
+<span class="nc" id="L952">        textfieldBeschreibung4.setVisible(false);</span>
+<span class="nc" id="L953">        textfieldNeueNummer4.setVisible(false);</span>
+<span class="nc" id="L954">        revalidate();</span>
+<span class="nc" id="L955">        repaint();</span>
         //Springe zu Card &quot;Alle Kontakte anzeigen&quot;
-<span class="nc" id="L555">        CardLayout cl = (CardLayout) (cards.getLayout());</span>
-<span class="nc" id="L556">        ((java.awt.CardLayout) cl).show(cards, &quot;cardAlleKontakteAnzeigen&quot;);</span>
-<span class="nc" id="L557">        jListFuellen(telefonbuch);</span>
-<span class="nc" id="L558">    } //GEN-LAST:event_butCancelNeuActionPerformed</span>
+<span class="nc" id="L957">        CardLayout cl = (CardLayout) (cards.getLayout());</span>
+<span class="nc" id="L958">        ((java.awt.CardLayout) cl).show(cards, &quot;cardAlleKontakteAnzeigen&quot;);</span>
+<span class="nc" id="L959">    }//GEN-LAST:event_butCancelNeuActionPerformed</span>
+
+    private void butZusNummerNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butZusNummerNeuActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L963">        zusNummerCounter++;</span>
+
+<span class="nc bnc" id="L965" title="All 2 branches missed.">        if (zusNummerCounter == 1){</span>
+<span class="nc" id="L966">            neueNummer2.setVisible(true);</span>
+<span class="nc" id="L967">            neueBeschreibung2.setVisible(true);</span>
+<span class="nc" id="L968">            textfieldBeschreibung2.setVisible(true);</span>
+<span class="nc" id="L969">            textfieldNeueNummer2.setVisible(true);</span>
+        }
+<span class="nc bnc" id="L971" title="All 2 branches missed.">        if (zusNummerCounter == 2){</span>
+<span class="nc" id="L972">            neueNummer3.setVisible(true);</span>
+<span class="nc" id="L973">            neueBeschreibung3.setVisible(true);</span>
+<span class="nc" id="L974">            textfieldBeschreibung3.setVisible(true);</span>
+<span class="nc" id="L975">            textfieldNeueNummer3.setVisible(true);</span>
+        }
+<span class="nc bnc" id="L977" title="All 2 branches missed.">        if (zusNummerCounter == 3){</span>
+<span class="nc" id="L978">            neueNummer4.setVisible(true);</span>
+<span class="nc" id="L979">            neueBeschreibung4.setVisible(true);</span>
+<span class="nc" id="L980">            textfieldBeschreibung4.setVisible(true);</span>
+<span class="nc" id="L981">            textfieldNeueNummer4.setVisible(true);</span>
+        }
+
+<span class="nc" id="L984">    }//GEN-LAST:event_butZusNummerNeuActionPerformed</span>
+
+    private void butKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktSuchenActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L988">        CardLayout cl = (CardLayout) (cards.getLayout());</span>
+<span class="nc" id="L989">        ((java.awt.CardLayout) cl).show(cards, &quot;cardKontaktSuchen&quot;);</span>
+
+<span class="nc" id="L991">    }//GEN-LAST:event_butKontaktSuchenActionPerformed</span>
+
+    
+
+    private void menuKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuKontaktSuchenActionPerformed
+        // TODO add your handling code here:
+        //jDialogSuchen.setVisible(true);
+<span class="nc" id="L998">        CardLayout cl = (CardLayout) (cards.getLayout());</span>
+<span class="nc" id="L999">        ((java.awt.CardLayout) cl).show(cards, &quot;cardKontaktSuchen&quot;);</span>
+<span class="nc" id="L1000">    }//GEN-LAST:event_menuKontaktSuchenActionPerformed</span>
+
+    private void menuAlleKontakteAnzeigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAlleKontakteAnzeigenActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L1004">        CardLayout cl = (CardLayout) (cards.getLayout());</span>
+<span class="nc" id="L1005">        ((java.awt.CardLayout) cl).show(cards, &quot;cardAlleKontakteAnzeigen&quot;);</span>
+<span class="nc" id="L1006">    }//GEN-LAST:event_menuAlleKontakteAnzeigenActionPerformed</span>
+
+    private void jButtonSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuchenActionPerformed
+        // TODO add your handling code here:
+        
+        //Kontakt suchErgebnis = new Kontakt();
+<span class="nc" id="L1012">        DefaultListModel&lt;String&gt; model = new DefaultListModel&lt;&gt;();</span>
+<span class="nc" id="L1013">        String suchString = textSuche.getText();</span>
+<span class="nc" id="L1014">        Telefonbuch suchergebnisse = new Telefonbuch();</span>
+
+<span class="nc bnc" id="L1016" title="All 2 branches missed.">        for (Kontakt kontakt:telefonbuch.telefonbuchArray){</span>
+
+<span class="nc bnc" id="L1018" title="All 2 branches missed.">            if (jRadioButtonName.isSelected()){</span>
+<span class="nc bnc" id="L1019" title="All 2 branches missed.">                if (kontakt.getName().contains(suchString)){</span>
+
+<span class="nc" id="L1021">                    model.addElement(kontakt.getName());</span>
+<span class="nc" id="L1022">                    suchergebnisse.fuegeKontaktHinzu(kontakt);</span>
+                }
+            }
+
+<span class="nc bnc" id="L1026" title="All 2 branches missed.">            if (jRadioButtonAdresse.isSelected()){</span>
+<span class="nc bnc" id="L1027" title="All 2 branches missed.">                if (kontakt.getAdresse().contains(suchString)){</span>
+<span class="nc" id="L1028">                    model.addElement(kontakt.getName());</span>
+<span class="nc" id="L1029">                    suchergebnisse.fuegeKontaktHinzu(kontakt);</span>
+                }
+            }
+
+<span class="nc bnc" id="L1033" title="All 2 branches missed.">            if (jRadioButtonEmailSuche.isSelected()){</span>
+<span class="nc bnc" id="L1034" title="All 2 branches missed.">                if(kontakt.getEmail().contains(suchString)){</span>
+<span class="nc" id="L1035">                    model.addElement(kontakt.getName());</span>
+<span class="nc" id="L1036">                    suchergebnisse.fuegeKontaktHinzu(kontakt);</span>
+                }
+            }
+
+<span class="nc bnc" id="L1040" title="All 2 branches missed.">            if (jRadioButtonNummer.isSelected()){</span>
+<span class="nc" id="L1041">                long suchStringlong = Long.parseLong(suchString);</span>
+<span class="nc bnc" id="L1042" title="All 2 branches missed.">                if (kontakt.getNummern().contains(suchStringlong)){</span>
+<span class="nc" id="L1043">                    model.addElement(kontakt.getName());</span>
+<span class="nc" id="L1044">                    suchergebnisse.fuegeKontaktHinzu(kontakt);</span>
+                }
+            }
+<span class="nc" id="L1047">        }</span>
+<span class="nc" id="L1048">        suchergebnisse.alleKontakteAnzeigen();</span>
+<span class="nc" id="L1049">        jListSuchergebnisse.setModel(model);</span>
+<span class="nc" id="L1050">        jListSuchergebnisse.setVisible(true);</span>
+<span class="nc" id="L1051">    }//GEN-LAST:event_jButtonSuchenActionPerformed</span>
+
+    private void jListSuchergebnisseValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListSuchergebnisseValueChanged
+        // TODO add your handling code here:
+
+<span class="nc" id="L1056">        int index = 0;</span>
+                //Auswahl index
+<span class="nc" id="L1058">        index = jListSuchergebnisse.getSelectedIndex();</span>
+<span class="nc" id="L1059">        System.out.println(&quot;index=&quot; +index);</span>
+
+        //Kontakt auslesen
+<span class="nc" id="L1062">        Kontakt details = suchergebnisse.telefonbuchArray.get(index);</span>
+<span class="nc" id="L1063">        Kontakt suchDetails = new Kontakt();</span>
+<span class="nc" id="L1064">        suchDetails.setName(details.getName());</span>
+<span class="nc" id="L1065">        suchDetails.setAdresse(details.getAdresse());</span>
+<span class="nc" id="L1066">        suchDetails.setEmail(details.getEmail());</span>
+<span class="nc" id="L1067">        suchDetails.setNummern(details.getNummern());</span>
+        //Textfelder befüllen
+<span class="nc" id="L1069">        jTextFieldSucheDetailsName.setText(suchDetails.getName());</span>
+<span class="nc" id="L1070">        jTextFieldSucheDetailsAdresse.setText(suchDetails.getAdresse());</span>
+<span class="nc" id="L1071">        jTextFieldSucheDetailsEmail.setText(suchDetails.getEmail());</span>
+<span class="nc" id="L1072">        jTextFieldSucheDetailsNummer.setText(suchDetails.getNummern().toString());</span>
+<span class="nc" id="L1073">    }//GEN-LAST:event_jListSuchergebnisseValueChanged</span>
+
+    private void butStartBuchNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartBuchNeuActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L1077">        telefonbuch = new Telefonbuch();</span>
+<span class="nc" id="L1078">        CardLayout cl = (CardLayout) (cards.getLayout());</span>
+<span class="nc" id="L1079">        ((java.awt.CardLayout) cl).show(cards, &quot;cardAlleKontakteAnzeigen&quot;);</span>
+<span class="nc" id="L1080">        menuKontakt.setEnabled(true);</span>
+<span class="nc" id="L1081">    }//GEN-LAST:event_butStartBuchNeuActionPerformed</span>
+
+    private void butSucheZuruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSucheZuruckActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L1085">                CardLayout cl = (CardLayout) (cards.getLayout());</span>
+<span class="nc" id="L1086">        ((java.awt.CardLayout) cl).show(cards, &quot;cardAlleKontakteAnzeigen&quot;);</span>
+<span class="nc" id="L1087">    }//GEN-LAST:event_butSucheZuruckActionPerformed</span>
+
+
+
 
     /**
      * @param args the command line arguments
@@ -568,41 +1100,41 @@ public class GuiBuild&lt;CardLayout&gt; extends javax.swing.JFrame {
          */
     
         try {
-<span class="nc bnc" id="L571" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
-<span class="nc bnc" id="L572" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
-<span class="nc" id="L573">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
-<span class="nc" id="L574">                    break;</span>
+<span class="nc bnc" id="L1103" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L1104" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L1105">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L1106">                    break;</span>
                 }
             }
-<span class="nc" id="L577">        } catch (ClassNotFoundException ex) {</span>
-<span class="nc" id="L578">            java.util.logging.Logger.getLogger(GuiBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L579">        } catch (InstantiationException ex) {</span>
-<span class="nc" id="L580">            java.util.logging.Logger.getLogger(GuiBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L581">        } catch (IllegalAccessException ex) {</span>
-<span class="nc" id="L582">            java.util.logging.Logger.getLogger(GuiBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L583">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
-<span class="nc" id="L584">            java.util.logging.Logger.getLogger(GuiBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L585">        }</span>
+<span class="nc" id="L1109">        } catch (ClassNotFoundException ex) {</span>
+<span class="nc" id="L1110">            java.util.logging.Logger.getLogger(GuiBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L1111">        } catch (InstantiationException ex) {</span>
+<span class="nc" id="L1112">            java.util.logging.Logger.getLogger(GuiBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L1113">        } catch (IllegalAccessException ex) {</span>
+<span class="nc" id="L1114">            java.util.logging.Logger.getLogger(GuiBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L1115">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L1116">            java.util.logging.Logger.getLogger(GuiBuild.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L1117">        }</span>
         //&lt;/editor-fold&gt;
 
         /* Create and display the form */
-<span class="nc" id="L589">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+<span class="nc" id="L1121">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="nc" id="L591">                new GuiBuild().setVisible(true);</span>
-<span class="nc" id="L592">            }</span>
+<span class="nc" id="L1123">                new GuiBuild().setVisible(true);</span>
+<span class="nc" id="L1124">            }</span>
         });
-<span class="nc" id="L594">    }</span>
+<span class="nc" id="L1126">    }</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel alleKontakteAnzeigen;
     private javax.swing.JButton butCancelNeu;
-    private javax.swing.JButton butKontaktAnzeigen;
     private javax.swing.JButton butKontaktLoeschen;
     private javax.swing.JButton butKontaktSpeichern;
     private javax.swing.JButton butKontaktSuchen;
     private javax.swing.JButton butSpeichernNeu;
     private javax.swing.JButton butStartBuchLaden;
     private javax.swing.JButton butStartBuchNeu;
+    private javax.swing.JButton butSucheZuruck;
     private javax.swing.JButton butZusNummerNeu;
     private javax.swing.JPanel cards;
     private javax.swing.JLabel detailsAdresse;
@@ -612,8 +1144,28 @@ public class GuiBuild&lt;CardLayout&gt; extends javax.swing.JFrame {
     private javax.swing.JLabel detailsName;
     private javax.swing.JTextField detailsNameText;
     private javax.swing.JLabel detailsNummer;
-    private javax.swing.JTextField detailsNummerText;
+    private javax.swing.JButton jButtonSuchen;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabelSucheDetailsName;
     private javax.swing.JList&lt;String&gt; jList1;
+    private javax.swing.JList&lt;String&gt; jListSuchergebnisse;
+    private javax.swing.JRadioButton jRadioButtonAdresse;
+    private javax.swing.JRadioButton jRadioButtonEmailSuche;
+    private javax.swing.JRadioButton jRadioButtonName;
+    private javax.swing.JRadioButton jRadioButtonNummer;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextAreaNummern;
+    private javax.swing.JTextField jTextFieldBeschreibungNeu;
+    private javax.swing.JTextField jTextFieldSucheDetailsAdresse;
+    private javax.swing.JTextField jTextFieldSucheDetailsEmail;
+    private javax.swing.JTextField jTextFieldSucheDetailsName;
+    private javax.swing.JTextField jTextFieldSucheDetailsNummer;
     private javax.swing.JPanel kontaktAnlegen;
     private javax.swing.JLabel labelAdresseNeu;
     private javax.swing.JLabel labelEMailNeu;
@@ -630,12 +1182,29 @@ public class GuiBuild&lt;CardLayout&gt; extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuSpeichern;
     private javax.swing.JMenu menuTelefonbuch;
     private javax.swing.JMenuBar menueleiste;
+    private javax.swing.JLabel neueBeschreibung2;
+    private javax.swing.JLabel neueBeschreibung3;
+    private javax.swing.JLabel neueBeschreibung4;
+    private javax.swing.JLabel neueNummer2;
+    private javax.swing.JLabel neueNummer3;
+    private javax.swing.JLabel neueNummer4;
+    private javax.swing.JPanel panelKontaktSuchen;
     private javax.swing.JPanel startWindow;
     private javax.swing.JTextField textFieldAdresseNeu;
     private javax.swing.JTextField textFieldNameNeu;
     private javax.swing.JTextField textFieldeMailNeu;
+    private javax.swing.JTextField textSuche;
+    private javax.swing.JTextField textfieldBeschreibung2;
+    private javax.swing.JTextField textfieldBeschreibung3;
+    private javax.swing.JTextField textfieldBeschreibung4;
+    private javax.swing.JTextField textfieldNeueNummer2;
+    private javax.swing.JTextField textfieldNeueNummer3;
+    private javax.swing.JTextField textfieldNeueNummer4;
     private javax.swing.JTextField textfieldNummerNeu;
     private Telefonbuch telefonbuch;
+    private Telefonbuch suchergebnisse;
+    private Telefonnummer neueNummer;
+<span class="nc" id="L1207">    private int zusNummerCounter =0;</span>
     // End of variables declaration//GEN-END:variables
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

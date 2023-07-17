@@ -10,11 +10,11 @@ public class Kontakt implements Serializable {
     private String name;
     private String adresse;
     private String email;
-    protected ArrayList&lt;Long&gt; nummern;
+    protected ArrayList&lt;Telefonnummer&gt; nummern;
 
     //Konstruktor
 <span class="nc" id="L16">    public Kontakt() {</span>
-<span class="nc" id="L17">        ArrayList&lt;Long&gt; nummern = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L17">        ArrayList&lt;Telefonnummer&gt; nummern = new ArrayList&lt;&gt;();</span>
 <span class="nc" id="L18">        this.nummern = nummern;</span>
 <span class="nc" id="L19">        this.name = null;</span>
 <span class="nc" id="L20">        this.adresse = null;</span>
@@ -22,66 +22,77 @@ public class Kontakt implements Serializable {
 <span class="nc" id="L22">    }</span>
 
 <span class="nc" id="L24">    public Kontakt(String name) {</span>
-<span class="nc" id="L25">        ArrayList&lt;Long&gt; nummern = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L25">        ArrayList&lt;Telefonnummer&gt; nummern = new ArrayList&lt;&gt;();</span>
 <span class="nc" id="L26">        this.nummern = nummern;</span>
 <span class="nc" id="L27">        this.name = name;</span>
 <span class="nc" id="L28">    }</span>
 
-    public ArrayList&lt;Long&gt; getNummern() {
+    public ArrayList&lt;Telefonnummer&gt; getNummern() {
 <span class="nc" id="L31">        return nummern;</span>
     }
 
-    public void setNummern(ArrayList&lt;Long&gt; nummern) {
+    public void setNummern(ArrayList&lt;Telefonnummer&gt; nummern) {
 <span class="nc" id="L35">        this.nummern = nummern;</span>
 <span class="nc" id="L36">    }</span>
 
-    //Getter Methoden
     public String getName() {
-<span class="nc" id="L40">        return name;</span>
+<span class="nc" id="L39">        return name;</span>
     }
 
     public String getAdresse() {
-<span class="nc" id="L44">        return adresse;</span>
+<span class="nc" id="L43">        return adresse;</span>
     }
 
     public String getEmail() {
-<span class="nc" id="L48">        return email;</span>
+<span class="nc" id="L47">        return email;</span>
     }
 
     //Setter Methoden
     public void setName(String name) {
-<span class="nc" id="L53">        this.name = name;</span>
-<span class="nc" id="L54">    }</span>
+<span class="nc" id="L52">        this.name = name;</span>
+<span class="nc" id="L53">    }</span>
 
     public void setAdresse(String adresse) {
-<span class="nc" id="L57">        this.adresse = adresse;</span>
-<span class="nc" id="L58">    }</span>
+<span class="nc" id="L56">        this.adresse = adresse;</span>
+<span class="nc" id="L57">    }</span>
 
     public void setEmail(String email) {
-<span class="nc" id="L61">        this.email = email;</span>
-<span class="nc" id="L62">    }</span>
+<span class="nc" id="L60">        this.email = email;</span>
+<span class="nc" id="L61">    }</span>
 
     //Telefonnummer zu ArrayList&lt;Long&gt; hinzufügen
-    public void fuegeNrHinzu(long telefonnummer) {
-<span class="nc" id="L66">        nummern.add(telefonnummer);</span>
-<span class="nc" id="L67">    }</span>
+    public void fuegeNrHinzu(Telefonnummer telefonnummer) {
+<span class="nc" id="L65">        nummern.add(telefonnummer);</span>
+<span class="nc" id="L66">    }</span>
 
     //beim laden aus Datei Telefonbuch.ser
     public void fuegeNrHinzu(String nummerString) {
-<span class="nc" id="L71">        long l = Long.parseLong(nummerString);</span>
-<span class="nc" id="L72">        nummern.add(l);</span>
-<span class="nc" id="L73">    }</span>
+
+<span class="nc" id="L71">        Telefonnummer l = new Telefonnummer();</span>
+<span class="nc" id="L72">        l = l.stringToTelefonnummer(nummerString);</span>
+<span class="nc" id="L73">        nummern.add(l);</span>
+<span class="nc" id="L74">    }</span>
 
     public void nummerAusgeben() {
-<span class="nc bnc" id="L76" title="All 2 branches missed.">        for(long nummer: nummern){</span>
-<span class="nc" id="L77">            System.out.println(nummer);</span>
-<span class="nc" id="L78">        }</span>
-<span class="nc" id="L79">    }</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        for(Telefonnummer nummer: nummern){</span>
+<span class="nc" id="L78">            System.out.println(nummer);</span>
+<span class="nc" id="L79">        }</span>
+<span class="nc" id="L80">    }</span>
+
+    public String nummernToString(){
+<span class="nc" id="L83">        String nummerToString = &quot;&quot;;</span>
+
+<span class="nc bnc" id="L85" title="All 2 branches missed.">        for (Telefonnummer nummer: nummern){</span>
+<span class="nc" id="L86">            nummerToString += nummer.telefonnummerToString() + &quot; \n&quot; ;</span>
+            
+<span class="nc" id="L88">        }</span>
+<span class="nc" id="L89">        return nummerToString;</span>
+    }
 
     // toString
     @Override
     public String toString() {
-<span class="nc" id="L84">        return &quot;[name=&quot; + name + &quot;, adresse=&quot; + adresse + &quot;, email=&quot; + email + &quot;, nummern=&quot; + nummern + &quot;]&quot;;</span>
+<span class="nc" id="L95">        return nummern + &quot; \n&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

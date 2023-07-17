@@ -65,7 +65,7 @@ public class Telefonbuch implements Serializable {
 <span class="nc" id="L65">            oos.writeObject(telefonbuchArray);</span>
 <span class="nc" id="L66">            oos.flush();</span>
 <span class="nc" id="L67">            oos.close();</span>
-<span class="nc" id="L68">            System.out.println(&quot;FileOutPutStream erfolgreich&quot;);</span>
+<span class="nc" id="L68">            System.out.println(&quot;Speichern erfolgreich!&quot;);</span>
             //alleKontakteAnzeigen();
 
 <span class="nc" id="L71">        } catch (FileNotFoundException e) {</span>
@@ -84,7 +84,7 @@ public class Telefonbuch implements Serializable {
 <span class="nc" id="L84">            ois = new ObjectInputStream(fis);</span>
 <span class="nc" id="L85">            Object obj = ois.readObject();</span>
 <span class="nc" id="L86">            telefonbuchArray = (ArrayList&lt;Kontakt&gt;) obj;</span>
-        //System.out.println(&quot;Telefonbuch erfolgreich geladen!&quot;);
+<span class="nc" id="L87">            System.out.println(&quot;Telefonbuch erfolgreich geladen!&quot;);</span>
         }
 <span class="nc" id="L89">            catch (IOException e){</span>
 <span class="nc" id="L90">                e.printStackTrace();</span>
