@@ -938,7 +938,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                     //e.printStackTrace();
                 }
             }
-            //TODO Cancel Button Action1
         
             System.out.println("Versuche zu speichern...");
             telefonbuch.alleKontakteAnzeigen();                 //Bug Hunting

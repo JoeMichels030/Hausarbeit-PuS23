@@ -50,7 +50,7 @@ public class Telefonnummer implements Serializable{
         return nummerToString;
     }
 
-    //Telefonnummer toString, Rückgabe der Telefonnummer als String
+    //Telefonnummer toString, Rückgabe der Telefonnummer als String 
     //Ausgabe
     @Override
     public String toString() {
