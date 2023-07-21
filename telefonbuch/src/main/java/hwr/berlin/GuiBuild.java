@@ -44,6 +44,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         startWindow = new javax.swing.JPanel();
         butStartBuchLaden = new javax.swing.JButton();
         butStartBuchNeu = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         kontaktAnlegen = new javax.swing.JPanel();
         textFieldNameNeu = new javax.swing.JTextField();
         textFieldAdresseNeu = new javax.swing.JTextField();
@@ -134,6 +135,9 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hwr/berlin/images/download.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout startWindowLayout = new javax.swing.GroupLayout(startWindow);
         startWindow.setLayout(startWindowLayout);
         startWindowLayout.setHorizontalGroup(
@@ -144,11 +148,17 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, Short.MAX_VALUE)
                 .addComponent(butStartBuchNeu)
                 .addGap(121, 121, 121))
+            .addGroup(startWindowLayout.createSequentialGroup()
+                .addGap(359, 359, 359)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         startWindowLayout.setVerticalGroup(
             startWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startWindowLayout.createSequentialGroup()
-                .addContainerGap(374, Short.MAX_VALUE)
+                .addGap(81, 81, 81)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(startWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butStartBuchLaden)
                     .addComponent(butStartBuchNeu))
@@ -438,8 +448,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                                 .addComponent(butKontaktSpeichern)
                                 .addGap(18, 18, 18)
-                                .addComponent(butKontaktLoeschen)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(butKontaktLoeschen))
                             .addComponent(jScrollPane2)))
                     .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                         .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -460,7 +469,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -624,7 +633,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                             .addComponent(jTextFieldSucheDetailsNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addComponent(butSucheZuruck)
                 .addGap(55, 55, 55))
         );
@@ -1255,6 +1264,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JLabel detailsNummer;
     private javax.swing.JButton jButtonSuchen;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
