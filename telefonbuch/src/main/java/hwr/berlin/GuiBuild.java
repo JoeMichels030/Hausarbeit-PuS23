@@ -115,10 +115,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
-        telefonbuch = new Telefonbuch();
-        suchergebnisse = new Telefonbuch();
-        neueNummer = new Telefonnummer();
-        fehlermeldung = new javax.swing.JOptionPane();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         cards.setLayout(new java.awt.CardLayout());
@@ -187,7 +184,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         kontaktAnlegen.add(textFieldeMailNeu, gridBagConstraints);
 
-
+        textfieldNummerNeu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfieldNummerNeuActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 8;
@@ -276,7 +277,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(jLabel1, gridBagConstraints);
 
-
+        jTextFieldBeschreibungNeu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBeschreibungNeuActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 10;
@@ -290,7 +295,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(neueNummer2, gridBagConstraints);
 
-
+        textfieldNeueNummer2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfieldNeueNummer2ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 12;
@@ -332,7 +341,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(neueBeschreibung4, gridBagConstraints);
 
-
+        textfieldBeschreibung2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfieldBeschreibung2ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 14;
@@ -358,24 +371,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.gridy = 22;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(textfieldBeschreibung4, gridBagConstraints);
-
-        // Felder Zusätzliche Nummern + Beschreibung unsichtbar per Default, werden sichtbar durch klick auf Button "zusätzliche Nummer"
-            neueNummer2.setVisible(false);
-            neueBeschreibung2.setVisible(false);
-            textfieldBeschreibung2.setVisible(false);
-            textfieldNeueNummer2.setVisible(false);
-
-        neueNummer3.setVisible(false);
-        neueBeschreibung3.setVisible(false);
-        textfieldBeschreibung3.setVisible(false);
-        textfieldNeueNummer3.setVisible(false);
-
-        neueNummer4.setVisible(false);
-        neueBeschreibung4.setVisible(false);
-        textfieldBeschreibung4.setVisible(false);
-        textfieldNeueNummer4.setVisible(false);
-        
-
 
         cards.add(kontaktAnlegen, "cardKontaktAnlegen");
 
@@ -410,7 +405,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         detailsNummer.setText("Telefonnummer");
 
-
+        detailsNameText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                detailsNameTextActionPerformed(evt);
+            }
+        });
 
         butKontaktSpeichern.setText("Kontakt speichern");
         butKontaktSpeichern.addActionListener(new java.awt.event.ActionListener() {
@@ -430,29 +429,29 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(listNamen, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(18, 18, 18)
                 .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
-                        .addComponent(detailsNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(detailsNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                                 .addComponent(butKontaktSpeichern)
                                 .addGap(18, 18, 18)
                                 .addComponent(butKontaktLoeschen)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jScrollPane2)))
                     .addGroup(alleKontakteAnzeigenLayout.createSequentialGroup()
                         .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(detailsName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(detailsAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(detailsEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(detailsEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(detailsAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(detailsName, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(50, 50, 50)
                         .addGroup(alleKontakteAnzeigenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(detailsAdresseText)
                             .addComponent(detailsEmailText)
                             .addComponent(detailsNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(146, 146, 146)
                 .addComponent(butKontaktSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
@@ -492,12 +491,20 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         cards.add(alleKontakteAnzeigen, "cardAlleKontakteAnzeigen");
 
-
+        textSuche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textSucheActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Suche:");
 
         jRadioButtonName.setText("Name");
-
+        jRadioButtonName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonNameActionPerformed(evt);
+            }
+        });
 
         jRadioButtonAdresse.setText("Adresse");
 
@@ -682,7 +689,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontakt.add(menuKontaktLoeschen);
 
         menueleiste.add(menuKontakt);
-        menuKontakt.setEnabled(false);
+
         setJMenuBar(menueleiste);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -695,7 +702,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -837,7 +844,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         }
     }
         //-> card AllekOntakteanzeigen
-    //GEN-LAST:event_butSpeichernNeuActionPerformed
+//GEN-LAST:event_butSpeichernNeuActionPerformed
 
     //mit getSelectedIndex den aktuellen Index abfragen (Kontakt auswählen)
     //Kontakt aus Telefonbuch löschen
@@ -1303,10 +1310,5 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textfieldNeueNummer3;
     private javax.swing.JTextField textfieldNeueNummer4;
     private javax.swing.JTextField textfieldNummerNeu;
-    private Telefonbuch telefonbuch;
-    private Telefonbuch suchergebnisse;
-    private Telefonnummer neueNummer;
-    private int zusNummerCounter =0;
-    private JOptionPane fehlermeldung;
     // End of variables declaration//GEN-END:variables
 }

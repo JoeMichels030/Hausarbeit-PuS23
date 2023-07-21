@@ -2432,26 +2432,26 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Component id="listNamen" min="-2" pref="209" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="detailsNummer" min="-2" pref="96" max="-2" attributes="0"/>
+                              <Component id="detailsNummer" min="-2" pref="127" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="butKontaktSpeichern" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="butKontaktLoeschen" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="149" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane2" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="detailsName" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Component id="detailsAdresse" min="-2" pref="55" max="-2" attributes="0"/>
-                                  <Component id="detailsEmail" min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Component id="detailsEmail" min="-2" pref="68" max="-2" attributes="0"/>
+                                  <Component id="detailsAdresse" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                                  <Component id="detailsName" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -2461,7 +2461,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
                       <Component id="butKontaktSuchen" min="-2" pref="118" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                   </Group>
