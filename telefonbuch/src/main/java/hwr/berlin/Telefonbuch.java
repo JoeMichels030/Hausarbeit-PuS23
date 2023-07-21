@@ -34,6 +34,10 @@ public class Telefonbuch implements Serializable {
         this.telefonbuchArray = buchLaden(file);
     }
 
+    
+    /** 
+     * @param kontakt
+     */
     //Kontakt zu ArrayList<Kontakt> (Telefonbuch) hinzufügen
     public void fuegeKontaktHinzu(Kontakt kontakt) {
         telefonbuchArray.add(kontakt);

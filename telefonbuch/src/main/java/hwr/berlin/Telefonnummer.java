@@ -14,6 +14,10 @@ public class Telefonnummer implements Serializable{
         this.beschreibung = null;
     }
 
+    
+    /** 
+     * @return long
+     */
     //get Telefonnummer
     public long getNummer() {
         return nummer;

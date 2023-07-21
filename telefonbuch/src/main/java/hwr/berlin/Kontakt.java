@@ -29,6 +29,10 @@ public class Kontakt implements Serializable {
         this.name = name;
     }
 
+    
+    /** 
+     * @return ArrayList<Telefonnummer>
+     */
     //get Telefonnummern als ArrayList
     public ArrayList<Telefonnummer> getNummern() {
         return nummern;

@@ -720,10 +720,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //status = 1 && textfield leer -> kein Fehler
         //status = 0 && textfield leer -> Fehlermeldung
         
-
+        int status = 0;
         //Neuer Kontakt erstellen
         while (true){
-        int status = 0;
+        try{
         Kontakt neuerKontakt = new Kontakt();
 
         if (textFieldNameNeu.getText().isEmpty() && status != 2){
@@ -745,13 +745,14 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //Telefonnummer
             if(status != 2){
                 try{Long.parseLong(textfieldNummerNeu.getText());
+                    neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());
                 }
                     catch (NumberFormatException nfe){
                         JOptionPane.showMessageDialog(null, "Bitte geben Sie eine gültige Telefonnummer ein. (Nur Ziffern 0-9)");
                         break;
                     }
             }
-        neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());
+        
 
 
         neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());
@@ -828,7 +829,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
         jListFuellen(telefonbuch);
-
+        break;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
         }
     }
         //-> card AllekOntakteanzeigen
@@ -853,6 +858,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         jTextAreaNummern.setText("");
         //jList updaten
         jListFuellen(telefonbuch);
+        
     }//GEN-LAST:event_butKontaktLoeschenActionPerformed
 
     private void menuBeendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuBeendenActionPerformed
@@ -1150,7 +1156,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         int index = 0;
                 //Auswahl index
         index = jListSuchergebnisse.getSelectedIndex();
-        System.out.println("index=" +index);
+      
 
         //Kontakt auslesen
         Kontakt details = suchergebnisse.telefonbuchArray.get(index);

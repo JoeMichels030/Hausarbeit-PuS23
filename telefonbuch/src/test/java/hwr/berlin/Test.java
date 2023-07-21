@@ -5,6 +5,10 @@ import java.io.File;
 public class Test {
 
 
+    
+    /** 
+     * @param args[]
+     */
     public static void main(String args[]){
 
     final String filelocation = "telefonbuch/src/main/java/hwr/berlin/Telefonbuch_Testklasse.ser";

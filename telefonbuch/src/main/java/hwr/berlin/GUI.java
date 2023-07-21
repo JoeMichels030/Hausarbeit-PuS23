@@ -47,6 +47,10 @@ public class GUI extends JFrame implements ActionListener{
    
 
 
+    
+    /** 
+     * @param args[]
+     */
     public static void main(String args[]){
         
         GUI fenster = new GUI();
