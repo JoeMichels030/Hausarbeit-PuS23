@@ -28,6 +28,7 @@ public class Telefonnummer implements Serializable{
         this.nummer = nummer;
     }
 
+
     //get Beschreibung
     public String getBeschreibung() {
         return beschreibung;
@@ -51,6 +52,22 @@ public class Telefonnummer implements Serializable{
         return nummerAlsTelefonnummer;
 
     }
+
+    public void  textfieldToTelefonnummer(String string){
+        //Telefonnummer nummerAlsTelefonnummer = new Telefonnummer();
+        try {
+        this.nummer = Long.parseLong(string);
+        }
+        catch (Exception e){
+            
+        }
+        //return nummerAlsTelefonnummer;
+
+    }
+
+
+
+
 
     //telefonnummerToString
     //wandelt Telefonnummer in String um

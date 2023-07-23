@@ -120,6 +120,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         suchergebnisse = new Telefonbuch();
        // kontakt = new Kontakt();
         neueNummer = new Telefonnummer();
+        telefonnummer = new Telefonnummer();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -900,6 +901,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
             jListFuellen(telefonbuch);
             //Menupunkt "Kontakt" wird enabled
             menuKontakt.setEnabled(true);
+            revalidate();
+            repaint();
         } 
     }//GEN-LAST:event_menuLadenActionPerformed
 
@@ -949,6 +952,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     }//GEN-LAST:event_menuSpeichernActionPerformed
 
     private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+        try{
         int index = 0;
         //Auswahl index
         index = jList1.getSelectedIndex();
@@ -961,7 +965,8 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         detailsAdresseText.setText(details.getAdresse());
         detailsEmailText.setText(details.getEmail());
         jTextAreaNummern.setText(details.nummernToString());
-
+        }
+        catch (Exception e){}
     }//GEN-LAST:event_jList1ValueChanged
 
 
@@ -969,6 +974,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         //Kontakt im Telefonbuch ändern
         // TODO add your handling code here:
                 //Auswahl index
+        try{ 
         int index = jList1.getSelectedIndex();
         //Telefonnummer neueNummer = new Telefonnummer();
 
@@ -978,11 +984,36 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         details.setName(detailsNameText.getText());
         details.setAdresse(detailsAdresseText.getText());
         details.setEmail(detailsEmailText.getText());
-        neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());
-        neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());
-        details.fuegeNrHinzu(neueNummer);
+        String[] geanderteNummer = jTextAreaNummern.getText().split(":");
+        for(Telefonnummer nummer:details.nummern){
+            details.loescheNr(nummer);
+        }
         
-    }//GEN-LAST:event_butKontaktSpeichernActionPerformed
+        int gerade = 0;
+            for (String part : geanderteNummer){
+                
+                if(gerade%2==0){
+                   telefonnummer.textfieldToTelefonnummer(part);
+                }
+                else {
+                    telefonnummer.setBeschreibung(part);
+                }
+                gerade++;
+                details.fuegeNrHinzu(telefonnummer);
+            }
+
+        
+            
+        jListFuellen(telefonbuch);
+        }
+        catch (Exception e){}
+    }
+        //details.jTextAreaToTelefonnummern(geanderteNummer);
+        //System.out.println(geanderteNummer);
+        //neueNummer.stringToTelefonnummer(textfieldNummerNeu.getText());
+        //neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());
+        
+    //}//GEN-LAST:event_butKontaktSpeichernActionPerformed
 
     //Bei Klick auf Menu "Neuer Kontakt"
     //setze counter auf 0
@@ -1299,6 +1330,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private Telefonbuch telefonbuch;
     private Telefonbuch suchergebnisse;
     private Telefonnummer neueNummer;
+    private Telefonnummer telefonnummer;
     //private Kontakt kontakt;
     private int zusNummerCounter;    
     // End of variables declaration//GEN-END:variables

@@ -78,6 +78,10 @@ public class Kontakt implements Serializable {
         nummern.add(telefonnummer);
     }
 
+    public void loescheNr(Telefonnummer telefonnummer){
+        nummern.remove(telefonnummer);
+    }
+
     //beim laden aus Datei Telefonbuch.ser
     //Eingabe String -> Telefonnummer
     //Telefonnummer zu ArrayList Telefonnummer hinzufügen
@@ -97,14 +101,13 @@ public class Kontakt implements Serializable {
     }
 
 
-
     //Ausgabe in jTextArea
     //Format: " nummer : beschreibung " \n
     public String nummernToString(){
         String nummerToString = "";
 
         for (Telefonnummer nummer: nummern){
-            nummerToString += nummer.telefonnummerToString() + " : "+nummer.getBeschreibung() +" \n" ;
+            nummerToString += nummer.telefonnummerToString() +":"+nummer.getBeschreibung() +" \n" ;
             
         }
         return nummerToString;
@@ -115,4 +118,6 @@ public class Kontakt implements Serializable {
     public String NummerArraytoString1() {
         return nummern + " \n";
     }
+
+
 }

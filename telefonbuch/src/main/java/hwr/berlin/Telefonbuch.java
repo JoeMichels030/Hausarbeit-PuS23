@@ -48,6 +48,8 @@ public class Telefonbuch implements Serializable {
         telefonbuchArray.remove(kontakt);
     }
 
+
+
     //Testmethode zum Überprüfen der geladenen/gespeicherten Werte
     //Kontakte anzeigen
     //Ausgabe Telefonbuch in der Konsole
