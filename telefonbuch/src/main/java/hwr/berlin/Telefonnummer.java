@@ -42,7 +42,12 @@ public class Telefonnummer implements Serializable{
     //wandelt Eingabe (String) aus jTextfield in Telefonnummer um, String wird als long geparst
     public Telefonnummer  stringToTelefonnummer(String string){
         Telefonnummer nummerAlsTelefonnummer = new Telefonnummer();
+        try {
         this.nummer = Long.parseLong(string);
+        }
+        catch (Exception e){
+            
+        }
         return nummerAlsTelefonnummer;
 
     }
