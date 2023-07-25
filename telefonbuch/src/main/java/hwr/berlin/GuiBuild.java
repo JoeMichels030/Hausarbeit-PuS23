@@ -40,6 +40,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        buttonGroupSuche = new javax.swing.ButtonGroup();
         cards = new javax.swing.JPanel();
         startWindow = new javax.swing.JPanel();
         butStartBuchLaden = new javax.swing.JButton();
@@ -116,11 +117,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
-        telefonbuch = new Telefonbuch();
-        suchergebnisse = new Telefonbuch();
-       // kontakt = new Kontakt();
-        neueNummer = new Telefonnummer();
-        telefonnummer = new Telefonnummer();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -199,7 +195,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         kontaktAnlegen.add(textFieldeMailNeu, gridBagConstraints);
 
-
+        textfieldNummerNeu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfieldNummerNeuActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 8;
@@ -288,7 +288,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(jLabel1, gridBagConstraints);
 
-
+        jTextFieldBeschreibungNeu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBeschreibungNeuActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 10;
@@ -302,7 +306,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(neueNummer2, gridBagConstraints);
 
-
+        textfieldNeueNummer2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfieldNeueNummer2ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 12;
@@ -344,7 +352,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(neueBeschreibung4, gridBagConstraints);
 
-
+        textfieldBeschreibung2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfieldBeschreibung2ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 14;
@@ -404,7 +416,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         detailsNummer.setText("Telefonnummer");
 
-
+        detailsNameText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                detailsNameTextActionPerformed(evt);
+            }
+        });
 
         butKontaktSpeichern.setText("Kontakt speichern");
         butKontaktSpeichern.addActionListener(new java.awt.event.ActionListener() {
@@ -485,17 +501,29 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         cards.add(alleKontakteAnzeigen, "cardAlleKontakteAnzeigen");
 
-
+        textSuche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textSucheActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Suche:");
 
+        buttonGroupSuche.add(jRadioButtonName);
         jRadioButtonName.setText("Name");
+        jRadioButtonName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonNameActionPerformed(evt);
+            }
+        });
 
-
+        buttonGroupSuche.add(jRadioButtonAdresse);
         jRadioButtonAdresse.setText("Adresse");
 
+        buttonGroupSuche.add(jRadioButtonEmailSuche);
         jRadioButtonEmailSuche.setText("E-Mail");
 
+        buttonGroupSuche.add(jRadioButtonNummer);
         jRadioButtonNummer.setText("Telefonnummer");
 
         jButtonSuchen.setText("Suchen");
@@ -552,25 +580,25 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                             .addComponent(jRadioButtonEmailSuche, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jRadioButtonNummer))
                         .addGap(45, 45, 45)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelKontaktSuchenLayout.createSequentialGroup()
-                                .addGap(182, 182, 182)
+                                .addGap(22, 22, 22)
                                 .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelSucheDetailsName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(45, 45, 45)
                                 .addGroup(panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldSucheDetailsName, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldSucheDetailsName, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                                     .addComponent(jTextFieldSucheDetailsAdresse)
                                     .addComponent(jTextFieldSucheDetailsEmail)))
                             .addGroup(panelKontaktSuchenLayout.createSequentialGroup()
-                                .addGap(176, 176, 176)
+                                .addGap(16, 16, 16)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTextFieldSucheDetailsNummer)))
-                        .addGap(49, 49, 49))))
+                        .addGap(94, 94, 94))))
         );
         panelKontaktSuchenLayout.setVerticalGroup(
             panelKontaktSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -675,7 +703,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontakt.add(menuKontaktLoeschen);
 
         menueleiste.add(menuKontakt);
-        menuKontakt.setEnabled(false);
+
         setJMenuBar(menueleiste);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1261,6 +1289,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JButton butStartBuchNeu;
     private javax.swing.JButton butSucheZuruck;
     private javax.swing.JButton butZusNummerNeu;
+    private javax.swing.ButtonGroup buttonGroupSuche;
     private javax.swing.JPanel cards;
     private javax.swing.JLabel detailsAdresse;
     private javax.swing.JTextField detailsAdresseText;
@@ -1327,11 +1356,5 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textfieldNeueNummer3;
     private javax.swing.JTextField textfieldNeueNummer4;
     private javax.swing.JTextField textfieldNummerNeu;
-    private Telefonbuch telefonbuch;
-    private Telefonbuch suchergebnisse;
-    private Telefonnummer neueNummer;
-    private Telefonnummer telefonnummer;
-    //private Kontakt kontakt;
-    private int zusNummerCounter;    
     // End of variables declaration//GEN-END:variables
 }
