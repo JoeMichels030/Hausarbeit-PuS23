@@ -1236,9 +1236,6 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         //Kontakt auslesen
         Kontakt details = suchergebnisse.telefonbuchArray.get(index);
-        System.out.println("_______________");
-        System.out.println("Suchergebnisse");
-        System.out.println(details.toString());
         //Textfelder befüllen
         jTextFieldSucheDetailsName.setText(details.getName());
         jTextFieldSucheDetailsAdresse.setText(details.getAdresse());
