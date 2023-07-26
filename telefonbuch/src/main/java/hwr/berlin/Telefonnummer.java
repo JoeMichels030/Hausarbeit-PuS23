@@ -80,7 +80,7 @@ public class Telefonnummer implements Serializable{
     //Ausgabe
     @Override
     public String toString() {
-        return  nummer + ": " + beschreibung;
+        return  nummer + "  :   " + beschreibung;
     }
 
 

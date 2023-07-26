@@ -107,7 +107,7 @@ public class Kontakt implements Serializable {
         String nummerToString = "";
 
         for (Telefonnummer nummer: nummern){
-            nummerToString += nummer.telefonnummerToString() +":"+nummer.getBeschreibung() +" \n" ;
+            nummerToString += nummer.telefonnummerToString() +"    :   "+nummer.getBeschreibung() +" \n" ;
             
         }
         return nummerToString;

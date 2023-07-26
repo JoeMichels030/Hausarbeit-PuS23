@@ -117,6 +117,10 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuAlleKontakteAnzeigen = new javax.swing.JMenuItem();
         menuKontaktSuchen = new javax.swing.JMenuItem();
         menuKontaktLoeschen = new javax.swing.JMenuItem();
+        telefonbuch = new Telefonbuch();
+        suchergebnisse = new Telefonbuch();
+        telefonnummer = new Telefonnummer();
+       // neueNummer = new Telefonnummer();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -195,11 +199,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         kontaktAnlegen.add(textFieldeMailNeu, gridBagConstraints);
 
-        textfieldNummerNeu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldNummerNeuActionPerformed(evt);
-            }
-        });
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 8;
@@ -288,11 +288,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(jLabel1, gridBagConstraints);
 
-        jTextFieldBeschreibungNeu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBeschreibungNeuActionPerformed(evt);
-            }
-        });
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 10;
@@ -306,11 +302,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(neueNummer2, gridBagConstraints);
 
-        textfieldNeueNummer2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldNeueNummer2ActionPerformed(evt);
-            }
-        });
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 12;
@@ -352,11 +344,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         kontaktAnlegen.add(neueBeschreibung4, gridBagConstraints);
 
-        textfieldBeschreibung2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldBeschreibung2ActionPerformed(evt);
-            }
-        });
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 14;
@@ -416,11 +404,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         detailsNummer.setText("Telefonnummer");
 
-        detailsNameText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                detailsNameTextActionPerformed(evt);
-            }
-        });
+
 
         butKontaktSpeichern.setText("Kontakt speichern");
         butKontaktSpeichern.addActionListener(new java.awt.event.ActionListener() {
@@ -501,21 +485,13 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
 
         cards.add(alleKontakteAnzeigen, "cardAlleKontakteAnzeigen");
 
-        textSuche.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textSucheActionPerformed(evt);
-            }
-        });
+
 
         jLabel4.setText("Suche:");
 
         buttonGroupSuche.add(jRadioButtonName);
         jRadioButtonName.setText("Name");
-        jRadioButtonName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonNameActionPerformed(evt);
-            }
-        });
+
 
         buttonGroupSuche.add(jRadioButtonAdresse);
         jRadioButtonAdresse.setText("Adresse");
@@ -703,6 +679,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         menuKontakt.add(menuKontaktLoeschen);
 
         menueleiste.add(menuKontakt);
+        menuKontakt.setEnabled(false);
 
         setJMenuBar(menueleiste);
 
@@ -746,6 +723,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         while (true){
         try{
         Kontakt neuerKontakt = new Kontakt();
+        Telefonnummer neueNummer = new Telefonnummer();
 
         if (textFieldNameNeu.getText().isEmpty() && status != 2){
             JOptionPane.showMessageDialog(null, "Bitte geben Sie einen Namen ein.");
@@ -1012,7 +990,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
         details.setName(detailsNameText.getText());
         details.setAdresse(detailsAdresseText.getText());
         details.setEmail(detailsEmailText.getText());
-        String[] geanderteNummer = jTextAreaNummern.getText().split(":");
+      /*   String[] geanderteNummer = jTextAreaNummern.getText().split(":");
         for(Telefonnummer nummer:details.nummern){
             details.loescheNr(nummer);
         }
@@ -1030,7 +1008,7 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
                 details.fuegeNrHinzu(telefonnummer);
             }
 
-        
+        */
             
         jListFuellen(telefonbuch);
         }
@@ -1356,5 +1334,11 @@ public class GuiBuild<CardLayout> extends javax.swing.JFrame {
     private javax.swing.JTextField textfieldNeueNummer3;
     private javax.swing.JTextField textfieldNeueNummer4;
     private javax.swing.JTextField textfieldNummerNeu;
+    private Telefonbuch telefonbuch;
+    private Telefonbuch suchergebnisse;
+    private Telefonnummer telefonnummer;
+    private Telefonnummer neueNummer;
+    private int zusNummerCounter;
+
     // End of variables declaration//GEN-END:variables
 }
