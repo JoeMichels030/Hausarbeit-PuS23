@@ -2,6 +2,8 @@
 
 <Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupSuche">
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="menueleiste">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="menuTelefonbuch">
@@ -2651,10 +2653,10 @@
                                   <Component id="jRadioButtonNummer" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabelSucheDetailsName" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
                                           <Component id="jLabel6" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
@@ -2662,19 +2664,19 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jTextFieldSucheDetailsName" pref="247" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldSucheDetailsName" pref="202" max="32767" attributes="0"/>
                                           <Component id="jTextFieldSucheDetailsAdresse" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jTextFieldSucheDetailsEmail" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                       <Component id="jLabel8" min="-2" pref="99" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jTextFieldSucheDetailsNummer" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -2747,6 +2749,9 @@
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonName">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupSuche"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Name"/>
               </Properties>
               <Events>
@@ -2755,16 +2760,25 @@
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonAdresse">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupSuche"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Adresse"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonEmailSuche">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupSuche"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="E-Mail"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButtonNummer">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupSuche"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Telefonnummer"/>
               </Properties>
             </Component>

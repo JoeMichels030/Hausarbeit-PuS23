@@ -9,6 +9,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Telefonbuch implements Serializable {
 
@@ -34,10 +36,6 @@ public class Telefonbuch implements Serializable {
         this.telefonbuchArray = buchLaden(file);
     }
 
-    
-    /** 
-     * @param kontakt
-     */
     //Kontakt zu ArrayList<Kontakt> (Telefonbuch) hinzufügen
     public void fuegeKontaktHinzu(Kontakt kontakt) {
         telefonbuchArray.add(kontakt);
@@ -48,7 +46,11 @@ public class Telefonbuch implements Serializable {
         telefonbuchArray.remove(kontakt);
     }
 
-
+    public void clearTelefonbuch(){
+        for (Kontakt kontakt : telefonbuchArray){
+            telefonbuchArray.remove(kontakt);
+        }
+    }
 
     //Testmethode zum Überprüfen der geladenen/gespeicherten Werte
     //Kontakte anzeigen
@@ -62,6 +64,19 @@ public class Telefonbuch implements Serializable {
         }
         System.out.println("Alle Kontakte erfolgreich angezeigt!");
     }
+
+    public void sortiere(){
+        Collections.sort(telefonbuchArray, new Comparator<Kontakt>(){
+
+            @Override
+            public int compare(Kontakt arg0, Kontakt arg1) {
+                // TODO Auto-generated method stub
+                return arg0.getName().compareToIgnoreCase(arg1.getName());
+                //throw new UnsupportedOperationException("Unimplemented method 'compare'");
+            }
+    });  
+    }
+    
 
     //??
     public String alleNameToStrings() {
