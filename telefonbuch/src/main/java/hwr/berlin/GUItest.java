@@ -153,6 +153,10 @@ public void initMainWindow(){
 
     }
 
+
+/** 
+ * @param knopfdruck
+ */
 @Override
 public void actionPerformed(ActionEvent knopfdruck) {
     

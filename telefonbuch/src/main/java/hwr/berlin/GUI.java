@@ -712,6 +712,10 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param evt
+     */
     private void menuKontaktLoeschenActionPerformed(ActionEvent evt) {
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");

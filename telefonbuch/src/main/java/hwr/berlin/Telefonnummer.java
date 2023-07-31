@@ -6,7 +6,7 @@ public class Telefonnummer implements Serializable{
     private long nummer;
     private String beschreibung;
     private static final long serialVersionUID = -1L;
-    //private static final Telefonnummer[] Kontakt = null;
+    
 
     //Standard Konstruktor
     public Telefonnummer(){
@@ -23,6 +23,10 @@ public class Telefonnummer implements Serializable{
         return nummer;
     }
 
+    
+    /** 
+     * @param nummer
+     */
     //set Telefonnummer
     public void setNummer(long nummer) {
         this.nummer = nummer;

@@ -38,6 +38,10 @@ public class Kontakt implements Serializable {
         return nummern;
     }
 
+    
+    /** 
+     * @param nummern
+     */
     //set Telefonnummern
     public void setNummern(ArrayList<Telefonnummer> nummern) {
         this.nummern = nummern;
