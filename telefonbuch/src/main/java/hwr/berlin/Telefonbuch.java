@@ -76,12 +76,7 @@ public class Telefonbuch implements Serializable {
             }
     });  
     }
-    
 
-    //??
-    public String alleNameToStrings() {
-        return  telefonbuchArray.toString();
-    }
 
     //Buch speichern 
     public void speichern(File outputFile){

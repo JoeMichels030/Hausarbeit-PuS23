@@ -113,11 +113,7 @@ public class Kontakt implements Serializable {
         return nummerToString;
     }
 
-    // toString
-   // @Override
-    public String NummerArraytoString1() {
-        return nummern + " \n";
-    }
+
 
 
 }
