@@ -715,6 +715,7 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
     private void menuKontaktLoeschenActionPerformed(ActionEvent evt) {
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
+        menuTelefonbuch.setEnabled(true);
     }
 
     //wie menuLaden
@@ -737,7 +738,7 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
         //Vor textfield reset status = 1
         //status = 1 && textfield leer -> kein Fehler
         //status = 0 && textfield leer -> Fehlermeldung
-        
+        menuTelefonbuch.setEnabled(false);
         int status = 0;
         //Neuer Kontakt erstellen
         while (true){
@@ -775,32 +776,61 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
 
 
         neueNummer.setBeschreibung(jTextFieldBeschreibungNeu.getText());
-
+        neuerKontakt.fuegeNrHinzu(neueNummer);
 
 
         if (1 <= zusNummerCounter && zusNummerCounter <4){
-            Telefonnummer neueNummer2 = new Telefonnummer();
-            neueNummer2.stringToTelefonnummer(textfieldNeueNummer2.getText());
+            if (status != 2){
+                Telefonnummer neueNummer2 = new Telefonnummer();
+                try{
+                    Long.parseLong(textfieldNeueNummer2.getText());
+                    neueNummer2.stringToTelefonnummer(textfieldNeueNummer2.getText());
+            }
+                catch (NumberFormatException nfe){
+                    JOptionPane.showMessageDialog(null, "Bitte geben Sie eine gültige Telefonnummer ein. (Nur Ziffern 0-9)");
+                    break; 
+            }
             neueNummer2.setBeschreibung(textfieldBeschreibung2.getText());
             neuerKontakt.fuegeNrHinzu(neueNummer2);
-          }
+            }
+        }
 
-         if (2 <= zusNummerCounter && zusNummerCounter < 4){
-            Telefonnummer neueNummer3 = new Telefonnummer();
-            neueNummer3.stringToTelefonnummer(textfieldNeueNummer3.getText());
+        if (2 <= zusNummerCounter && zusNummerCounter < 4){
+            if (status != 2){
+                Telefonnummer neueNummer3 = new Telefonnummer();
+                try{
+                    Long.parseLong(textfieldNeueNummer3.getText());
+                    neueNummer3.stringToTelefonnummer(textfieldNeueNummer3.getText());
+                }
+                catch (NumberFormatException nfe){
+                    JOptionPane.showMessageDialog(null, "Bitte geben Sie eine gültige Telefonnummer ein. (Nur Ziffern 0-9)");
+                    break; 
+            }
+            
             neueNummer3.setBeschreibung(textfieldBeschreibung3.getText());
             neuerKontakt.fuegeNrHinzu(neueNummer3);
-         }      
-        
+            }      
+        }
+
         if (3 <= zusNummerCounter && zusNummerCounter < 4){
-            Telefonnummer neueNummer4 = new Telefonnummer();
-            neueNummer4.stringToTelefonnummer(textfieldNeueNummer4.getText());
-            neueNummer4.setBeschreibung(textfieldBeschreibung4.getText());
-            neuerKontakt.fuegeNrHinzu(neueNummer4);
-            } 
+            if (status !=2){
+                Telefonnummer neueNummer4 = new Telefonnummer();
+                try{
+                    Long.parseLong(textfieldNeueNummer4.getText());
+                    neueNummer4.stringToTelefonnummer(textfieldNeueNummer4.getText());
+                }
+                catch (NumberFormatException nfe){
+                    JOptionPane.showMessageDialog(null, "Bitte geben Sie eine gültige Telefonnummer ein. (Nur Ziffern 0-9)");
+                    break; 
+                }
+                neueNummer4.setBeschreibung(textfieldBeschreibung4.getText());
+                neuerKontakt.fuegeNrHinzu(neueNummer4);
+            }
+            
+        } 
 
             //Telefonnummer zu Kontakt hinzufügen
-            neuerKontakt.fuegeNrHinzu(neueNummer);
+
 
 
 
@@ -1055,6 +1085,7 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
     private void menuNeuerKontaktActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNeuerKontaktActionPerformed
         // TODO add your handling code here:
         //Springe zu Card "Neuer Kontakt anlegen"
+        menuTelefonbuch.setEnabled(false);
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardKontaktAnlegen");
         zusNummerCounter = 0;
@@ -1102,6 +1133,7 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
         //Springe zu Card "Alle Kontakte anzeigen"
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
+        menuTelefonbuch.setEnabled(true);
     }//GEN-LAST:event_butCancelNeuActionPerformed
 
     //Button zusätzliche Nummer
@@ -1136,6 +1168,7 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
     //Springt zu Kontakt suchen
     private void butKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butKontaktSuchenActionPerformed
         // TODO add your handling code here:
+        menuTelefonbuch.setEnabled(false);
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardKontaktSuchen");
 
@@ -1145,7 +1178,7 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
     //Menu Kontakt suchen
     private void menuKontaktSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuKontaktSuchenActionPerformed
         // TODO add your handling code here:
-        //jDialogSuchen.setVisible(true);
+        menuTelefonbuch.setEnabled(false);
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardKontaktSuchen");
     }//GEN-LAST:event_menuKontaktSuchenActionPerformed
@@ -1154,6 +1187,7 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardLayout cl = (CardLayout) (cards.getLayout());
         ((java.awt.CardLayout) cl).show(cards, "cardAlleKontakteAnzeigen");
+        menuTelefonbuch.setEnabled(true);
     }//GEN-LAST:event_menuAlleKontakteAnzeigenActionPerformed
 
 
@@ -1164,10 +1198,9 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
     private void jButtonSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuchenActionPerformed
         // TODO add your handling code here:
         
-        //suchergebnisse.sortiere();
-        //Kontakt suchErgebnis = new Kontakt();
+
         try{
-            //Telefonbuch suchergebnisse = new Telefonbuch();
+            
         jListSuchergebnisse.clearSelection();
         suchergebnisse.clearTelefonbuch();
         DefaultListModel<String> model = new DefaultListModel<>();
@@ -1268,6 +1301,7 @@ public class GUI<CardLayout> extends javax.swing.JFrame {
         suchergebnisse.clearTelefonbuch();
         }
         catch (Exception e){}
+        menuTelefonbuch.setEnabled(true);
     //GEN-LAST:event_butSucheZuruckActionPerformed
 }
 
